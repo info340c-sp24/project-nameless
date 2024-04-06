@@ -43,15 +43,15 @@ a:hover {
 }
 
 /* Additional styling to demonstrate CSS requirements */
-section#problem-domain {
+section#problem_domain {
     background-color: #e7eff6;
 }
 
-section#app-description {
+section#app_description {
     background-color: #eef7ee;
 }
 
-section#team-contribution {
+section#team_contribution {
     background-color: #fff0f0;
 }
 
