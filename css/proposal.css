@@ -42,6 +42,10 @@ a:hover {
     text-decoration: none;
 }
 
+h4 { 
+    margin-top: 0.1em; 
+}
+
 /* Additional styling to demonstrate CSS requirements */
 section#problem_domain {
     background-color: #e7eff6;
