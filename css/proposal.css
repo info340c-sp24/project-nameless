@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: 3px solid #0779e4;
+}
+
+header h1 {
+    margin: 0;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+section {
+    margin-top: 20px;
+    padding: 20px;
+    background: #fff;
+}
+
+section h2 {
+    color: #333;
+}
+
+ul {
+    list-style-position: inside;
+}
+
+a {
+    color: #0779e4;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* Additional styling to demonstrate CSS requirements */
+section#problem-domain {
+    background-color: #e7eff6;
+}
+
+section#app-description {
+    background-color: #eef7ee;
+}
+
+section#team-contribution {
+    background-color: #fff0f0;
+}
+
+/* Example of changing multiple properties */
+h2 {
+    margin-bottom: 10px;
+    color: #305A72;
+}
