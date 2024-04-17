@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Course Evaluation Comments</title>
+        <link rel="stylesheet" href="/css/index.css">
+    </head>
+    <body>
+
+        <header>
+            <h1>Course Evaluation for INFO340</h1>
+        </header>
+        <div>
+            <div class="Comments">
+                <div class="fcontainer">
+                    <div class="column">
+                        <div class="commentName">
+                            <p class="tutorName"> James, Kim</p>
+                            <p class="quarterTaught"> Spring, 2024</p>
+                        </div>
+                        <p class="commentLabel">Comments </p>
+                        <p class="comment">James has a deep understanding of client-side development concepts and presents them in a clear and engaging manner. Her lectures are well-structured and incorporate real-world examples, which make the material more relatable and easier to grasp. No exams, problem sets due every week and a large group project, totally doable!</p>
+                        <div class="ratingBox">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rateAClass">
+                <form id="commentForm">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required><br><br>
+
+                    <label for="course">Course:</label>
+                    <input type="text" id="course" name="course" required><br><br>
+
+                    <label for="instructor">Instructor:</label>
+                    <input type="text" id="instructor" name="instructor" required><br><br>
+
+                    <label for="rating">Your Rating:</label>
+                    <select id="rating" name="rating" required>
+                      <option value="5">5 - Excellent</option>
+                      <option value="4">4 - Very Good</option>
+                      <option value="3">3 - Good</option>
+                      <option value="2">2 - Fair</option>
+                      <option value="1">1 - Poor</option>
+                    </select><br><br>
+
+                    <label for="comment">Your Comment:</label><br>
+                    <textarea id="comment" name="comment" required></textarea><br><br>
+
+                    <button type="submit">Submit Comment</button>
+                  </form>
+            </div>
+        </div>
+    </body>
+</html>
