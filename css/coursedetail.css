@@ -9,6 +9,43 @@ main {
   padding: 20px;
 }
 
+.info-list li:first-child {
+  margin-bottom: 30px;
+}
+
+
+.info-box h1 {
+  margin-bottom: 0;
+}
+
+.info-list {
+  margin-top: 0;
+}
+
+
+.info-list li:not(:first-child) {
+  margin-top: 10px; 
+}
+
+
+a {
+  color: #0000EE;
+  text-decoration: none; 
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.statistics {
+  float: right;
+  width: auto; /* or specify a width */
+  position: relative;
+  top: -90px; /* Adjust the value to move the div up */
+}
+
+
+
 .info-box, .course-introduction-box, .evaluate-box, .question-box {
   background-color: #FBF0FF; 
   margin-bottom: 20px;
@@ -29,6 +66,4 @@ main {
 .evaluate-box, .question-box {
   width: 45%; 
 }
-  
-  
   
