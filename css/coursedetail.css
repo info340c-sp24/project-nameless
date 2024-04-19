@@ -13,20 +13,13 @@ main {
   margin-bottom: 30px;
 }
 
-
 .info-box h1 {
   margin-bottom: 0;
 }
 
-.info-list {
-  margin-top: 0;
-}
-
-
 .info-list li:not(:first-child) {
   margin-top: 10px; 
 }
-
 
 a {
   color: #0000EE;
@@ -39,12 +32,10 @@ a:hover {
 
 .statistics {
   float: right;
-  width: auto; /* or specify a width */
+  width: auto; 
   position: relative;
-  top: -90px; /* Adjust the value to move the div up */
+  top: -90px; 
 }
-
-
 
 .info-box, .course-introduction-box, .evaluate-box, .question-box {
   background-color: #FBF0FF; 
@@ -55,6 +46,7 @@ a:hover {
 .info-list {
   list-style-type: none;
   padding: 0;
+  margin-top: 0;
 }
 
 .evaluation-container {
@@ -67,3 +59,56 @@ a:hover {
   width: 45%; 
 }
   
+img {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+#searchBox {
+  height: 48px;     
+  padding: 8px 12px; 
+  border: 1px solid #ccc;
+  flex-grow: 1;      
+  font-size: 16px;    
+  border-radius: 15px; 
+}
+
+#search-container {
+  display: flex;
+  align-items: center; 
+}
+
+#loginButton {
+  display: inline-block; 
+  padding: 8px 12px;
+  border: none;
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+#loginButton img {
+  vertical-align: middle;  
+  margin-right: 5px;       
+  width: 30px;             
+  height: auto;           
+}
+
+#loginButton:hover {
+  background-color: #d89edb;
+}
+
+.link-icon {
+  width: 16px;             
+  height: auto;            
+  vertical-align: middle;  
+}
+
+.link-text {
+  vertical-align: middle;  
+  padding-bottom: 2px;     
+}

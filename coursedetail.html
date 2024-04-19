@@ -2,21 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Course Evaluation</title>
+  <title>Course Detail</title>
   <link rel="stylesheet" href="css/coursedetail.css">
 </head>
 <body>
   <header>
-    <input type="search" placeholder="Search" id="searchBox">
-    <button type="button" id="loginButton">Log in</button>
+    <div id="search-container">
+      <img src="image/search_icon.png" alt="Search Icon" id="search-icon">
+      <input type="search" placeholder="Search" id="searchBox">
+    </div>
+
+    <a href="http://www.baidu.com" id="loginButton" role="button">
+      <img src="image/login_icon.png" alt="Login Icon">
+      Log in
+    </a>  
+
+
   </header>
   <main>
     <div class="info-box">
       <h1>INFO 340 Client Side Development</h1>
       <ul class="info-list">
         <li>5 credit | RSN</li>
-        <li><a href="https://myplan.uw.edu/course/#/courses/INFO%20340?id=87022718-a92e-4ac7-b774-2a6289c77ff4" target="_blank">Myplan</a></li>
-        <li><a href="https://dawgpath.uw.edu/course?id=INFO%20340&campus=seattle" target="_blank">DawgPath</a></li>
+        <li><a href="https://myplan.uw.edu/course/#/courses/INFO%20340?id=87022718-a92e-4ac7-b774-2a6289c77ff4" target="_blank"><img src="image/external_link_line_icon.png" class="link-icon" alt="Myplan Icon"> <span class="link-text">Myplan</span></a></li>
+        <li><a href="https://dawgpath.uw.edu/course?id=INFO%20340&campus=seattle" target="_blank"><img src="image/external_link_line_icon.png" class="link-icon" alt="DawgPath Icon"> <span class="link-text">DawgPath</span></a></li>
       </ul>
       <div class="statistics">
         <div class="statistic">
@@ -34,7 +43,6 @@
           <progress id="score" value="3.21" max="4"></progress>
           <span class="progress-value">3.21</span>
         </div>
-        <!-- Included the average score here -->
         <p class="average-score">3.55 average score</p>
       </div>
     </div>
