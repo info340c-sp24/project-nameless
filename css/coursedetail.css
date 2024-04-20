@@ -112,3 +112,30 @@ img {
   vertical-align: middle;  
   padding-bottom: 2px;     
 }
+
+@media (max-width: 960px) {
+  .evaluation-container {
+      display: flex;
+      flex-direction: column;
+  }
+  .evaluate-box, .question-box {
+      width: 100%; 
+      box-sizing: border-box; 
+  }
+}
+
+
+.background-only-box {
+  height: 300px; 
+  width: 100%; 
+  width: 100%; 
+  background-image: url('/image/picture1.png'); 
+  background-size: cover; 
+  background-position: center; 
+}
+@media (min-width: 960px) {
+  .background-only-box {
+      height: calc(100vh - 100px); 
+  }
+}
+
