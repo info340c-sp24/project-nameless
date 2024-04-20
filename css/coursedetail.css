@@ -5,6 +5,10 @@ header {
   background-color: #f5f5f5;
 }
 
+body {
+    font-family: 'Arial', Helvetica, sans-serif;
+}
+
 main {
   padding: 20px;
 }
@@ -139,3 +143,11 @@ img {
   }
 }
 
+
+progress {
+    background-color: #e6e6e6; 
+}
+
+progress::-webkit-progress-value {
+    background-color: rgb(115, 0, 255);
+}
