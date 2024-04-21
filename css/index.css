@@ -63,7 +63,19 @@ h1{
     margin-right: 10px;
 }
 
+<<<<<<< HEAD
 .ask {
+=======
+h1{
+    padding-top: 50px;
+    margin-bottom: 1.5rem;
+    font-size: 32px;
+    color: #1B1B1B;
+    text-align: center;
+}
+
+.title_ask .ask {
+>>>>>>> a735d7fee2ae28e9a80991ff3cb6921c0ee5d0be
     text-align: center;
     margin-bottom: 1.5rem;
 }
@@ -176,6 +188,13 @@ footer p {
     line-height: 1.25;
 }
 
+<<<<<<< HEAD
+=======
+footer p:last-of-type {
+    padding-top: 8px;
+}
+
+>>>>>>> a735d7fee2ae28e9a80991ff3cb6921c0ee5d0be
 .login_input {
     padding-top: 30px;
     padding-left: 450px;
