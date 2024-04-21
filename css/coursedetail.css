@@ -22,12 +22,12 @@ main {
 }
 
 .info-list li:not(:first-child) {
-  margin-top: 10px; 
+  margin-top: 10px;
 }
 
 a {
   color: #0000EE;
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 a:hover {
@@ -36,13 +36,13 @@ a:hover {
 
 .statistics {
   float: right;
-  width: auto; 
+  width: auto;
   position: relative;
-  top: -90px; 
+  top: -90px;
 }
 
 .info-box, .course-introduction-box, .evaluate-box, .question-box {
-  background-color: #FBF0FF; 
+  background-color: #FBF0FF;
   margin-bottom: 20px;
   padding: 20px;
 }
@@ -56,34 +56,34 @@ a:hover {
 .evaluation-container {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
 }
 
 .evaluate-box, .question-box {
-  width: 45%; 
+  width: 45%;
 }
-  
+
 img {
   vertical-align: middle;
   margin-right: 5px;
 }
 
 #searchBox {
-  height: 48px;     
-  padding: 8px 12px; 
+  height: 48px;
+  padding: 8px 12px;
   border: 1px solid #ccc;
-  flex-grow: 1;      
-  font-size: 16px;    
-  border-radius: 15px; 
+  flex-grow: 1;
+  font-size: 16px;
+  border-radius: 15px;
 }
 
 #search-container {
   display: flex;
-  align-items: center; 
+  align-items: center;
 }
 
 #loginButton {
-  display: inline-block; 
+  display: inline-block;
   padding: 8px 12px;
   border: none;
   background-color: white;
@@ -96,10 +96,10 @@ img {
 }
 
 #loginButton img {
-  vertical-align: middle;  
-  margin-right: 5px;       
-  width: 30px;             
-  height: auto;           
+  vertical-align: middle;
+  margin-right: 5px;
+  width: 30px;
+  height: auto;
 }
 
 #loginButton:hover {
@@ -107,14 +107,14 @@ img {
 }
 
 .link-icon {
-  width: 16px;             
-  height: auto;            
-  vertical-align: middle;  
+  width: 16px;
+  height: auto;
+  vertical-align: middle;
 }
 
 .link-text {
-  vertical-align: middle;  
-  padding-bottom: 2px;     
+  vertical-align: middle;
+  padding-bottom: 2px;
 }
 
 @media (max-width: 960px) {
@@ -123,29 +123,29 @@ img {
       flex-direction: column;
   }
   .evaluate-box, .question-box {
-      width: 100%; 
-      box-sizing: border-box; 
+      width: 100%;
+      box-sizing: border-box;
   }
 }
 
 
 .background-only-box {
-  height: 300px; 
-  width: 100%; 
-  width: 100%; 
-  background-image: url('../img/picture1.png'); 
-  background-size: cover; 
-  background-position: center; 
+  height: 300px;
+  width: 100%;
+  width: 100%;
+  background-image: url('../img/picture1.png');
+  background-size: cover;
+  background-position: center;
 }
 @media (min-width: 960px) {
   .background-only-box {
-      height: calc(100vh - 100px); 
+      height: calc(100vh - 100px);
   }
 }
 
 
 progress {
-    background-color: #e6e6e6; 
+    background-color: #e6e6e6;
 }
 
 progress::-webkit-progress-value {
