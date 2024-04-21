@@ -1,10 +1,14 @@
 /* Q&A Section Styles */
-header, main {
+body {
+    margin: 0;
+}
+
+header, main, footer {
     font-family: "Titillium Web", sans-serif;
     font-weight: 600;
 }
 
-header.qa {
+header {
     width: 100%;
     display: flex;
     height: 72px;
@@ -13,17 +17,17 @@ header.qa {
     align-items: center;
 }
 
-header.qa .logo {
+header .logo {
     display: flex;
     align-items: center;
 }
 
-header.qa img {
+header img {
     height: 40px;
     margin: 10px;
 }
 
-header.qa a {
+header a {
     font-size: 28px;
     margin: 10px;
     text-decoration: none;
@@ -51,7 +55,7 @@ main {
     margin-right: 10px;
 }
 
-.title_ask h2{
+h1{
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     font-size: 32px;
@@ -101,4 +105,51 @@ main {
 .reply a {
     text-decoration: none;
     color: #7469B6;
+}
+
+input[type=text], textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 10px;
+    resize: vertical;
+  }
+
+input[type=submit], .cancel {
+    width: 150px;
+    text-align: center;
+    background-color: #E1AFD1;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    margin-left: 15px;
+}
+
+input[type=submit]:hover, .cancel:hover {
+    background-color: #7469B6;
+}
+
+.cancel a {
+    text-decoration: none;
+    color: white;
+}
+
+footer {
+    color: #7469B6;
+    background-color: rgba(225, 175, 209, 0.2);
+}
+
+footer p {
+    margin: 0;
+    line-height: 1.25;
+}
+
+footer p:last-of-type {
+    padding-top: 8px;
 }
