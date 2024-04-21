@@ -133,7 +133,7 @@ img {
   height: 300px; 
   width: 100%; 
   width: 100%; 
-  background-image: url('/image/picture1.png'); 
+  background-image: url('../img/picture1.png'); 
   background-size: cover; 
   background-position: center; 
 }
