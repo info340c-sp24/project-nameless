@@ -63,17 +63,21 @@ h1{
     margin-right: 10px;
 }
 
-.ask {
+.rate {
+    background-image: url('..\img\uw.jpg');
+}
+
+.ask, .rate {
     text-align: center;
     margin-bottom: 1.5rem;
 }
 
-.ask a {
+.ask a, .rate a{
     text-decoration: none;
     color: black;
 }
 
-.search button, .ask button {
+.search button, .ask button, .rate button {
     background-color: rgba(173, 136, 198, 0.4);
     color: #080710;
     padding: 5px 20px;
@@ -159,7 +163,7 @@ footer {
     padding-top: 12px;
     color: #7469B6;
     background-color: rgba(225, 175, 209, 0.2);
-    position: fixed;
+    position: relative;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -212,4 +216,32 @@ button.login {
     padding-top: 15px;
     color: grey;
     text-align: center;
+}
+
+.wrapper {
+    padding: 15px;
+}
+
+.ratingBoxContainer {
+    display: flex;
+    flex-direction: row;
+    border-radius: 4px;
+    border-style: solid;
+    background-color: rgba(225, 175, 209, 0.2);
+    border-color: #dadada;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+}
+
+.ratingBox {
+    display: flex;
+    flex-direction: row;
+    height: 2vh;
+    margin: auto;
+    font-size: 15px;
+}
+
+.rating {
+    margin-left: .5vw;
 }
