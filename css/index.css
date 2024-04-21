@@ -245,3 +245,159 @@ button.login {
 .rating {
     margin-left: .5vw;
 }
+
+
+/* coursedetail's css */
+header, main, footer {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 600;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    height: 72px;
+    justify-content: space-between;
+    background-color: #FFE6E6;
+    align-items: center;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header img {
+    height: 40px;
+    margin: 10px;
+}
+
+header a {
+    font-size: 28px;
+    margin: 10px;
+    text-decoration: none;
+    color: #7469B6;
+    display: flex;
+    align-items: center;
+}
+
+#searchBox {
+  height: 48px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  flex-grow: 1;
+  font-size: 16px;
+  border-radius: 15px;
+}
+
+#search-container {
+  display: flex;
+  align-items: center;
+}
+
+body {
+    font-family: 'Arial', Helvetica, sans-serif;
+}
+
+.coursedetail-main {
+  padding: 20px;
+}
+
+.info-list li:first-child {
+  margin-bottom: 30px;
+}
+
+.info-box h1 {
+  margin-bottom: 0;
+}
+
+.info-list li:not(:first-child) {
+  margin-top: 10px;
+}
+
+.coursedetail-link {
+  color: #0000EE;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.statistics {
+  float: right;
+  width: auto;
+  position: relative;
+  top: -90px;
+}
+
+.info-box, .course-introduction-box, .evaluate-box, .question-box {
+  background-color: #FBF0FF;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.info-list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 0;
+}
+
+.evaluation-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.evaluate-box, .question-box {
+  width: 45%;
+}
+
+.coursedetail-image {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.link-icon {
+  width: 16px;
+  height: auto;
+  vertical-align: middle;
+}
+
+.link-text {
+  vertical-align: middle;
+  padding-bottom: 2px;
+}
+
+@media (max-width: 960px) {
+  .evaluation-container {
+      display: flex;
+      flex-direction: column;
+  }
+  .evaluate-box, .question-box {
+      width: 100%;
+      box-sizing: border-box;
+  }
+}
+
+.background-only-box {
+  height: 300px;
+  width: 100%;
+  width: 100%;
+  background-image: url('../img/picture1.png');
+  background-size: cover;
+  background-position: center;
+}
+@media (min-width: 960px) {
+  .background-only-box {
+      height: calc(100vh - 100px);
+  }
+}
+
+progress {
+    background-color: #e6e6e6;
+}
+
+progress::-webkit-progress-value {
+    background-color: rgb(115, 0, 255);
+}
