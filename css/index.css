@@ -1,4 +1,4 @@
-/* Q&A Section Styles */
+/*General Styles*/
 body {
     margin: 0;
     min-height: 100vh;
@@ -6,7 +6,7 @@ body {
     flex-direction: column;
 }
 
-header, main, footer {
+* {
     font-family: "Titillium Web", sans-serif;
     font-weight: 600;
 }
@@ -15,18 +15,41 @@ header {
     width: 100%;
     display: flex;
     height: 72px;
-    justify-content: space-between;
     background-color: #FFE6E6;
     align-items: center;
 }
 
 header .logo {
+    flex: 1;
     display: flex;
+    justify-content: flex-start;
     align-items: center;
 }
 
-header img {
+header .logo img {
     height: 40px;
+    margin: 10px;
+}
+
+header .search-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+header .search-container img {
+    height: 40px;
+}
+
+header .login {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+header .login img {
+    height: 30px;
     margin: 10px;
 }
 
@@ -34,14 +57,23 @@ header a {
     font-size: 28px;
     margin: 10px;
     text-decoration: none;
-    color: #7469B6;
+    color: #4835B6;
     display: flex;
     align-items: center;
 }
 
-main {
-    display: block;
+@media (max-width: 598px) {
+    .logo span, .search-container img, header .login span {
+        display: none;
+    }
 }
+
+@media (max-width: 1330px) {
+    .logo span {
+        display: none;
+    }
+}
+
 
 h1{
     padding-top: 50px;
@@ -80,7 +112,7 @@ h1{
     color: black;
 }
 
-.search button, .ask button, .rate button {
+.search button, .ask button, .rate button, button.back {
     background-color: rgba(173, 136, 198, 0.4);
     color: #080710;
     padding: 5px 20px;
@@ -121,7 +153,7 @@ h1{
 
 .reply a {
     text-decoration: none;
-    color: #7469B6;
+    color: #4835B6;
 }
 
 .text_input {
@@ -154,7 +186,7 @@ input[type=submit], .cancel {
 }
 
 input[type=submit]:hover, .cancel:hover {
-    background-color: #7469B6;
+    background-color: #4835B6;
 }
 
 .cancel a {
@@ -164,7 +196,7 @@ input[type=submit]:hover, .cancel:hover {
 
 footer {
     padding-top: 12px;
-    color: #7469B6;
+    color: #4835B6;
     background-color: rgba(225, 175, 209, 0.2);
     position: relative;
     left: 0;
@@ -176,7 +208,7 @@ footer {
 
 footer a {
     text-decoration: none;
-    color: #7469B6;
+    color: #4835B6;
 }
 
 footer p {
@@ -251,12 +283,10 @@ button.login {
 }
 
 
-
-
 /*index(main page)*/
 
 a {
-    text-decoration: none; 
+    text-decoration: none;
 }
 
 .main_page {
@@ -270,36 +300,21 @@ a {
 .main_page .tabs {
     width: 100%;
     text-align: left;
-    margin: 10px 20px;  
-}
-
-.tabs .qa {
-    margin-left: 140px;
-    font-size: 16px;
-    font-family: "Titillium Web", sans-serif;
-    font-weight: bold;
-    line-height: 1.5;    
-    width: 200px;        
-    height: 50px;        
-    display: inline-block; 
-    border: 1px solid #ccc; 
-    background-color: #f8f8f8; 
-    text-align: center; 
-    border-radius: 4px;
+    margin: 10px 20px;
 }
 
 .courses {
     display: flex;
-    flex-wrap: wrap; 
-    justify-content: center; 
-    padding: 20px 20px; 
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px 20px;
 }
 
 .courses .course_card {
-    width: 340px; 
+    width: 340px;
     background-color: #ffffff;
     margin-bottom: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
     margin: 20px 40px;
@@ -307,133 +322,83 @@ a {
 
 .courses .course_background {
     position: relative;
-    width: 100%; 
-    height: 170px; 
-    overflow: hidden; 
+    width: 100%;
+    height: 170px;
+    overflow: hidden;
     border-radius: 4px;
 }
 
 .course_background .course_img {
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 0; 
+    z-index: 0;
 }
 
 .course_background .course_title {
     position: absolute;
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-    color: #ffffff; 
-    z-index: 1; 
-    font-weight: bold; 
-    text-shadow: 0px 8px 10px rgba(0, 0, 0, 0.6); 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    z-index: 1;
+    font-weight: bold;
+    text-shadow: 0px 8px 10px rgba(0, 0, 0, 0.6);
     font-size: 32px;
 }
 
 .simple_description .course-name {
     margin: 25px 20px;
-    font-size: 18px; 
+    font-size: 18px;
     font-weight: bold;
     margin-bottom: 5px
 }
 
 .simple_description .description-tags {
-    display: flex; 
+    display: flex;
     align-items: center;
-    justify-content: flex-start; 
-    padding: 10px 20px; 
-    font-size: 12px; 
+    justify-content: flex-start;
+    padding: 10px 20px;
+    font-size: 12px;
 }
 
-
 .description-tags .tag_RSN {
-    background-color: #ad7589; 
-    color: #ffffff; 
+    background-color: #ad7589;
+    color: #ffffff;
 }
 
 .description-tags .tag_credit {
-    background-color: #e08ec9; 
-    color: #ffffff; 
+    background-color: #e08ec9;
+    color: #ffffff;
 }
 
 .description-tags .tag_RSN, .tag_credit {
-    margin: 5px; 
+    margin: 5px;
     flex-basis: 16%;
-    text-align: center; 
+    text-align: center;
     border-radius: 15px;
 }
 
 
-
-
-
 /* coursedetail's css */
-header, main, footer {
-    font-family: "Titillium Web", sans-serif;
-    font-weight: 600;
-}
 
-header {
-    width: 100%;
-    display: flex;
-    height: 72px;
-    justify-content: space-between;
-    background-color: #FFE6E6;
-    align-items: center;
-}
 
-header .logo {
-    display: flex;
-    align-items: center;
-}
 
-header img {
-    height: 40px;
-    margin: 10px;
-}
-
-header a {
-    font-size: 28px;
-    margin: 10px;
-    text-decoration: none;
-    color: #7469B6;
-    display: flex;
-    align-items: center;
-}
-
-#searchBox {
-  height: 48px;
-  padding: 8px 12px;
-  border: 1px solid #ccc;
-  flex-grow: 1;
-  font-size: 16px;
-  border-radius: 15px;
-}
-
-#search-container {
-  display: flex;
-  align-items: center;
-}
-
-body {
-    font-family: 'Arial', Helvetica, sans-serif;
-}
-
-.coursedetail-main {
+.course-detail-main {
   padding: 20px;
+}
+
+.course-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .info-list li:first-child {
   margin-bottom: 30px;
-}
-
-.info-box h1 {
-  margin-bottom: 0;
 }
 
 .info-list li:not(:first-child) {
@@ -441,7 +406,7 @@ body {
 }
 
 .coursedetail-link {
-  color: #0000EE;
+  color: #4835B6;
   text-decoration: none;
 }
 
@@ -450,10 +415,7 @@ a:hover {
 }
 
 .statistics {
-  float: right;
-  width: auto;
-  position: relative;
-  top: -90px;
+    align-self: flex-end;
 }
 
 .info-box, .course-introduction-box, .evaluate-box, .question-box {
