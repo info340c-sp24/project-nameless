@@ -338,6 +338,10 @@ progress::-webkit-progress-value {
     color: black;
 }
 
+.ask .back {
+    margin-left: 0;
+}
+
 .card {
     border: 1px solid #ccc;
     border-radius: 4px;
