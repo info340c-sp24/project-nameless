@@ -1,6 +1,104 @@
 /* Q&A Section Styles */
-#question_list {
+header, main {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 600;
+}
+
+header.qa {
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    height: 72px;
+    justify-content: space-between;
+    background-color: #FFE6E6;
+    align-items: center;
+}
+
+header.qa .logo {
+    display: flex;
+    align-items: center;
+}
+
+header.qa img {
+    height: 40px;
+    margin: 10px;
+}
+
+header.qa a {
+    font-size: 28px;
+    margin: 10px;
+    text-decoration: none;
+    color: #7469B6;
+    display: flex;
+    align-items: center;
+}
+
+main {
+    display: block;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+}
+
+.search_q {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.title_ask h2{
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 32px;
+    color: #1B1B1B;
+    text-align: center;
+}
+
+.title_ask .ask {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.ask a {
+    text-decoration: none;
+    color: black;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.card-title {
+    background-color: rgba(225, 175, 209, 0.2);
+    padding: 10px 15px;
+    border-bottom: 1px solid #ccc;
+}
+
+.card-text {
+    margin: 15px;
+}
+
+.card-text li {
+    margin-bottom: 10px;
+}
+
+.reply {
+    margin-top: auto;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+}
+
+.reply a {
+    text-decoration: none;
+    color: #7469B6;
 }
