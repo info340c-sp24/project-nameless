@@ -281,25 +281,6 @@ a:hover {
     background-position: center;
 }
 
-@media (min-width: 960px) {
-    .course-info {
-    flex-direction: row;
-    }
-
-    .evaluation-container {
-    flex-direction: row;
-    justify-content: space-between;
-    }
-
-    .evaluate-box, .question-box {
-    width: 45%;
-    }
-
-    .background-only-box {
-    height: calc(100vh - 100px);
-    }
-}
-
   progress {
     background-color: #e6e6e6;
 }
@@ -557,6 +538,23 @@ button.login-btn {
         font-size:40px;
         font-weight: 600;
     }
+
+    .course-info {
+        flex-direction: row;
+    }
+
+    .evaluation-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .evaluate-box, .question-box {
+        width: 45%;
+    }
+
+    .background-only-box {
+        height: calc(100vh - 100px);
+    }
 }
 
 @media (min-width: 1330px) {
@@ -564,7 +562,6 @@ button.login-btn {
         display: flex;
     }
 }
-
 
 @media (max-width: 960px) {
     .evaluation-container {
