@@ -220,7 +220,7 @@ button:hover, .back:hover {
 
 .course-info {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     justify-content: space-between;
 }
 
@@ -229,7 +229,7 @@ button:hover, .back:hover {
 }
 
 .info-list li:first-child {
-    margin-top: 0; 
+    margin-top: 0;
 }
 
 .coursedetail-link {
@@ -253,7 +253,7 @@ a:hover {
 }
 
 .evaluate-box, .question-box {
-    width: 100%; 
+    width: 100%;
 }
 
 .coursedetail-image {
@@ -273,6 +273,7 @@ a:hover {
 }
 
 .background-only-box {
+    display: none;
     height: 300px;
     width: 100%;
     background-image: url('../img/picture1.png');
@@ -282,7 +283,7 @@ a:hover {
 
 @media (min-width: 960px) {
     .course-info {
-    flex-direction: row; 
+    flex-direction: row;
     }
 
     .evaluation-container {
@@ -295,10 +296,10 @@ a:hover {
     }
 
     .background-only-box {
-    height: calc(100vh - 100px); 
+    height: calc(100vh - 100px);
     }
 }
-  
+
   progress {
     background-color: #e6e6e6;
 }
@@ -536,6 +537,26 @@ button.login-btn {
     .search-container img, header .login span {
         display: flex;
     }
+
+    .background-only-box {
+        display: block;
+    }
+}
+
+@media (min-width: 960px) {
+    .background-only-box {
+        height: calc(100vh - 100px);
+    }
+
+    body {
+        font-weight: 700;
+        height: 92px;
+    }
+
+    h1 {
+        font-size:40px;
+        font-weight: 600;
+    }
 }
 
 @media (min-width: 1330px) {
@@ -544,11 +565,6 @@ button.login-btn {
     }
 }
 
-@media (min-width: 960px) {
-    .background-only-box {
-        height: calc(100vh - 100px);
-    }
-}
 
 @media (max-width: 960px) {
     .evaluation-container {
