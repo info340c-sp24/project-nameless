@@ -388,103 +388,94 @@ a {
 
 
 .course-detail-main {
-  padding: 20px;
+    padding: 20px;
 }
 
 .course-info {
     display: flex;
-    flex-direction: row;
+    flex-direction: column; 
     justify-content: space-between;
 }
 
-.info-list li:first-child {
-  margin-bottom: 30px;
+.info-list li {
+    margin-top: 10px;
 }
 
-.info-list li:not(:first-child) {
-  margin-top: 10px;
+.info-list li:first-child {
+    margin-top: 0; 
 }
 
 .coursedetail-link {
-  color: #4835B6;
-  text-decoration: none;
+    color: #4835B6;
+    text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline;
-}
-
-.statistics {
-    align-self: flex-end;
+    text-decoration: underline;
 }
 
 .info-box, .course-introduction-box, .evaluate-box, .question-box {
-  background-color: #FBF0FF;
-  margin-bottom: 20px;
-  padding: 20px;
-}
-
-.info-list {
-  list-style-type: none;
-  padding: 0;
-  margin-top: 0;
+    background-color: #FBF0FF;
+    margin-bottom: 20px;
+    padding: 20px;
 }
 
 .evaluation-container {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .evaluate-box, .question-box {
-  width: 45%;
+    width: 100%; 
 }
 
 .coursedetail-image {
-  vertical-align: middle;
-  margin-right: 5px;
+    vertical-align: middle;
+    margin-right: 5px;
 }
 
 .link-icon {
-  width: 16px;
-  height: auto;
-  vertical-align: middle;
+    width: 16px;
+    height: auto;
+    vertical-align: middle;
 }
 
 .link-text {
-  vertical-align: middle;
-  padding-bottom: 2px;
-}
-
-@media (max-width: 960px) {
-  .evaluation-container {
-      display: flex;
-      flex-direction: column;
-  }
-  .evaluate-box, .question-box {
-      width: 100%;
-      box-sizing: border-box;
-  }
+    vertical-align: middle;
+    padding-bottom: 2px;
 }
 
 .background-only-box {
-  height: 300px;
-  width: 100%;
-  width: 100%;
-  background-image: url('../img/picture1.png');
-  background-size: cover;
-  background-position: center;
-}
-@media (min-width: 960px) {
-  .background-only-box {
-      height: calc(100vh - 100px);
-  }
+    height: 300px;
+    width: 100%;
+    background-image: url('../img/picture1.png');
+    background-size: cover;
+    background-position: center;
 }
 
-progress {
+@media (min-width: 960px) {
+    .course-info {
+    flex-direction: row; 
+    }
+
+    .evaluation-container {
+    flex-direction: row;
+    justify-content: space-between;
+    }
+
+    .evaluate-box, .question-box {
+    width: 45%;
+    }
+
+    .background-only-box {
+    height: calc(100vh - 100px); 
+    }
+}
+  
+  progress {
     background-color: #e6e6e6;
 }
 
-progress::-webkit-progress-value {
+  progress::-webkit-progress-value {
     background-color: rgb(115, 0, 255);
 }

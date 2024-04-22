@@ -220,37 +220,25 @@ button:hover, .back:hover {
 
 .course-info {
     display: flex;
-    flex-direction: row;
+    flex-direction: column; 
     justify-content: space-between;
 }
 
-.info-list li:first-child {
-    margin-bottom: 30px;
-  }
-
-.info-list li:not(:first-child) {
+.info-list li {
     margin-top: 10px;
 }
 
-.statistics {
-    align-self: flex-end;
+.info-list li:first-child {
+    margin-top: 0; 
 }
 
-.stat-wrapper {
-    display: flex;
-    align-items: center;
+.coursedetail-link {
+    color: #4835B6;
+    text-decoration: none;
 }
 
-.stat-wrapper label {
-    flex: 1;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding-right: 15px;
-}
-
-.stat-wrapper span {
-    padding-left: 10px;
+a:hover {
+    text-decoration: underline;
 }
 
 .info-box, .course-introduction-box, .evaluate-box, .question-box {
@@ -259,30 +247,18 @@ button:hover, .back:hover {
     padding: 20px;
 }
 
-.info-list {
-    list-style-type: none;
-    padding: 0;
-    margin-top: 0;
-}
-
 .evaluation-container {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
+    flex-direction: column;
 }
 
 .evaluate-box, .question-box {
-    width: 45%;
+    width: 100%; 
 }
 
 .coursedetail-image {
     vertical-align: middle;
     margin-right: 5px;
-}
-
-.evaluate-box h2:hover, .question-box h2:hover {
-    text-decoration: underline;
-    text-decoration-color: #4835B6;
 }
 
 .link-icon {
@@ -299,22 +275,36 @@ button:hover, .back:hover {
 .background-only-box {
     height: 300px;
     width: 100%;
-    width: 100%;
     background-image: url('../img/picture1.png');
     background-size: cover;
     background-position: center;
 }
 
-progress {
+@media (min-width: 960px) {
+    .course-info {
+    flex-direction: row; 
+    }
+
+    .evaluation-container {
+    flex-direction: row;
+    justify-content: space-between;
+    }
+
+    .evaluate-box, .question-box {
+    width: 45%;
+    }
+
+    .background-only-box {
+    height: calc(100vh - 100px); 
+    }
+}
+  
+  progress {
     background-color: #e6e6e6;
 }
 
-progress::-webkit-progress-value {
+  progress::-webkit-progress-value {
     background-color: rgb(115, 0, 255);
-}
-
-.link-text:hover {
-    text-decoration: underline;
 }
 
 /* evaluation.html style */
@@ -348,6 +338,10 @@ progress::-webkit-progress-value {
 .ask a, .rate a{
     text-decoration: none;
     color: black;
+}
+
+.ask .back {
+    margin-left: 0;
 }
 
 .card {
@@ -492,8 +486,8 @@ input.login {
 
 .login_input {
     padding-top: 30px;
-    padding-left: 450px;
-    padding-right: 450px;
+    padding-left: 30%;
+    padding-right: 30%;
 }
 
 input.login {
