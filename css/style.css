@@ -65,7 +65,7 @@ a {
     height: 30px;
 }
 
-header .login span {
+.login span {
     display: none;
 }
 
@@ -220,25 +220,37 @@ button:hover, .back:hover {
 
 .course-info {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
 }
 
-.info-list li {
+.info-list li:first-child {
+    margin-bottom: 30px;
+}
+
+.info-list li:not(:first-child) {
     margin-top: 10px;
 }
 
-.info-list li:first-child {
-    margin-top: 0;
+.statistics {
+    align-self: flex-end;
 }
 
-.coursedetail-link {
-    color: #4835B6;
-    text-decoration: none;
+.stat-wrapper {
+    display: flex;
+    align-items: center;
 }
 
-a:hover {
-    text-decoration: underline;
+.stat-wrapper label {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-right: 15px;
+}
+
+.stat-wrapper span {
+    padding-left: 10px;
 }
 
 .info-box, .course-introduction-box, .evaluate-box, .question-box {
@@ -247,18 +259,30 @@ a:hover {
     padding: 20px;
 }
 
+.info-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 0;
+}
+
 .evaluation-container {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .evaluate-box, .question-box {
-    width: 100%;
+    width: 45%;
 }
 
 .coursedetail-image {
     vertical-align: middle;
     margin-right: 5px;
+}
+
+.evaluate-box h2:hover, .question-box h2:hover {
+    text-decoration: underline;
+    text-decoration-color: #4835B6;
 }
 
 .link-icon {
@@ -281,12 +305,16 @@ a:hover {
     background-position: center;
 }
 
-  progress {
+progress {
     background-color: #e6e6e6;
 }
 
-  progress::-webkit-progress-value {
+progress::-webkit-progress-value {
     background-color: rgb(115, 0, 255);
+}
+
+.link-text:hover {
+    text-decoration: underline;
 }
 
 /* evaluation.html style */
@@ -428,6 +456,19 @@ a:hover {
     color: #4835B6;
 }
 
+.reply {
+    margin-top: auto;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+}
+
+.reply a {
+    text-decoration: none;
+    color: #4835B6;
+}
+
 .text_input {
     padding: 12px;
 }
@@ -519,6 +560,10 @@ button.login-btn {
         display: flex;
     }
 
+    .login span:hover {
+        text-decoration: underline;
+    }
+
     .background-only-box {
         display: block;
     }
@@ -560,6 +605,10 @@ button.login-btn {
 @media (min-width: 1330px) {
     .logo span {
         display: flex;
+    }
+
+    .logo span:hover {
+        text-decoration: underline;
     }
 }
 
