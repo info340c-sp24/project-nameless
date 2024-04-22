@@ -484,8 +484,8 @@ input.login {
 
 .login_input {
     padding-top: 30px;
-    padding-left: 450px;
-    padding-right: 450px;
+    padding-left: 30%;
+    padding-right: 30%;
 }
 
 input.login {
