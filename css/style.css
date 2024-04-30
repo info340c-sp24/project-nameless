@@ -612,7 +612,7 @@ button.login-btn {
     }
 }
 
-@media (min-width: 960px) {
+@media (min-width: 600px) {
     .evaluation-container {
         flex-direction: row;
         justify-content: space-between;
