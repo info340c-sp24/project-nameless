@@ -267,12 +267,12 @@ button:hover, .back:hover {
 
 .evaluation-container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     margin-bottom: 20px;
 }
 
 .evaluate-box, .question-box {
-    width: 45%;
+    width: 100%;
 }
 
 .coursedetail-image {
@@ -612,13 +612,12 @@ button.login-btn {
     }
 }
 
-@media (max-width: 960px) {
+@media (min-width: 960px) {
     .evaluation-container {
-        display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-between;
     }
     .evaluate-box, .question-box {
-        width: 100%;
-        box-sizing: border-box;
+        width: 45%; /* Adjusts width when side by side */
     }
 }
