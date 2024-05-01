@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Course Detail</title>
+        <link rel="icon" type="image/png" href="../img/star.png">
+        <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../img/star.png" alt="site logo">
+                    <span>UW Course Evaluation</span>
+                </a>
+            </div>
+            <div class="search-container">
+                <input type="search" placeholder="Search" class="search_bar">
+                <img src="../img/search.png" alt="Search Icon">
+            </div>
+            <div class="login">
+                <a href="login.html">
+                    <img src="../img/login.png" alt="Login Icon">
+                    <span>Login</span>
+                </a>
+            </div>
+        </header>
+
+        <main class="course-detail-main">
+            <div class="info-box">
+                <a href="../index.html" aria-label="go back to index page" class="back">Back</a>
+                <h1>INFO 340 Client-Side Development</h1>
+                <div class="course-info">
+                    <ul class="info-list">
+                        <li>5 credit | RSN</li>
+                        <li>
+                            <a href="https://myplan.uw.edu/course/#/courses/INFO%20340?id=87022718-a92e-4ac7-b774-2a6289c77ff4" target="_blank" class="coursedetail-link">
+                                <img src="../img/external_link_line_icon.png" class="coursedetail-image link-icon" alt="Myplan Icon">
+                                <span class="link-text">Myplan</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://dawgpath.uw.edu/course?id=INFO%20340&campus=seattle" target="_blank" class="coursedetail-link">
+                                <img src="../img/external_link_line_icon.png" class="coursedetail-image link-icon" alt="DawgPath Icon">
+                                <span class="link-text">DawgPath</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="statistics">
+                        <div class="stat-wrapper">
+                            <label for="difficulty">Rating difficulty</label>
+                            <progress id="difficulty" value="3.11" max="4"></progress>
+                            <span class="progress-value">3.11</span>
+                        </div>
+                        <div class="stat-wrapper">
+                            <label for="workload">Workload</label>
+                            <progress id="workload" value="3.01" max="4"></progress>
+                            <span class="progress-value">3.01</span>
+                        </div>
+                        <div class="stat-wrapper">
+                            <label for="score">Score</label>
+                            <progress id="score" value="3.21" max="4"></progress>
+                            <span class="progress-value">3.21</span>
+                        </div>
+                        <p class="average-score">Average score: 3.55</p>
+                    </div>
+                </div>
+            </div>
+            <div class="course-introduction-box">
+                <h2>Course Introduction</h2>
+                <p>Introduction to client-side development on the internet, including markup, programming languages, protocols, libraries, and frameworks for creating and maintaining usable and accessible, interactive applications. Prerequisite: either CSE 143, CSE 154, or CSE 163; and INFO 201.</p>
+            </div>
+            <div class="evaluation-container">
+                <div class="evaluate-box">
+                    <h2>
+                        <a href="evaluation.html" class="coursedetail-link">Evaluate (40)</a>
+                    </h2>
+                    <p>Learn to make applications, websites, etc. There is a problem set every week, but the amount is not large. There are two group projects in one semester, and it is more important to do them well. There are no exams. . Remember to choose reliable team members.</p>
+                    <p class="user-info">Posted by <span class="username">Justin</span> on <span class="publish-date">2020</span></p>
+                </div>
+                <div class="question-box">
+                    <h2>
+                        <a href="qa.html" class="coursedetail-link">Question (35)</a>
+                    </h2>
+                    <p>Is it difficult? How about kim teach?</p>
+                    <p class="user-info">Posted by <span class="username">Kim</span> on <span class="publish-date">2023</span></p>
+                </div>
+            </div>
+            <div class="background-only-box"></div>
+        </main>
+        <footer>
+            <div class="footer_container">
+                <p><a href="mailto:namelessl@uw.edu" class="coursedetail-link">nameless@uw.edu</a></p>
+                <p><a href="tel:123-4567-8888">123&#8209;4567&#8209;8888</a></p>
+                <p>&copy;2024 Nameless All Rights Reserved</p>
+            </div>
+        </footer>
+    </body>
+</html>
