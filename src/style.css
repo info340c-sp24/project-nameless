@@ -296,13 +296,29 @@ button:hover, .back:hover {
     padding-bottom: 2px;
 }
 
-.background-only-box {
-    height: 100px;
-    background-color: #f0f0f0;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-bottom: 20px;
-}
+.course-detail-page .background-only-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .course-detail-page .background-only-box img {
+    width: 100%;
+    height: auto;
+  }
+  
+  
+  /* Specific footer styles for this page */
+  .course-detail-page footer {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background: #f0f0f0; /* Adjust background color as needed */
+    position: relative;
+    bottom: 0;
+    left: 0;
+    clear: both; /* Ensure it doesn't overlap with other content */
+  }
 
 progress {
     background-color: #e6e6e6;

@@ -1,9 +1,9 @@
 import React from 'react';
-import '../style.css';  
+import '../style.css';
 
 const CourseDetailMain = () => {
   return (
-    <main className="course-detail-main">
+    <main className="course-detail-page course-detail-main">
       <div className="info-box">
         <a href="../index.html" aria-label="go back to index page" className="back">Back</a>
         <h1>INFO 340 Client-Side Development</h1>
@@ -52,7 +52,7 @@ const CourseDetailMain = () => {
           <h2>
             <a href="evaluation.html" className="coursedetail-link">Evaluate (40)</a>
           </h2>
-          <p>Learn to make applications, websites, etc. There is a problem set every week, but the amount is not large. There are two group projects in one semester, and it is more important to do them well. There are no exams. . Remember to choose reliable team members.</p>
+          <p>Learn to make applications, websites, etc. There is a problem set every week, but the amount is not large. There are two group projects in one semester, and it is more important to do them well. There are no exams. Remember to choose reliable team members.</p>
           <p className="user-info">Posted by <span className="username">Justin</span> on <span className="publish-date">2020</span></p>
         </div>
         <div className="question-box">
@@ -63,11 +63,14 @@ const CourseDetailMain = () => {
           <p className="user-info">Posted by <span className="username">Kim</span> on <span className="publish-date">2023</span></p>
         </div>
       </div>
-      <div className="background-only-box"></div>
+      <div className="background-only-box">
+        <img src="/img/picture1.png" alt="Course related image" className="course-detail-image"/>
+      </div>
     </main>
   );
 };
 
 export default CourseDetailMain;
+
 
 
