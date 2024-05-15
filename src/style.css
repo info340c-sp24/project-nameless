@@ -308,16 +308,15 @@ button:hover, .back:hover {
   }
   
   
-  /* Specific footer styles for this page */
   .course-detail-page footer {
     width: 100%;
     text-align: center;
     padding: 10px 0;
-    background: #f0f0f0; /* Adjust background color as needed */
+    background: #f0f0f0; 
     position: relative;
     bottom: 0;
     left: 0;
-    clear: both; /* Ensure it doesn't overlap with other content */
+    clear: both; 
   }
 
 progress {
@@ -331,6 +330,24 @@ progress::-webkit-progress-value {
 .link-text:hover {
     text-decoration: underline;
 }
+
+
+/* Login and Sign Up */
+/* src/style.css */
+.App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+  
+header {
+    background-color: #f8d7da;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
 
 /* evaluation.html style */
 /* .rate {

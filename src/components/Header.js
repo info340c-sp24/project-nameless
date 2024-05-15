@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../style.css';  
+import '../style.css';
 
 const Header = () => {
   return (
@@ -16,10 +16,10 @@ const Header = () => {
         <img src="/img/search.png" alt="Search Icon" />
       </div>
       <div className="login">
-        <a href="login.html">
+        <Link to="/login">
           <img src="/img/login.png" alt="Login Icon" />
           <span>Login</span>
-        </a>
+        </Link>
       </div>
     </header>
   );
