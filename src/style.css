@@ -340,13 +340,7 @@ progress::-webkit-progress-value {
     min-height: 100vh;
 }
   
-header {
-    background-color: #f8d7da;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+
   
 
 /* evaluation.html style */
