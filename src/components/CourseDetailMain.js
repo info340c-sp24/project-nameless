@@ -1,5 +1,5 @@
 import React from 'react';
-import '../style.css';
+
 
 const CourseDetailMain = () => {
   return (
@@ -57,7 +57,7 @@ const CourseDetailMain = () => {
         </div>
         <div className="question-box">
           <h2>
-            <a href="qa.html" className="coursedetail-link">Question (35)</a>
+            <a href="/qa" className="coursedetail-link">Question (35)</a>
           </h2>
           <p>Is it difficult? How about kim teach?</p>
           <p className="user-info">Posted by <span className="username">Kim</span> on <span className="publish-date">2023</span></p>

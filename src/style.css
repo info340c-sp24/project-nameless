@@ -1,5 +1,5 @@
 /* Default Styles */
-header, body, footer {
+* {
     font-family: "Titillium Web", sans-serif;
     font-weight: 600;
 }
@@ -119,14 +119,8 @@ button, .back {
     color: #080710;
     padding: 5px 20px;
     font-size: 18px;
-    font-weight: 600;
     border-radius: 5px;
-    cursor: pointer;
-    border-width: 2px;
     border-style: outset;
-    border-image: initial;
-    width: auto;
-    margin-bottom: 20px;
 }
 
 button:hover, .back:hover {

@@ -1,0 +1,42 @@
+[
+    {
+      "id": 1,
+      "title": "Are there midterm and final exams?",
+      "answers": [
+        "Yes, there are both midterm and final exams in this course.",
+        "The midterm exam is usually held in the middle of the semester, and the final exam is at the end of the semester."
+      ]
+    },
+    {
+      "id": 2,
+      "title": "How many assignments are there in this course?",
+      "answers": [
+        "There are typically 4-5 assignments throughout the semester.",
+        "The assignments are evenly spread out and cover different topics from the course material."
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Is attendance mandatory for this course?",
+      "answers": [
+        "Attendance is highly recommended but not strictly mandatory.",
+        "However, regular attendance can help you stay engaged and better understand the course content."
+      ]
+    },
+    {
+      "id": 4,
+      "title": "What programming languages are used in this course?",
+      "answers": [
+        "The primary programming language used in this course is JavaScript.",
+        "We will also be using HTML and CSS for web development purposes."
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Are there any group projects in this course?",
+      "answers": [
+        "Yes, there is usually one group project towards the end of the semester.",
+        "The group project allows you to collaborate with your classmates and apply the concepts learned in the course."
+      ]
+    }
+  ]

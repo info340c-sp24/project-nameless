@@ -1,0 +1,16 @@
+footer {
+    padding-top: 12px;
+    color: #4835B6;
+    background-color: rgba(225, 175, 209, 0.2);
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+    line-height: 1.25;
+}
