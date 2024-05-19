@@ -60,7 +60,7 @@ const CourseDetailMain = ({ evaluations, questions }) => {
             <Link to="/evaluation" className="coursedetail-link">Evaluate ({evaluations.length})</Link>
           </h2>
           <p>{evaluations.length > 0 ? evaluations[0].comment : 'No evaluations yet.'}</p>
-          <p className="user-info">Posted by <span className="username">{evaluations.length > 0 ? evaluations[0].instructor : 'Anonymous'}</span> on <span className="publish-date">{evaluations.length > 0 ? getYearFromQuarter(evaluations[0].quarterTaught) : 'Unknown'}</span></p>
+          <p className="user-info">Taught by <span className="username">{evaluations.length > 0 ? evaluations[0].instructor : 'Anonymous'}</span> on <span className="publish-date">{evaluations.length > 0 ? getYearFromQuarter(evaluations[0].quarterTaught) : 'Unknown'}</span></p>
         </div>
         <div className="question-box">
           <h2>
