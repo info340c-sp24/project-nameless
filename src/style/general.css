@@ -3,11 +3,14 @@
     font-weight: 600;
 }
 
-body {
-    margin: 0;
-    min-height: 100vh;
+.App {
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+}
+
+body {
+    margin: 0;
     width: 100%;
 }
 
@@ -81,4 +84,45 @@ header a {
     border-radius: 4px;
     font-size: 16px;
     margin-right: 10px;
+}
+
+footer {
+    padding-top: 12px;
+    color: #4835B6;
+    background-color: rgba(225, 175, 209, 0.2);
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+    line-height: 1.25;
+}
+
+@media (min-width: 1330px) {
+    .logo span {
+        display: flex;
+    }
+
+    .logo span:hover {
+        text-decoration: underline;
+    }
+}
+
+@media (min-width: 598px) {
+    .search-container img, header .login span {
+        display: flex;
+    }
+
+    .login span:hover {
+        text-decoration: underline;
+    }
+
+    .background-only-box {
+        display: block;
+    }
 }
