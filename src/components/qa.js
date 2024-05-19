@@ -7,7 +7,8 @@ const QuestionCard = ({ question, onAnswerSubmit }) => {
     const [isAnswering, setIsAnswering] = useState(false);
     const [answer, setAnswer] = useState('');
 
-    const handleAnswerSubmit = () => {
+    const handleAnswerSubmit = (event) => {
+        event.preventDefault();
         if (answer.trim() !== '') {
             onAnswerSubmit(question.id, answer);
             setAnswer('');
@@ -21,8 +22,7 @@ const QuestionCard = ({ question, onAnswerSubmit }) => {
     };
 
     return (
-        <div className="col-md-4">
-            <div className="card">
+        <div className="card">
             <div className="card-body">
                 <div className="question">
                     <p className="card-title">{question.title}</p>
@@ -37,21 +37,20 @@ const QuestionCard = ({ question, onAnswerSubmit }) => {
                 <br />
                 <div className="reply">
                     {isAnswering ? (
-                        <div>
+                        <form onSubmit={handleAnswerSubmit}>
                             <textarea
                                 value={answer}
                                 onChange={(e) => setAnswer(e.target.value)}
                                 placeholder="Enter your answer"
                             ></textarea>
-                            <button onClick={handleAnswerSubmit}>Submit</button>
-                            <button onClick={handleAnswerCancel}>Cancel</button>
-                        </div>
+                            <button type="submit">Submit</button>
+                            <button type="button" onClick={handleAnswerCancel}>Cancel</button>
+                        </form>
                 ) : (
                     <button onClick={() => setIsAnswering(true)}>Answer</button>
                 )}
                 </div>
             </div>
-        </div>
         </div>
     );
 };
@@ -60,26 +59,10 @@ const QuestionCard = ({ question, onAnswerSubmit }) => {
 const QAPage = () => {
     const [questions, setQuestions] = useState(questionList);
     const [searchQuery, setSearchQuery] = useState('');
+    const [searchResults, setSearchResults] = useState([]);
+    const [noMatchingResults, setNoMatchingResults] = useState(false);
     const [isAsking, setIsAsking] = useState(false);
     const [newQuestion, setNewQuestion] = useState('');
-
-    const handleAskQuestion = () => {
-        if (newQuestion.trim() !== '') {
-          const newQuestionObj = {
-            id: questions.length + 1,
-            title: newQuestion,
-            answers: [],
-          };
-          setQuestions([...questions, newQuestionObj]);
-          setNewQuestion('');
-          setIsAsking(false);
-        }
-    };
-
-    const handleAskCancel = () => {
-        setNewQuestion('');
-        setIsAsking(false);
-    };
 
     const handleAnswerSubmit = (questionId, answer) => {
         const questionIndex = questions.findIndex((q) => q.id === questionId);
@@ -90,6 +73,7 @@ const QAPage = () => {
                 answers: [...questions[questionIndex].answers, answer],
             };
             setQuestions(updatedQuestions);
+            // need server side
         }
     };
 
@@ -97,14 +81,42 @@ const QAPage = () => {
         setSearchQuery(event.target.value);
     };
 
-    const filteredQuestions = questions.filter((question) =>
-        question.title.toLowerCase().includes(searchQuery.toLowerCase())
-    );
+    const handleSearch = () => {
+        const filteredResults = questions.filter((question) =>
+            question.title.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+        setSearchResults(filteredResults);
+        setNoMatchingResults(filteredResults.length === 0);
+    };
+
+    const handleAskQuestion = (event) => {
+        event.preventDefault();
+        if (newQuestion.trim() !== '') {
+            const newQuestionObj = {
+                id: questions.length + 1,
+                title: newQuestion,
+                answers: [],
+            };
+            setQuestions([...questions, newQuestionObj]);
+            setNewQuestion('');
+            setIsAsking(false);
+            // need sever side
+        }
+    };
+
+    const handleAskCancel = () => {
+        setNewQuestion('');
+        setIsAsking(false);
+    };
+
+    const filteredQuestions = searchResults.length > 0 ? searchResults : questions;
 
     return (
         <div>
         <div className="title_ask">
-            <Link to='/detail'>Back</Link>
+            <Link to='/detail'>
+                <button className="back-btn-qa">Back</button>
+            </Link>
             <h1>Q &amp; A Board</h1>
             <div className="search">
                 <input
@@ -114,19 +126,24 @@ const QAPage = () => {
                     value={searchQuery}
                     onChange={handleSearchChange}
                 />
-                <button type="button">Search</button>
+                <button type="button" onClick={handleSearch} className="search-btn-qa">Search</button>
+                {noMatchingResults && (
+                    <div className="no-match">
+                        <p>No Matching Questions</p>
+                    </div>
+                )}
             </div>
             <div className="ask">
                 {isAsking ? (
-                    <div>
+                    <form onSubmit={handleAskQuestion}>
                         <textarea
                             value={newQuestion}
                             onChange={(e) => setNewQuestion(e.target.value)}
                             placeholder="Enter your question"
                         ></textarea>
-                        <button onClick={handleAskQuestion}>Submit</button>
-                        <button onClick={handleAskCancel}>Cancel</button>
-                    </div>
+                        <button type="submit">Submit</button>
+                        <button type="button" onClick={handleAskCancel}>Cancel</button>
+                    </form>
                 ) : (
                     <button onClick={() => setIsAsking(true)}>Ask a Question</button>
                 )}

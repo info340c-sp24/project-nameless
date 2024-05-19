@@ -57,3 +57,13 @@ textarea {
     margin-right: 2%;
     margin-bottom: 10px;
 }
+
+.no-match {
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+.back-btn-qa {
+    margin-top: 15px;
+    margin-left: 15px;
+}
