@@ -50,7 +50,7 @@ const CourseDetailMain = () => {
       <div className="evaluation-container">
         <div className="evaluate-box">
           <h2>
-            <a href="evaluation.html" className="coursedetail-link">Evaluate (40)</a>
+            <a href="/evaluation" className="coursedetail-link">Evaluate (40)</a>
           </h2>
           <p>Learn to make applications, websites, etc. There is a problem set every week, but the amount is not large. There are two group projects in one semester, and it is more important to do them well. There are no exams. Remember to choose reliable team members.</p>
           <p className="user-info">Posted by <span className="username">Justin</span> on <span className="publish-date">2020</span></p>
