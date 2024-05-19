@@ -1,0 +1,108 @@
+.rate {
+    background-image: url('../img/pink-banner.jpg');
+    background-size: cover;
+}
+
+.rate-wrap {
+    padding: 20px;
+    margin-bottom: 1.5rem;
+}
+
+.rate-wrap .back {
+    margin-left: 12px;
+}
+
+.title_ask .back {
+    margin-left: 5%
+}
+
+.ask, .rate h1, .rateee {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.search button {
+    margin-bottom: 0;
+}
+
+.ask a, .rate a{
+    text-decoration: none;
+    color: black;
+}
+
+.ask .back {
+    margin-left: 0;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.card-title {
+    background-color: rgba(225, 175, 209, 0.2);
+    padding: 10px 15px;
+    border-bottom: 1px solid #ccc;
+}
+
+.card-text {
+    margin: 15px;
+}
+
+.card-text li {
+    margin-bottom: 10px;
+}
+
+.wrapper {
+    padding: 15px;
+}
+
+.ratingBoxContainer {
+    display: flex;
+    flex-direction: row;
+    border-radius: 4px;
+    border-style: solid;
+    background-color: rgba(225, 175, 209, 0.2);
+    border-color: #dadada;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+}
+
+.ratingBox {
+    display: flex;
+    flex-direction: row;
+    height: 2vh;
+    margin: auto;
+    font-size: 15px;
+}
+
+.rating {
+    margin-left: .5vw;
+}
+
+.input-fields {
+    display: flex;
+    align-items: center;
+    padding-left: 30%;
+    padding-right: 30%;
+    padding-bottom: 30px;
+}
+
+.input-fields label {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.input-fields input, .input-fields select, .input-fields textarea {
+    width: 300px;
+}
+
+.eval-back {
+    margin-left: 300px;
+}
