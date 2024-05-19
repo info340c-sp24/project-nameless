@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "title": "INFO340",
+        "description": "Client-Side Development",
+        "tagRSN": "RSN",
+        "credit": "5",
+        "image": "img/titlebackground.jpeg"
+    },
+    {
+        "id": 2,
+        "title": "INFO340",
+        "description": "Client-Side Development",
+        "tagRSN": "RSN",
+        "credit": "5",
+        "image": "img/titlebackground.jpeg"
+    },
+    {
+        "id": 3,
+        "title": "INFO340",
+        "description": "Client-Side Development",
+        "tagRSN": "RSN",
+        "credit": "5",
+        "image": "img/titlebackground.jpeg"
+    },
+    {
+        "id": 4,
+        "title": "INFO340",
+        "description": "Client-Side Development",
+        "tagRSN": "RSN",
+        "credit": "5",
+        "image": "img/titlebackground.jpeg"
+    },
+    {
+        "id": 5,
+        "title": "INFO340",
+        "description": "Client-Side Development",
+        "tagRSN": "RSN",
+        "credit": "5",
+        "image": "img/titlebackground.jpeg"
+    },
+    {
+        "id": 6,
+        "title": "INFO340",
+        "description": "Client-Side Development",
+        "tagRSN": "RSN",
+        "credit": "5",
+        "image": "img/titlebackground.jpeg"
+    }
+    
+]
