@@ -12,7 +12,7 @@ const CourseDetailMain = ({ evaluations, questions }) => {
   return (
     <main className="course-detail-page course-detail-main">
       <div className="info-box">
-        <Link to="/homepage" aria-label="go back to index page" className="back">Back</Link>
+        <Link to="/" aria-label="go back to index page" className="back">Back</Link>
         <h1>INFO 340 Client-Side Development</h1>
         <div className="course-info">
           <ul className="info-list">
