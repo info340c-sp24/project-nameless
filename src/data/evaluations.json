@@ -1,0 +1,38 @@
+[
+    {
+      "instructor": "James, Kim",
+      "quarterTaught": "Spring, 2024",
+      "drating": "5",
+      "wlrating": "4",
+      "rating": "5",
+      "grade": "3.8",
+      "comment": "James has a deep understanding of client-side development concepts and presents them in a clear and engaging manner. Her lectures are well-structured and incorporate real-world examples, which make the material more relatable and easier to grasp. No exams, problem sets due every week and a large group project, totally doable!"
+    },
+    {
+      "instructor": "Smith, John",
+      "quarterTaught": "Winter, 2024",
+      "drating": "4",
+      "wlrating": "5",
+      "rating": "4",
+      "grade": "3.9",
+      "comment": "John is an excellent instructor with a strong command of the subject matter. His lectures are well-organized and easy to follow. He encourages class participation and is always willing to help students outside of class. The workload is manageable with regular assignments and a final project."
+    },
+    {
+      "instructor": "Garcia, Maria",
+      "quarterTaught": "Autumn, 2023",
+      "drating": "3",
+      "wlrating": "4",
+      "rating": "4",
+      "grade": "3.7",
+      "comment": "Maria is knowledgeable about the course material, but her lectures can be a bit dry at times. She provides clear explanations and examples, but the pace can be a bit slow for some students. The workload is reasonable with a few assignments and a midterm exam."
+    },
+    {
+      "instructor": "Lee, David",
+      "quarterTaught": "Spring, 2023",
+      "drating": "5",
+      "wlrating": "3",
+      "rating": "4",
+      "grade": "4.0",
+      "comment": "David is an excellent instructor who truly cares about his students' learning. His lectures are engaging and interactive, and he makes a genuine effort to ensure that everyone understands the material. The workload is challenging but manageable with regular assignments and a final project. However, the class can be disorganized at times."
+    }
+  ]

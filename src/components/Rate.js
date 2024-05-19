@@ -76,6 +76,7 @@ function Rate({ onSubmitEvaluation }) {
                 onChange={handleChange}
                 required
               >
+                <option value="">Select Difficulty</option>
                 <option value="5">5 - Most Difficult</option>
                 <option value="4">4 - Very Difficult</option>
                 <option value="3">3 - Difficult</option>
@@ -93,6 +94,7 @@ function Rate({ onSubmitEvaluation }) {
                 onChange={handleChange}
                 required
               >
+                <option value="">Select Work Load</option>
                 <option value="5">5 - Overwhelming</option>
                 <option value="4">4 - Very Much</option>
                 <option value="3">3 - Reasonable</option>
@@ -110,6 +112,7 @@ function Rate({ onSubmitEvaluation }) {
                 onChange={handleChange}
                 required
               >
+                <option value="">Select overall Rating</option>
                 <option value="5">5 - Excellent</option>
                 <option value="4">4 - Very Good</option>
                 <option value="3">3 - Good</option>
@@ -119,7 +122,7 @@ function Rate({ onSubmitEvaluation }) {
             </div>
 
             <div className="input-fields">
-              <label htmlFor="grade">Grade:</label>
+              <label htmlFor="grade">Grade (Out of 4.0):</label>
               <input
                 type="text"
                 id="grade"

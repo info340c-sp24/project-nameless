@@ -8,9 +8,11 @@ import SignUp from './components/Signup';
 import QAPage from './components/qa';
 import Rate from './components/Rate';
 import Evaluation from './components/Evaluation';
+import evaluationList from './data/evaluations.json';
+
 
 const App = () => {
-  const [evaluations, setEvaluations] = useState([]);
+  const [evaluations, setEvaluations] = useState(evaluationList);
 
   const handleSubmitEvaluation = (evaluation) => {
     setEvaluations([...evaluations, evaluation]);
