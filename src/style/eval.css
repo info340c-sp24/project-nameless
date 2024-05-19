@@ -113,6 +113,10 @@
     padding-right: 10px;
 }
 
+.comments textarea {
+    width: 650px;
+}
+
 .input-fields input, .input-fields select, .input-fields textarea {
     width: 300px;
 }

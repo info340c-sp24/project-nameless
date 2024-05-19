@@ -39,7 +39,7 @@ function Rate({ onSubmitEvaluation }) {
   };
 
   return (
-    <div>
+    <div className="rate">
       <main>
         <button onClick={handleBackClick} aria-label="go back to evaluation page" className="back">Back</button>
         <h1>Submit your Rating</h1>
@@ -135,7 +135,7 @@ function Rate({ onSubmitEvaluation }) {
               />
             </div>
 
-            <div className="input-fields">
+            <div className="comments">
               <label htmlFor="comment">Your Comment:</label>
               <br />
               <textarea
