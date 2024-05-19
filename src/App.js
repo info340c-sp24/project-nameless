@@ -32,7 +32,7 @@ const App = () => {
           <Route path="/detail" element={<CourseDetailMain evaluations={evaluations} questions={questions} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/qa" element={<QAPage questions={questions} onAddQuestion={handleAddQuestion} />} />
+          <Route path="/qa" element={<QAPage questions={questions} setQuestions={setQuestions} onAddQuestion={handleAddQuestion} />} />
           <Route path="/rate" element={<Rate onAddEvaluation={handleAddEvaluation} />} />
           <Route path="/evaluation" element={<Evaluation evaluations={evaluations} />} />
         </Routes>

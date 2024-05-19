@@ -54,7 +54,7 @@ const QuestionCard = ({ question, onAnswerSubmit }) => {
   );
 };
 
-const QAPage = ({ questions, onAddQuestion }) => {
+const QAPage = ({ questions, setQuestions, onAddQuestion }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [noMatchingResults, setNoMatchingResults] = useState(false);

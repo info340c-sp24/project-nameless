@@ -18,14 +18,14 @@ const CourseDetailMain = ({ evaluations, questions }) => {
           <ul className="info-list">
             <li>5 credit | RSN</li>
             <li>
-              <a href="https://myplan.uw.edu/course/#/courses/INFO%20340?id=87022718-a92e-4ac7-b774-2a6289c77ff4" target="_blank" className="coursedetail-link">
+              <a href="https://myplan.uw.edu/course/#/courses/INFO%20340?id=87022718-a92e-4ac7-b774-2a6289c77ff4" target="_blank" rel="noopener noreferrer" className="coursedetail-link">
                 <img src="/img/external_link_line_icon.png" className="coursedetail-image link-icon" alt="Myplan Icon" />
                 <span className="link-text">Myplan</span>
               </a>
             </li>
             <li>
-              <a href="https://dawgpath.uw.edu/course?id=INFO%20340&campus=seattle" target="_blank" className="coursedetail-link">
-                <img src="/img/external_link_line_icon.png" className="coursedetail-image link-icon" alt="DawgPath Icon" />
+              <a href="https://dawgpath.uw.edu/course?id=INFO%20340&campus=seattle" target="_blank" rel="noopener noreferrer" className="coursedetail-link">
+              <img src="/img/external_link_line_icon.png" className="coursedetail-image link-icon" alt="DawgPath Icon" />
                 <span className="link-text">DawgPath</span>
               </a>
             </li>
@@ -67,18 +67,14 @@ const CourseDetailMain = ({ evaluations, questions }) => {
             <Link to='/qa'>Question ({questions.length})</Link>
           </h2>
           <p>{questions.length > 0 ? questions[0].title : 'No questions yet.'}</p>
-          <p className="user-info">Posted by <span className="username">{questions.length > 0 ? 'Kim' : 'Anonymous'}</span> on <span className="publish-date">2023</span></p>
+          <p className="user-info">Posted by <span className="username">{questions.length > 0 ? 'Kim' : 'Anonymous'}</span></p>
         </div>
       </div>
       <div className="background-only-box">
-        <img src="/img/picture1.png" alt="Course related image" className="course-detail-image" />
+        <img src={"/img/picture1.png"} alt="Course related" className="course-detail-image" />
       </div>
     </main>
   );
 };
 
 export default CourseDetailMain;
-
-
-
-
