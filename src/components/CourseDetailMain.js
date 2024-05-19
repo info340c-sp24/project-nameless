@@ -1,12 +1,13 @@
+// CourseDetailMain.js
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import '../style/coursedetail.css';
 
 const CourseDetailMain = () => {
   return (
     <main className="course-detail-page course-detail-main">
       <div className="info-box">
-        <a href="../index.html" aria-label="go back to index page" className="back">Back</a>
+        <Link to="/" aria-label="go back to index page" className="back">Back</Link>
         <h1>INFO 340 Client-Side Development</h1>
         <div className="course-info">
           <ul className="info-list">
@@ -51,7 +52,7 @@ const CourseDetailMain = () => {
       <div className="evaluation-container">
         <div className="evaluate-box">
           <h2>
-            <a href="/evaluation" className="coursedetail-link">Evaluate (40)</a>
+            <Link to="/evaluation" className="coursedetail-link">Evaluate (40)</Link>
           </h2>
           <p>Learn to make applications, websites, etc. There is a problem set every week, but the amount is not large. There are two group projects in one semester, and it is more important to do them well. There are no exams. Remember to choose reliable team members.</p>
           <p className="user-info">Posted by <span className="username">Justin</span> on <span className="publish-date">2020</span></p>
@@ -65,13 +66,14 @@ const CourseDetailMain = () => {
         </div>
       </div>
       <div className="background-only-box">
-        <img src="/img/picture1.png" alt="Course related image" className="course-detail-image"/>
+        <img src="/img/picture1.png" alt="Course related image" className="course-detail-image" />
       </div>
     </main>
   );
 };
 
 export default CourseDetailMain;
+
 
 
 
