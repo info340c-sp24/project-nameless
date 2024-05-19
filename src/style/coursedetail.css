@@ -1,4 +1,16 @@
-/* course_detail.html styles */
+button, .back {
+    background-color: rgba(173, 136, 198, 0.4);
+    color: #080710;
+    padding: 5px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    border-style: outset;
+}
+
+button:hover, .back:hover {
+    background-color: rgba(72, 53, 182, 0.4);
+}
+
 .course-detail-main {
     padding: 20px;
 }
@@ -116,8 +128,74 @@ progress::-webkit-progress-value {
     text-decoration: underline;
 }
 
+@media (min-width: 960px) {
+    .background-only-box {
+        height: calc(100vh - 100px);
+    }
 
-  
+    body {
+        font-weight: 700;
+        height: 92px;
+    }
+
+    h1 {
+        font-size:40px;
+        font-weight: 600;
+    }
+
+    .course-info {
+        flex-direction: row;
+    }
+
+    .evaluation-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .evaluate-box, .question-box {
+        width: 45%;
+    }
+
+    .background-only-box {
+        height: calc(100vh - 100px);
+    }
+}
+
+@media (min-width: 1330px) {
+    .logo span {
+        display: flex;
+    }
+
+    .logo span:hover {
+        text-decoration: underline;
+    }
+}
+
+.evaluation-container {
+    flex-direction: column;
+    justify-content: center;
+}
+.evaluate-box, .question-box {
+    width: 100%; 
+}
+
+@media only screen 
+    and (device-width: 414px) 
+    and (device-height: 672px) 
+    and (-webkit-device-pixel-ratio: 3) {
+    .tips-save {bottom: 20px;}
+}
+
+
+@media (min-width: 960px) {
+    .evaluation-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .evaluate-box, .question-box {
+        width: 45%; 
+    }
+}
 
 
 
