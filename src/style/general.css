@@ -46,14 +46,23 @@ a {
     margin: 10px;
 }
 
-.search-container {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-}
 
 .search-container img {
     display: none;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+}
+  
+.search-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+    margin-left: 1px; 
+    padding-left: 2px; 
 }
 
 .login {
@@ -84,6 +93,7 @@ header a {
     border-radius: 4px;
     font-size: 16px;
     margin-right: 10px;
+    outline: none;
 }
 
 main {
