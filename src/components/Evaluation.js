@@ -16,21 +16,21 @@ function Evaluation({ evaluations }) {
     navigate('/rate');
   };
 
-  const handleInstructorChange = (e) => {
-    setFilterInstructor(e.target.value);
+  const handleInstructorChange = (event) => {
+    setFilterInstructor(event.target.value);
   };
 
-  const handleQuarterChange = (e) => {
-    setFilterQuarter(e.target.value);
+  const handleQuarterChange = (event) => {
+    setFilterQuarter(event.target.value);
   };
 
-  const handleRatingChange = (e) => {
-    setFilterRating(e.target.value);
+  const handleRatingChange = (event) => {
+    setFilterRating(event.target.value);
   };
 
   const filteredEvaluations = evaluations.filter((evaluation) => {
-    const instructorMatch = filterInstructor === '' || evaluation.instructor.includes(filterInstructor);
-    const quarterMatch = filterQuarter === '' || evaluation.quarterTaught.includes(filterQuarter);
+    const instructorMatch = filterInstructor === '' || evaluation.instructor.toLowerCase().includes(filterInstructor.toLowerCase());
+    const quarterMatch = filterQuarter === '' || evaluation.quarterTaught.toLowerCase().includes(filterQuarter.toLowerCase());
     const ratingMatch = filterRating === '' || evaluation.rating === filterRating;
     return instructorMatch && quarterMatch && ratingMatch;
   });
@@ -42,7 +42,7 @@ function Evaluation({ evaluations }) {
           <div className="rate-wrap">
             <button onClick={handleBackClick} aria-label="go back to detail page" className="back">Back</button>
             <h1>Class Rating for INFO340</h1>
-            <button onClick={handleRateClick} aria-label="go to the rating page" className="back">Submit Rating</button>
+            <button onClick={handleRateClick} aria-label="go to the rating page" className="back submitRating">Submit Rating</button>
           </div>
         </div>
         <div>
