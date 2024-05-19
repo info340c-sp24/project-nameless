@@ -7,6 +7,7 @@ import Login from './components/Login';
 import SignUp from './components/Signup';
 import QAPage from './components/qa';
 import Rate from './components/Rate';
+import HomePage from './components/HomePage';
 import Evaluation from './components/Evaluation';
 import initialEvaluations from './data/evaluations.json';
 import initialQuestions from './data/questions.json';
@@ -28,7 +29,7 @@ const App = () => {
       <div className="App">
         <Header />
         <Routes>
-          <Route path="/" element={<CourseDetailMain evaluations={evaluations} questions={questions} />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/detail" element={<CourseDetailMain evaluations={evaluations} questions={questions} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
