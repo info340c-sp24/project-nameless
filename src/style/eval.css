@@ -3,6 +3,20 @@
     background-size: cover;
 }
 
+.filter-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter-input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex: 1;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
 .rate-wrap {
     padding: 20px;
     margin-bottom: 1.5rem;

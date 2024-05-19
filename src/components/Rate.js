@@ -34,12 +34,14 @@ function Rate({ onSubmitEvaluation }) {
     navigate('/evaluation');
   };
 
+  const handleBackClick = () => {
+    navigate('/evaluation');
+  };
+
   return (
     <div>
       <main>
-        <a href="/evaluation" aria-label="go back to evaluation page" className="back eval-back">
-          Back
-        </a>
+        <button onClick={handleBackClick} aria-label="go back to evaluation page" className="back">Back</button>
         <h1>Submit your Rating</h1>
         <div className="rateee">
           <form onSubmit={handleSubmit}>

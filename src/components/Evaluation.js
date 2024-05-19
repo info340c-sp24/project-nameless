@@ -1,31 +1,79 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../style/eval.css';
 import { useNavigate } from 'react-router-dom';
 
 function Evaluation({ evaluations }) {
     const navigate = useNavigate();
+    const [filterInstructor, setFilterInstructor] = useState('');
+    const [filterQuarter, setFilterQuarter] = useState('');
+    const [filterRating, setFilterRating] = useState('');
 
-    const handleBackClick = (e) => {
+    const handleBackClick = () => {
         navigate('/detail');
       };
 
-    const handleRateClick = (e) => {
+    const handleRateClick = () => {
         navigate('/rate');
     };
+
+    const handleInstructorChange = (e) => {
+        setFilterInstructor(e.target.value);
+    };
+
+    const handleQuarterChange = (e) => {
+        setFilterQuarter(e.target.value);
+    };
+
+    const handleRatingChange = (e) => {
+        setFilterRating(e.target.value);
+    };
+
+    const filteredEvaluations = evaluations.filter((evaluation) => {
+        const instructorMatch = filterInstructor === '' || evaluation.instructor.includes(filterInstructor);
+        const quarterMatch = filterQuarter === '' || evaluation.quarterTaught.includes(filterQuarter);
+        const ratingMatch = filterRating === '' || evaluation.rating === filterRating;
+        return instructorMatch && quarterMatch && ratingMatch;
+    });
 
     return (
         <div>
         <main>
-            <div class="rate">
-                <div class="rate-wrap">
-                        <button onClick={handleBackClick} aria-label="go back to detail page" className="back">Back</button>
-                        <h1> Class Rating for INFO340</h1>
-                        <button onClick={handleRateClick} aria-label="go to the rating page" className="back">Submit Rating</button>
+            <div className="rate">
+                <div className="rate-wrap">
+                    <button onClick={handleBackClick} aria-label="go back to detail page" className="back">Back</button>
+                    <h1> Class Rating for INFO340</h1>
+                    <button onClick={handleRateClick} aria-label="go to the rating page" className="back">Submit Rating</button>
                 </div>
             </div>
             <div>
-            {evaluations.map((evaluation, index) => (
-                <div className="container" key={index}>
+            <div className="filter-group">
+                <input
+                    type="text"
+                    id="instructor-filter"
+                    placeholder="Filter by Instructor"
+                    value={filterInstructor}
+                    onChange={handleInstructorChange}
+                    className="filter-input"
+                />
+                <input
+                    type="text"
+                    id="quarter-filter"
+                    placeholder="Filter by Quarter"
+                    value={filterQuarter}
+                    onChange={handleQuarterChange}
+                    className="filter-input"
+                />
+                <input
+                    type="text"
+                    id="rating-filter"
+                    placeholder="Filter by Overall Rating"
+                    value={filterRating}
+                    onChange={handleRatingChange}
+                    className="filter-input"
+                />
+            </div>
+            {filteredEvaluations.map((evaluation, index) => (
+                <div className="evaluation-container" key={index}>
                 <div className="row">
                     <div className="col">
                     <div className="card">
