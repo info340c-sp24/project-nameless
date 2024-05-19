@@ -20,10 +20,10 @@ const HomePage = () => {
                             </div>
                             <div className="description-tags">
                                 <div className="tag_RSN">
-                                    <p>RSN</p>
+                                    <p className='credit'>RSN</p>
                                 </div>
                                 <div className="tag_credit">
-                                    <p>5</p>
+                                    <p className='credit'>5</p>
                                 </div>
                             </div>
                         </div>
@@ -43,10 +43,10 @@ const HomePage = () => {
                             </div>
                             <div className="description-tags">
                                 <div className="tag_RSN">
-                                    <p>RSN</p>
+                                    <p className='credit'>RSN</p>
                                 </div>
                                 <div className="tag_credit">
-                                    <p>5</p>
+                                    <p className='credit'>5</p>
                                 </div>
                             </div>
                         </div>
@@ -66,10 +66,10 @@ const HomePage = () => {
                             </div>
                             <div className="description-tags">
                                 <div className="tag_RSN">
-                                    <p>RSN</p>
+                                    <p className='credit'>RSN</p>
                                 </div>
                                 <div className="tag_credit">
-                                    <p>5</p>
+                                    <p className='credit'>5</p>
                                 </div>
                             </div>
                         </div>
@@ -89,10 +89,10 @@ const HomePage = () => {
                             </div>
                             <div className="description-tags">
                                 <div className="tag_RSN">
-                                    <p>RSN</p>
+                                    <p className='credit'>RSN</p>
                                 </div>
                                 <div className="tag_credit">
-                                    <p>5</p>
+                                    <p className='credit'>5</p>
                                 </div>
                             </div>
                         </div>
@@ -112,10 +112,10 @@ const HomePage = () => {
                             </div>
                             <div className="description-tags">
                                 <div className="tag_RSN">
-                                    <p>RSN</p>
+                                    <p className='credit'>RSN</p>
                                 </div>
                                 <div className="tag_credit">
-                                    <p>5</p>
+                                    <p className='credit'>5</p>
                                 </div>
                             </div>
                         </div>
@@ -135,10 +135,10 @@ const HomePage = () => {
                             </div>
                             <div className="description-tags">
                                 <div className="tag_RSN">
-                                    <p>RSN</p>
+                                    <p className='credit'>RSN</p>
                                 </div>
                                 <div className="tag_credit">
-                                    <p>5</p>
+                                    <p className='credit'>5</p>
                                 </div>
                             </div>
                         </div>
