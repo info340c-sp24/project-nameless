@@ -98,23 +98,22 @@ button:hover, .back:hover {
     display: flex;
     justify-content: center;
   }
-  
-  .course-detail-page .background-only-box img {
+
+.course-detail-page .background-only-box img {
     width: 100%;
     height: auto;
-  }
-  
-  
-  .course-detail-page footer {
+}
+
+.course-detail-page footer {
     width: 100%;
     text-align: center;
     padding: 10px 0;
-    background: #f0f0f0; 
+    background: #f0f0f0;
     position: relative;
     bottom: 0;
     left: 0;
-    clear: both; 
-  }
+    clear: both;
+}
 
 progress {
     background-color: #e6e6e6;
@@ -176,12 +175,12 @@ progress::-webkit-progress-value {
     justify-content: center;
 }
 .evaluate-box, .question-box {
-    width: 100%; 
+    width: 100%;
 }
 
-@media only screen 
-    and (device-width: 414px) 
-    and (device-height: 672px) 
+@media only screen
+    and (device-width: 414px)
+    and (device-height: 672px)
     and (-webkit-device-pixel-ratio: 3) {
     .tips-save {bottom: 20px;}
 }
@@ -193,10 +192,6 @@ progress::-webkit-progress-value {
         justify-content: space-between;
     }
     .evaluate-box, .question-box {
-        width: 45%; 
+        width: 45%;
     }
 }
-
-
-
-
