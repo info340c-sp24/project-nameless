@@ -8,14 +8,19 @@ import SignUp from './components/Signup';
 import QAPage from './components/qa';
 import Rate from './components/Rate';
 import Evaluation from './components/Evaluation';
-import evaluationList from './data/evaluations.json';
-
+import initialEvaluations from './data/evaluations.json';
+import initialQuestions from './data/questions.json';
 
 const App = () => {
-  const [evaluations, setEvaluations] = useState(evaluationList);
+  const [evaluations, setEvaluations] = useState(initialEvaluations);
+  const [questions, setQuestions] = useState(initialQuestions);
 
-  const handleSubmitEvaluation = (evaluation) => {
+  const handleAddEvaluation = (evaluation) => {
     setEvaluations([...evaluations, evaluation]);
+  };
+
+  const handleAddQuestion = (question) => {
+    setQuestions([...questions, question]);
   };
 
   return (
@@ -23,12 +28,12 @@ const App = () => {
       <div className="App">
         <Header />
         <Routes>
-          <Route path='/' element={< CourseDetailMain />} />
-          <Route path="/detail" element={<CourseDetailMain />} />
+          <Route path="/" element={<CourseDetailMain evaluations={evaluations} questions={questions} />} />
+          <Route path="/detail" element={<CourseDetailMain evaluations={evaluations} questions={questions} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path='/qa' element={<QAPage />} />
-          <Route path="/rate" element={<Rate onSubmitEvaluation={handleSubmitEvaluation} />}/>
+          <Route path="/qa" element={<QAPage questions={questions} onAddQuestion={handleAddQuestion} />} />
+          <Route path="/rate" element={<Rate onAddEvaluation={handleAddEvaluation} />} />
           <Route path="/evaluation" element={<Evaluation evaluations={evaluations} />} />
         </Routes>
         <Footer />

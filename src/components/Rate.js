@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../style/eval.css';
 
-function Rate({ onSubmitEvaluation }) {
+function Rate({ onAddEvaluation }) {
   const [formData, setFormData] = useState({
     instructor: '',
     quarterTaught: '',
@@ -10,7 +10,7 @@ function Rate({ onSubmitEvaluation }) {
     wlrating: '',
     rating: '',
     grade: '',
-    comment: '',
+    comment: ''
   });
 
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ function Rate({ onSubmitEvaluation }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmitEvaluation(formData);
+    onAddEvaluation(formData);
     setFormData({
       instructor: '',
       quarterTaught: '',
@@ -29,7 +29,7 @@ function Rate({ onSubmitEvaluation }) {
       wlrating: '',
       rating: '',
       grade: '',
-      comment: '',
+      comment: ''
     });
     navigate('/evaluation');
   };

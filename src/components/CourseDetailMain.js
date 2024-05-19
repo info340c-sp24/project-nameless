@@ -1,9 +1,14 @@
-// CourseDetailMain.js
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../style/coursedetail.css';
 
-const CourseDetailMain = () => {
+const CourseDetailMain = ({ evaluations, questions }) => {
+
+  const getYearFromQuarter = (quarterTaught) => {
+    const parts = quarterTaught.split(', ');
+    return parts.length === 2 ? parts[1] : 'Unknown';
+  };
+
   return (
     <main className="course-detail-page course-detail-main">
       <div className="info-box">
@@ -52,17 +57,17 @@ const CourseDetailMain = () => {
       <div className="evaluation-container">
         <div className="evaluate-box">
           <h2>
-            <Link to="/evaluation" className="coursedetail-link">Evaluate (40)</Link>
+            <Link to="/evaluation" className="coursedetail-link">Evaluate ({evaluations.length})</Link>
           </h2>
-          <p>Learn to make applications, websites, etc. There is a problem set every week, but the amount is not large. There are two group projects in one semester, and it is more important to do them well. There are no exams. Remember to choose reliable team members.</p>
-          <p className="user-info">Posted by <span className="username">Justin</span> on <span className="publish-date">2020</span></p>
+          <p>{evaluations.length > 0 ? evaluations[0].comment : 'No evaluations yet.'}</p>
+          <p className="user-info">Posted by <span className="username">{evaluations.length > 0 ? evaluations[0].instructor : 'Anonymous'}</span> on <span className="publish-date">{evaluations.length > 0 ? getYearFromQuarter(evaluations[0].quarterTaught) : 'Unknown'}</span></p>
         </div>
         <div className="question-box">
           <h2>
-            <Link to='/qa'>Question (35)</Link>
+            <Link to='/qa'>Question ({questions.length})</Link>
           </h2>
-          <p>Is it difficult? How about kim teach?</p>
-          <p className="user-info">Posted by <span className="username">Kim</span> on <span className="publish-date">2023</span></p>
+          <p>{questions.length > 0 ? questions[0].title : 'No questions yet.'}</p>
+          <p className="user-info">Posted by <span className="username">{questions.length > 0 ? 'Kim' : 'Anonymous'}</span> on <span className="publish-date">2023</span></p>
         </div>
       </div>
       <div className="background-only-box">
