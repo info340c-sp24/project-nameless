@@ -42,7 +42,7 @@ function Evaluation({ evaluations }) {
           <div className="rate-wrap">
             <button onClick={handleBackClick} aria-label="go back to detail page" className="back">Back</button>
             <h1>Class Rating for INFO340</h1>
-            <button onClick={handleRateClick} aria-label="go to the rating page" className="back submitRating">Submit Rating</button>
+            <button onClick={handleRateClick} aria-label="go to the rating page" className="back">Submit Rating</button>
           </div>
         </div>
         <div>
@@ -73,7 +73,7 @@ function Evaluation({ evaluations }) {
             />
           </div>
           {filteredEvaluations.map((evaluation, index) => (
-            <div className="evaluation-container" key={index}>
+            <div className="evaluationTable" key={index}>
               <div className="row">
                 <div className="col">
                   <div className="card">

@@ -13,6 +13,7 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     flex: 1;
+    margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 5px;
 }
@@ -22,30 +23,20 @@
     margin-bottom: 1.5rem;
 }
 
-.rate-wrap .back {
+.back {
     margin-left: 12px;
+    margin-left: 0;
 }
 
-.title_ask .back {
-    margin-left: 5%
-}
 
-.ask, .rate h1, .rateee {
+.rate h1, .rateee {
     text-align: center;
     margin-bottom: 1.5rem;
 }
 
-.search button {
-    margin-bottom: 0;
-}
-
-.ask a, .rate a{
-    text-decoration: none;
-    color: black;
-}
-
-.ask .back {
-    margin-left: 0;
+.evaluationTable {
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .card {
