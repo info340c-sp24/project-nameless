@@ -128,6 +128,25 @@ button:hover, .back:hover {
     background-color: rgba(72, 53, 182, 0.4);
 }
 
+.text_input {
+    padding: 12px;
+}
+
+textarea {
+    width: 96%;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    resize: vertical;
+    height: 100PX;
+    padding: 12px 15px;
+    background-color: #f8f8f8;
+    font-size: 18px;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 10px;
+}
+
 @media (min-width: 1330px) {
     .logo span {
         display: flex;
