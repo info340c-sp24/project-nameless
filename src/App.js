@@ -30,7 +30,7 @@ const App = () => {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/detail" element={<CourseDetailMain evaluations={evaluations} questions={questions} />} />
+          <Route path="/detail/:courseId" element={<CourseDetailMain evaluations={evaluations} questions={questions} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/qa" element={<QAPage questions={questions} setQuestions={setQuestions} onAddQuestion={handleAddQuestion} />} />

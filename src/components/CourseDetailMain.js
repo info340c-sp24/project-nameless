@@ -1,22 +1,34 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import '../style/coursedetail.css';
+import courseData from '../data/coursecards.json'; 
 
 const CourseDetailMain = ({ evaluations, questions }) => {
+  const { courseId } = useParams(); 
+  const [course, setCourse] = useState(null); 
+
+  useEffect(() => {
+    const selectedCourse = courseData.find(course => course.id === parseInt(courseId));
+    setCourse(selectedCourse);
+  }, [courseId]);
 
   const getYearFromQuarter = (quarterTaught) => {
     const parts = quarterTaught.split(', ');
     return parts.length === 2 ? parts[1] : 'Unknown';
   };
 
+  if (!course) {
+    return <div>Loading...</div>; 
+  }
+
   return (
     <main className="course-detail-page course-detail-main">
       <div className="info-box">
         <Link to="/" aria-label="go back to index page" className="back">Back</Link>
-        <h1>INFO 340 Client-Side Development</h1>
+        <h1>{course.title} {course.description}</h1>
         <div className="course-info">
           <ul className="info-list">
-            <li>5 credit | RSN</li>
+            <li>{course.credit} credit | {course.tagRSN}</li>
             <li>
               <a href="https://myplan.uw.edu/course/#/courses/INFO%20340?id=87022718-a92e-4ac7-b774-2a6289c77ff4" target="_blank" rel="noopener noreferrer" className="coursedetail-link">
                 <img src="/img/external_link_line_icon.png" className="coursedetail-image link-icon" alt="Myplan Icon" />
@@ -25,7 +37,7 @@ const CourseDetailMain = ({ evaluations, questions }) => {
             </li>
             <li>
               <a href="https://dawgpath.uw.edu/course?id=INFO%20340&campus=seattle" target="_blank" rel="noopener noreferrer" className="coursedetail-link">
-              <img src="/img/external_link_line_icon.png" className="coursedetail-image link-icon" alt="DawgPath Icon" />
+                <img src="/img/external_link_line_icon.png" className="coursedetail-image link-icon" alt="DawgPath Icon" />
                 <span className="link-text">DawgPath</span>
               </a>
             </li>
@@ -33,20 +45,20 @@ const CourseDetailMain = ({ evaluations, questions }) => {
           <div className="statistics">
             <div className="stat-wrapper">
               <label htmlFor="difficulty">Rating difficulty</label>
-              <progress id="difficulty" value="3.11" max="4"></progress>
-              <span className="progress-value">3.11</span>
+              <progress id="difficulty" value={course.difficulty} max="4"></progress>
+              <span className="progress-value">{course.difficulty}</span>
             </div>
             <div className="stat-wrapper">
               <label htmlFor="workload">Workload</label>
-              <progress id="workload" value="3.01" max="4"></progress>
-              <span className="progress-value">3.01</span>
+              <progress id="workload" value={course.workload} max="4"></progress>
+              <span className="progress-value">{course.workload}</span>
             </div>
             <div className="stat-wrapper">
               <label htmlFor="score">Score</label>
-              <progress id="score" value="3.21" max="4"></progress>
-              <span className="progress-value">3.21</span>
+              <progress id="score" value={course.score} max="4"></progress>
+              <span className="progress-value">{course.score}</span>
             </div>
-            <p className="average-score">Average score: 3.55</p>
+            <p className="average-score">Average score: {course.averageScore}</p>
           </div>
         </div>
       </div>

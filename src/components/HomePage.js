@@ -8,7 +8,7 @@ const HomePage = () => {
         <div className="main_page">
             <div className="courses">
                 {courses.map(course => (
-                    <Link to="/detail" key={course.id}>
+                    <Link to={`/detail/${course.id}`} key={course.id}>
                         <div className="course_card">
                             <div className="course_background">
                                 <img src="img/titlebackground.jpeg" className="course_img" alt={course.description} />
