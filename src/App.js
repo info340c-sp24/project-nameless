@@ -15,6 +15,7 @@ import initialQuestions from './data/questions.json';
 const App = () => {
   const [evaluations, setEvaluations] = useState(initialEvaluations);
   const [questions, setQuestions] = useState(initialQuestions);
+  const [searchQuery, setSearchQuery] = useState('');
 
   const handleAddEvaluation = (evaluation) => {
     setEvaluations([...evaluations, evaluation]);
@@ -27,9 +28,9 @@ const App = () => {
   return (
     <Router>
       <div className="App">
-        <Header />
+        <Header setSearchQuery={setSearchQuery} />
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<HomePage searchQuery={searchQuery} />} />
           <Route path="/detail/:courseId" element={<CourseDetailMain evaluations={evaluations} questions={questions} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />

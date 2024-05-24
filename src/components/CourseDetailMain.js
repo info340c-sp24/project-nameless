@@ -30,13 +30,13 @@ const CourseDetailMain = ({ evaluations, questions }) => {
           <ul className="info-list">
             <li>{course.credit} credit | {course.tagRSN}</li>
             <li>
-              <a href="https://myplan.uw.edu/course/#/courses/INFO%20340?id=87022718-a92e-4ac7-b774-2a6289c77ff4" target="_blank" rel="noopener noreferrer" className="coursedetail-link">
+              <a href={course.myplanLink} target="_blank" rel="noopener noreferrer" className="coursedetail-link">
                 <img src="/img/external_link_line_icon.png" className="coursedetail-image link-icon" alt="Myplan Icon" />
                 <span className="link-text">Myplan</span>
               </a>
             </li>
             <li>
-              <a href="https://dawgpath.uw.edu/course?id=INFO%20340&campus=seattle" target="_blank" rel="noopener noreferrer" className="coursedetail-link">
+              <a href={course.dawgpathLink} target="_blank" rel="noopener noreferrer" className="coursedetail-link">
                 <img src="/img/external_link_line_icon.png" className="coursedetail-image link-icon" alt="DawgPath Icon" />
                 <span className="link-text">DawgPath</span>
               </a>
@@ -64,7 +64,7 @@ const CourseDetailMain = ({ evaluations, questions }) => {
       </div>
       <div className="course-introduction-box">
         <h2>Course Introduction</h2>
-        <p>Introduction to client-side development on the internet, including markup, programming languages, protocols, libraries, and frameworks for creating and maintaining usable and accessible, interactive applications. Prerequisite: either CSE 143, CSE 154, or CSE 163; and INFO 201.</p>
+        <p>{course.courseIntroduction}</p>
       </div>
       <div className="evaluation-container">
         <div className="evaluate-box">

@@ -2,19 +2,18 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../style/general.css';
 
-const Header = () => {
-  const [searchQuery, setSearchQuery] = useState('');
+const Header = ({ setSearchQuery }) => {
+  const [searchInput, setSearchInput] = useState('');
   const navigate = useNavigate();
 
   const handleSearchChange = (event) => {
-    setSearchQuery(event.target.value);
+    setSearchInput(event.target.value);
   };
 
   const handleSearchSubmit = (event) => {
     event.preventDefault();
-    if (searchQuery.toLowerCase() === 'info340') {
-      navigate('/detail');
-    }
+    setSearchQuery(searchInput.toLowerCase());
+    navigate('/', { state: { searchQuery: searchInput.toLowerCase() } }); // Navigate to homepage with search query
   };
 
   return (
@@ -31,7 +30,7 @@ const Header = () => {
             type="search"
             placeholder="Search"
             className="search_bar"
-            value={searchQuery}
+            value={searchInput}
             onChange={handleSearchChange}
           />
           <button type="submit" className="search-button">
