@@ -15,16 +15,8 @@ function Rate({ onAddEvaluation }) {
     comment: ''
   });
 
-  const { courseId } = useParams();
+  const { courseTitle } = useParams();
   const navigate = useNavigate();
-  const [courseTitle, setCourseTitle] = useState('');
-
-  useEffect(() => {
-    const course = courseData.find(c => c.id.toString() === courseId);
-    if (course) {
-      setCourseTitle(course.title);
-    }
-  }, [courseId]);
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
@@ -38,7 +30,6 @@ function Rate({ onAddEvaluation }) {
     };
     onAddEvaluation(newEvaluation);
     setFormData({
-      id: '',
       courseTitle: '',
       instructor: '',
       quarterTaught: '',
@@ -48,11 +39,11 @@ function Rate({ onAddEvaluation }) {
       grade: '',
       comment: '',
     });
-    navigate(`/evaluation/${courseId}`);
+    navigate(`/evaluation/${courseTitle}`);
   };
 
   const handleBackClick = () => {
-    navigate(`/evaluation/${courseId}`);
+    navigate(`/evaluation/${courseTitle}`);
   };
 
   return (
