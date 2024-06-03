@@ -9,19 +9,19 @@ const CourseDetailMain = () => {
   const { courseId } = useParams(); 
   const [course, setCourse] = useState(null); 
   const [statistics, setStatistics] = useState({ difficulty: 0, workload: 0, overallRating: 0, averageScore: 0 });
-  const [filteredEvaluations, setFilteredEvaluations] = useState([]);
-  const [filteredQuestions, setFilteredQuestions] = useState([]);
+  const [evaluations, setEvaluations] = useState([]);
+  const [questions, setQuestions] = useState([]);
 
   useEffect(() => {
     const selectedCourse = courseData.find(course => course.id === parseInt(courseId));
     setCourse(selectedCourse);
 
     if (selectedCourse) {
-      const courseEvaluations = evaluationsData.filter(evaluation => evaluation.courseTitle === selectedCourse.title);
-      const courseQuestions = questionsData.filter(question => question.courseTitle === selectedCourse.title);
-      
-      setFilteredEvaluations(courseEvaluations);
-      setFilteredQuestions(courseQuestions);
+      const courseEvaluations = evaluationsData.filter(evaluation => evaluation.id === parseInt(courseId));
+      const courseQuestions = questionsData.filter(question => question.id === parseInt(courseId));
+
+      setEvaluations(courseEvaluations);
+      setQuestions(courseQuestions);
       
       if (courseEvaluations.length > 0) {
         const totalDifficulty = courseEvaluations.reduce((sum, evaluation) => sum + parseFloat(evaluation.drating), 0);
@@ -96,17 +96,24 @@ const CourseDetailMain = () => {
       <div className="evaluation-container">
         <div className="evaluate-box">
           <h2>
-            <Link to="/evaluation" className="coursedetail-link">Evaluate ({filteredEvaluations.length})</Link>
+            <Link to={`/evaluation/${course.id}`} key={course.id} className="coursedetail-link">Evaluate ({evaluations.length})</Link>
           </h2>
-          <p>{filteredEvaluations.length > 0 ? filteredEvaluations[0].comment : 'No evaluations yet.'}</p>
-          <p className="user-info">Taught by <span className="username">{filteredEvaluations.length > 0 ? filteredEvaluations[0].instructor : 'Anonymous'}</span> on <span className="publish-date">{filteredEvaluations.length > 0 ? getYearFromQuarter(filteredEvaluations[0].quarterTaught) : 'Unknown'}</span></p>
+          {evaluations.length > 0 ? (
+            <p>{evaluations[0].comment}</p>
+          ) : (
+            <p>No evaluations yet.</p>
+          )}
+          <p className="user-info">Taught by <span className="username">{evaluations.length > 0 ? evaluations[0].instructor : 'Anonymous'}</span></p>
         </div>
         <div className="question-box">
           <h2>
-            <Link to='/qa'>Question ({filteredQuestions.length})</Link>
+            <Link to={`/qa/${course.id}`} key={course.id}>Question ({questions.length})</Link>
           </h2>
-          <p>{filteredQuestions.length > 0 ? filteredQuestions[0].title : 'No questions yet.'}</p>
-          <p className="user-info">Posted by <span className="username">{filteredQuestions.length > 0 ? filteredQuestions[0].username : 'Anonymous'}</span></p>
+          {questions.length > 0 ? (
+            <p>{questions[0].title}</p>
+          ) : (
+            <p>No questions yet.</p>
+          )}
         </div>
       </div>
       <div className="background-only-box">
