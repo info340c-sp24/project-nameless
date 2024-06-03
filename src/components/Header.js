@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../style/general.css';
 
-const Header = ({ setSearchQuery }) => {
+const Header = ({ setSearchQuery, isLoggedIn, handleLogout }) => {
   const [searchInput, setSearchInput] = useState('');
   const navigate = useNavigate();
 
@@ -14,6 +14,11 @@ const Header = ({ setSearchQuery }) => {
     event.preventDefault();
     setSearchQuery(searchInput.toLowerCase());
     navigate('/', { state: { searchQuery: searchInput.toLowerCase() } }); // Navigate to homepage with search query
+  };
+
+  const handleLogoutClick = () => {
+    handleLogout();
+    navigate('/');
   };
 
   return (
@@ -39,10 +44,17 @@ const Header = ({ setSearchQuery }) => {
         </form>
       </div>
       <div className="login">
-        <Link to="/login">
-          <img src="/img/login.png" alt="Login Icon" />
-          <span>Login</span>
-        </Link>
+      {isLoggedIn ? (
+          <div onClick={handleLogoutClick}>
+            <img src="../img/logout.png" alt="Logout Icon" />
+            <span>Logout</span>
+          </div>
+        ) : (
+          <Link to="/login">
+            <img src="/img/login.png" alt="Login Icon" />
+            <span>Login</span>
+          </Link>
+        )}
       </div>
     </header>
   );
