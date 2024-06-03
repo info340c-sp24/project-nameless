@@ -23,11 +23,11 @@ const App = ({ database }) => {
     const evaluationRef = ref(database, 'evaluations');
     const questionsRef = ref(database, 'questions');
 
-    onValue(evaluationRef, (snapshot) => {
-      const fetchedEvaluations = snapshot.val() || {};
-      const evaluationsArray = Object.values(fetchedEvaluations);
-      setEvaluations(evaluationsArray);
-    });
+onValue(evaluationRef, (snapshot) => {
+  const fetchedEvaluations = snapshot.val() || {};
+  const evaluationsArray = Object.values(fetchedEvaluations);
+  setEvaluations(evaluationsArray);
+});
 
     onValue(questionsRef, (snapshot) => {
       const fetchedQuestions = snapshot.val() || [];

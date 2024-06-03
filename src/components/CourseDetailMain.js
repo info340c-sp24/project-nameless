@@ -13,12 +13,12 @@ const CourseDetailMain = () => {
   const [questions, setQuestions] = useState([]);
 
   useEffect(() => {
-    const selectedCourse = courseData.find(course => course.id === parseInt(courseId));
+    const selectedCourse = courseData.find(course => course.id.toString() === courseId);
     setCourse(selectedCourse);
 
     if (selectedCourse) {
-      const courseEvaluations = evaluationsData.filter(evaluation => evaluation.id === parseInt(courseId));
-      const courseQuestions = questionsData.filter(question => question.id === parseInt(courseId));
+      const courseEvaluations = evaluationsData.filter(evaluation => evaluation.courseTitle === selectedCourse.title);
+      const courseQuestions = questionsData.filter(question => question.courseTitle === selectedCourse.title);
 
       setEvaluations(courseEvaluations);
       setQuestions(courseQuestions);
@@ -38,11 +38,6 @@ const CourseDetailMain = () => {
       }
     }
   }, [courseId]);
-
-  const getYearFromQuarter = (quarterTaught) => {
-    const parts = quarterTaught.split(', ');
-    return parts.length === 2 ? parts[1] : 'Unknown';
-  };
 
   if (!course) {
     return <div>Loading...</div>;
