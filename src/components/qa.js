@@ -54,7 +54,7 @@ const QuestionCard = ({ question, onAnswerSubmit }) => {
   );
 };
 
-const QAPage = ({ questions, setQuestions, onAddQuestion }) => {
+const QAPage = ({ questions, setQuestions, onAddQuestion, isLoggedIn }) => {
   const { courseId } = useParams();
   const [filteredQuestions, setFilteredQuestions] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
@@ -77,7 +77,6 @@ const QAPage = ({ questions, setQuestions, onAddQuestion }) => {
         answers: [...questions[questionIndex].answers, answer],
       };
       setQuestions(updatedQuestions);
-      // need server side
     }
   };
 
@@ -104,7 +103,6 @@ const QAPage = ({ questions, setQuestions, onAddQuestion }) => {
       onAddQuestion(newQuestionObj);
       setNewQuestion('');
       setIsAsking(false);
-      // need server side
     }
   };
 

@@ -180,3 +180,8 @@ textarea {
         display: block;
     }
 }
+
+.blur-login {
+    color: #ffffff;
+    font-size: 40px;
+}
