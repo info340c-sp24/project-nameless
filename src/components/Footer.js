@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Dropdown } from 'react-bootstrap';
 import '../style/general.css';
 
 const Footer = () => {
@@ -22,6 +22,23 @@ const Footer = () => {
                 123-4567-8888
               </a>
             </p>
+          </Col>
+        </Row>
+        <Row className="text-center">
+          <Col xs={12}>
+            <Dropdown>
+              <Dropdown.Toggle variant="link" id="dropdown-external-links" className='text-dark'>
+                External Links
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item href="https://myplan.uw.edu/home/" target="_blank" rel="noopener noreferrer">
+                  MyPlan
+                </Dropdown.Item>
+                <Dropdown.Item href="https://dawgpath.uw.edu/" target="_blank" rel="noopener noreferrer">
+                  DawgPath
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
           </Col>
         </Row>
         <Row className="text-center">
