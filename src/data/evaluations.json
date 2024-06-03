@@ -1,5 +1,6 @@
 [
     {
+      "id": 1,
       "instructor": "James, Kim",
       "quarterTaught": "Spring, 2024",
       "drating": "5",
@@ -9,6 +10,7 @@
       "comment": "James has a deep understanding of client-side development concepts and presents them in a clear and engaging manner. Her lectures are well-structured and incorporate real-world examples, which make the material more relatable and easier to grasp. No exams, problem sets due every week and a large group project, totally doable!"
     },
     {
+      "id": 1,
       "instructor": "James, Kim",
       "quarterTaught": "Spring, 2024",
       "drating": "5",
@@ -18,6 +20,7 @@
       "comment": "James has a deep understanding of client-side development concepts and presents them in a clear and engaging manner. Her lectures are well-structured and incorporate real-world examples, which make the material more relatable and easier to grasp. No exams, problem sets due every week and a large group project, totally doable!"
     },
     {
+      "id": 1,
       "instructor": "James, Kim",
       "quarterTaught": "Spring, 2024",
       "drating": "5",
@@ -27,6 +30,7 @@
       "comment": "James has a deep understanding of client-side development concepts and presents them in a clear and engaging manner. Her lectures are well-structured and incorporate real-world examples, which make the material more relatable and easier to grasp. No exams, problem sets due every week and a large group project, totally doable!"
     },
     {
+      "id": 1,
       "instructor": "Smith, John",
       "quarterTaught": "Winter, 2024",
       "drating": "4",
@@ -36,6 +40,7 @@
       "comment": "John is an excellent instructor with a strong command of the subject matter. His lectures are well-organized and easy to follow. He encourages class participation and is always willing to help students outside of class. The workload is manageable with regular assignments and a final project."
     },
     {
+      "id": 1,
       "instructor": "Garcia, Maria",
       "quarterTaught": "Autumn, 2023",
       "drating": "3",
@@ -45,6 +50,7 @@
       "comment": "Maria is knowledgeable about the course material, but her lectures can be a bit dry at times. She provides clear explanations and examples, but the pace can be a bit slow for some students. The workload is reasonable with a few assignments and a midterm exam."
     },
     {
+      "id": 1,
       "instructor": "Lee, David",
       "quarterTaught": "Spring, 2023",
       "drating": "5",
@@ -54,6 +60,7 @@
       "comment": "David is an excellent instructor who truly cares about his students' learning. His lectures are engaging and interactive, and he makes a genuine effort to ensure that everyone understands the material. The workload is challenging but manageable with regular assignments and a final project. However, the class can be disorganized at times."
     },
     {
+      "id": 1,
       "instructor": "Wilson, Sarah",
       "quarterTaught": "Winter, 2023",
       "drating": "4",
@@ -63,6 +70,7 @@
       "comment": "Sarah is a knowledgeable instructor who presents the material clearly. Her lectures can be a bit monotonous at times, but she is always prepared and willing to answer questions. The workload is manageable with regular assignments and a group project."
     },
     {
+      "id": 1,
       "instructor": "Brown, Michael",
       "quarterTaught": "Autumn, 2022",
       "drating": "3",
@@ -72,6 +80,7 @@
       "comment": "Michael's lectures are engaging and interactive, but the course material can be challenging at times. He provides clear explanations and is always willing to help students outside of class. The workload is heavy, with multiple assignments and projects throughout the quarter."
     },
     {
+      "id": 1,
       "instructor": "Davis, Emily",
       "quarterTaught": "Spring, 2022",
       "drating": "4",

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import CourseDetailMain from './components/CourseDetailMain';
@@ -9,13 +9,30 @@ import QAPage from './components/qa';
 import Rate from './components/Rate';
 import HomePage from './components/HomePage';
 import Evaluation from './components/Evaluation';
-import initialEvaluations from './data/evaluations.json';
-import initialQuestions from './data/questions.json';
+import { ref, onValue, push } from 'firebase/database';
+import initializeDatabase from './components/initializeDatabase';
 
-const App = () => {
-  const [evaluations, setEvaluations] = useState(initialEvaluations);
-  const [questions, setQuestions] = useState(initialQuestions);
+const App = ({ database }) => {
+  const [evaluations, setEvaluations] = useState([]);
+  const [questions, setQuestions] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
+
+  useEffect(() => {
+    initializeDatabase();
+    const evaluationRef = ref(database, 'evaluations');
+    const questionsRef = ref(database, 'questions');
+
+    onValue(evaluationRef, (snapshot) => {
+      const fetchedEvaluations = snapshot.val() || [];
+      setEvaluations(fetchedEvaluations);
+    });
+
+    onValue(questionsRef, (snapshot) => {
+      const fetchedQuestions = snapshot.val() || [];
+      setQuestions(fetchedQuestions);
+    });
+    initializeDatabase();
+  }, [database]);
 
   const handleAddEvaluation = (evaluation) => {
     setEvaluations([...evaluations, evaluation]);
