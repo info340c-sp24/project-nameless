@@ -18,10 +18,12 @@ const App = ({ database }) => {
   const [questions, setQuestions] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [coursecards, setCoursecards] = useState([]);
 
   useEffect(() => {
     const evaluationRef = ref(database, 'evaluations');
     const questionsRef = ref(database, 'questions');
+    const coursecardsRef = ref(database, 'coursecards');
 
     onValue(evaluationRef, (snapshot) => {
       const fetchedEvaluations = snapshot.val() || [];
@@ -31,6 +33,11 @@ const App = ({ database }) => {
     onValue(questionsRef, (snapshot) => {
       const fetchedQuestions = snapshot.val() || [];
       setQuestions(fetchedQuestions);
+    });
+    
+    onValue(coursecardsRef, (snapshot) => {
+      const fetchedcoursecards = snapshot.val() || [];
+      setCoursecards(fetchedcoursecards);
     });
   }, [database]);
 
@@ -79,8 +86,8 @@ const App = ({ database }) => {
           </div>
         )} */}
         <Routes>
-        <Route path="/" element={<HomePage searchQuery={searchQuery} isLoggedIn={isLoggedIn} />} />
-          <Route path="/detail/:courseTitle" element={<CourseDetailMain evaluations={evaluations} questions={questions} isLoggedIn={isLoggedIn} />} />
+        <Route path="/" element={<HomePage courses={coursecards} searchQuery={searchQuery} isLoggedIn={isLoggedIn} />} />
+          <Route path="/detail/:courseTitle" element={<CourseDetailMain courseData={coursecards} evaluations={evaluations} questions={questions} isLoggedIn={isLoggedIn} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/qa/:courseTitle" element={<QAPage database={database} questions={questions} setQuestions={setQuestions} onAddQuestion={handleAddQuestion} isLoggedIn={isLoggedIn} />} />

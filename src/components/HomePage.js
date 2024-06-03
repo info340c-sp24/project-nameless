@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import courses from '../data/coursecards.json';
 import '../style/index.css';
 
-const HomePage = ({ searchQuery }) => {
+const HomePage = ({ courses, searchQuery }) => {
     const location = useLocation();
     const [filteredCourses, setFilteredCourses] = useState(courses);
 
