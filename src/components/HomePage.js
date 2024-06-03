@@ -4,7 +4,7 @@ import '../style/index.css';
 
 const HomePage = ({ courses, searchQuery }) => {
     const location = useLocation();
-    const [filteredCourses, setFilteredCourses] = useState(courses);
+    const [filteredCourses, setFilteredCourses] = useState([]);
 
     useEffect(() => {
         const query = location.state?.searchQuery || searchQuery;
@@ -16,7 +16,7 @@ const HomePage = ({ courses, searchQuery }) => {
         } else {
             setFilteredCourses(courses);
         }
-    }, [location.state, searchQuery]);
+    }, [location.state, searchQuery, courses]);
 
     return (
         <div className="main_page">

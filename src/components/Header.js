@@ -13,8 +13,9 @@ const Header = ({ setSearchQuery, isLoggedIn, handleLogout }) => {
 
   const handleSearchSubmit = (event) => {
     event.preventDefault();
-    setSearchQuery(searchInput.toLowerCase());
-    navigate('/', { state: { searchQuery: searchInput.toLowerCase() } }); // Navigate to homepage with search query
+    const query = searchInput.toLowerCase();
+    setSearchQuery(query);
+    navigate('/', { state: { searchQuery: query } });
   };
 
   const handleLogoutClick = () => {
@@ -45,7 +46,7 @@ const Header = ({ setSearchQuery, isLoggedIn, handleLogout }) => {
         </form>
       </div>
       <div className="login">
-      {isLoggedIn ? (
+        {isLoggedIn ? (
           <div onClick={handleLogoutClick}>
             <img src={logout} alt="Logout Icon" />
           </div>
