@@ -1,5 +1,7 @@
 [
     {
+      "id": 1,
+      "courseTitle": "INFO340",
       "instructor": "James, Kim",
       "quarterTaught": "Spring, 2024",
       "drating": "5",
@@ -9,6 +11,8 @@
       "comment": "James has a deep understanding of client-side development concepts and presents them in a clear and engaging manner. Her lectures are well-structured and incorporate real-world examples, which make the material more relatable and easier to grasp. No exams, problem sets due every week and a large group project, totally doable!"
     },
     {
+      "id": 1,
+      "courseTitle": "INFO340",
       "instructor": "James, Kim",
       "quarterTaught": "Spring, 2024",
       "drating": "5",
@@ -18,6 +22,8 @@
       "comment": "James has a deep understanding of client-side development concepts and presents them in a clear and engaging manner. Her lectures are well-structured and incorporate real-world examples, which make the material more relatable and easier to grasp. No exams, problem sets due every week and a large group project, totally doable!"
     },
     {
+      "id": 1,
+      "courseTitle": "INFO340",
       "instructor": "James, Kim",
       "quarterTaught": "Spring, 2024",
       "drating": "5",
@@ -27,6 +33,8 @@
       "comment": "James has a deep understanding of client-side development concepts and presents them in a clear and engaging manner. Her lectures are well-structured and incorporate real-world examples, which make the material more relatable and easier to grasp. No exams, problem sets due every week and a large group project, totally doable!"
     },
     {
+      "id": 1,
+      "courseTitle": "INFO340",
       "instructor": "Smith, John",
       "quarterTaught": "Winter, 2024",
       "drating": "4",
@@ -36,6 +44,8 @@
       "comment": "John is an excellent instructor with a strong command of the subject matter. His lectures are well-organized and easy to follow. He encourages class participation and is always willing to help students outside of class. The workload is manageable with regular assignments and a final project."
     },
     {
+      "id": 1,
+      "courseTitle": "INFO340",
       "instructor": "Garcia, Maria",
       "quarterTaught": "Autumn, 2023",
       "drating": "3",
@@ -45,6 +55,8 @@
       "comment": "Maria is knowledgeable about the course material, but her lectures can be a bit dry at times. She provides clear explanations and examples, but the pace can be a bit slow for some students. The workload is reasonable with a few assignments and a midterm exam."
     },
     {
+      "id": 1,
+      "courseTitle": "INFO340",
       "instructor": "Lee, David",
       "quarterTaught": "Spring, 2023",
       "drating": "5",
@@ -54,6 +66,8 @@
       "comment": "David is an excellent instructor who truly cares about his students' learning. His lectures are engaging and interactive, and he makes a genuine effort to ensure that everyone understands the material. The workload is challenging but manageable with regular assignments and a final project. However, the class can be disorganized at times."
     },
     {
+      "id": 1,
+      "courseTitle": "INFO340",
       "instructor": "Wilson, Sarah",
       "quarterTaught": "Winter, 2023",
       "drating": "4",
@@ -63,6 +77,8 @@
       "comment": "Sarah is a knowledgeable instructor who presents the material clearly. Her lectures can be a bit monotonous at times, but she is always prepared and willing to answer questions. The workload is manageable with regular assignments and a group project."
     },
     {
+      "id": 1,
+      "courseTitle": "INFO340",
       "instructor": "Brown, Michael",
       "quarterTaught": "Autumn, 2022",
       "drating": "3",
@@ -72,6 +88,8 @@
       "comment": "Michael's lectures are engaging and interactive, but the course material can be challenging at times. He provides clear explanations and is always willing to help students outside of class. The workload is heavy, with multiple assignments and projects throughout the quarter."
     },
     {
+      "id": 1,
+      "courseTitle": "INFO340",
       "instructor": "Davis, Emily",
       "quarterTaught": "Spring, 2022",
       "drating": "4",
@@ -79,5 +97,37 @@
       "rating": "5",
       "grade": "3.9",
       "comment": "Emily is an outstanding instructor who truly cares about her students' success. Her lectures are well-structured and engaging, and she provides real-world examples to illustrate complex concepts. The workload is challenging but manageable with regular assignments and a final project."
+    },
+    {
+      "id": 2,
+      "courseTitle": "INFO201",
+      "instructor": "Thayer, Kyler",
+      "quarterTaught": "Spring, 2022",
+      "drating": "4",
+      "wlrating": "3",
+      "rating": "5",
+      "grade": "3.4",
+      "comment": "Kyle was kind and I think he has taken steps to become a better professor overall. The class was enjoyable and relatively easy to follow. The course is beginner friendly and actually fun. My only complaints are that all grades came in at the very end of the quarter and the final website project was really rushed and thus difficult to execute."
+    },
+    {"id": 2,
+      "courseTitle": "INFO201",
+      "instructor": "toomet, Ott",
+      "quarterTaught": "Summer, 2022",
+      "drating": "4",
+      "wlrating": "3",
+      "rating": "5",
+      "grade": "3.9",
+      "comment": "Ott is great! Although a 2-hour lecture isn't really justifiable, I really enjoy his structure and material. There is about 3 reading quiz (online), 6 programming assignments and couple of lab assignments and group project. Ott try his best to answer any question 24/7 on discord. Overall, I really enjoy this class and learning R!"
+    },
+    {
+      "id": 2,
+      "courseTitle": "INFO201",
+      "instructor": "deeb-swihart, Julia",
+      "quarterTaught": "Autumn, 2023",
+      "drating": "4.5",
+      "wlrating": "4",
+      "rating": "4.8",
+      "grade": "2.9",
+      "comment": "I enjoyed INFO201, it had interesting content + taught R very well. You have to attend basically every lecture to get a high grade, which is fair for college. At times expectations for projects were pretty unclear which led to frustration for some weeks. TAs were unhelpful, though taking close notes + reading textbook makes a high grade manageable"
     }
   ]

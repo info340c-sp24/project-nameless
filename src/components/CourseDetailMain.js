@@ -2,14 +2,41 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import '../style/coursedetail.css';
 import courseData from '../data/coursecards.json'; 
+import evaluationsData from '../data/evaluations.json'; 
+import questionsData from '../data/questions.json'; 
 
-const CourseDetailMain = ({ evaluations, questions }) => {
+const CourseDetailMain = () => {
   const { courseId } = useParams(); 
   const [course, setCourse] = useState(null); 
+  const [statistics, setStatistics] = useState({ difficulty: 0, workload: 0, overallRating: 0, averageScore: 0 });
+  const [evaluations, setEvaluations] = useState([]);
+  const [questions, setQuestions] = useState([]);
 
   useEffect(() => {
     const selectedCourse = courseData.find(course => course.id === parseInt(courseId));
     setCourse(selectedCourse);
+
+    if (selectedCourse) {
+      const courseEvaluations = evaluationsData.filter(evaluation => evaluation.id === parseInt(courseId));
+      const courseQuestions = questionsData.filter(question => question.id === parseInt(courseId));
+
+      setEvaluations(courseEvaluations);
+      setQuestions(courseQuestions);
+      
+      if (courseEvaluations.length > 0) {
+        const totalDifficulty = courseEvaluations.reduce((sum, evaluation) => sum + parseFloat(evaluation.drating), 0);
+        const totalWorkload = courseEvaluations.reduce((sum, evaluation) => sum + parseFloat(evaluation.wlrating), 0);
+        const totalOverallRating = courseEvaluations.reduce((sum, evaluation) => sum + parseFloat(evaluation.rating), 0);
+        const totalGrades = courseEvaluations.reduce((sum, evaluation) => sum + parseFloat(evaluation.grade), 0);
+
+        const difficulty = totalDifficulty / courseEvaluations.length;
+        const workload = totalWorkload / courseEvaluations.length;
+        const overallRating = totalOverallRating / courseEvaluations.length;
+        const averageScore = totalGrades / courseEvaluations.length;
+
+        setStatistics({ difficulty, workload, overallRating, averageScore });
+      }
+    }
   }, [courseId]);
 
   const getYearFromQuarter = (quarterTaught) => {
@@ -44,21 +71,21 @@ const CourseDetailMain = ({ evaluations, questions }) => {
           </ul>
           <div className="statistics">
             <div className="stat-wrapper">
-              <label htmlFor="difficulty">Rating difficulty</label>
-              <progress id="difficulty" value={course.difficulty} max="4"></progress>
-              <span className="progress-value">{course.difficulty}</span>
+              <label htmlFor="difficulty">Rating Difficulty</label>
+              <progress id="difficulty" value={statistics.difficulty} max="5"></progress>
+              <span className="progress-value">{statistics.difficulty.toFixed(2)}</span>
             </div>
             <div className="stat-wrapper">
               <label htmlFor="workload">Workload</label>
-              <progress id="workload" value={course.workload} max="4"></progress>
-              <span className="progress-value">{course.workload}</span>
+              <progress id="workload" value={statistics.workload} max="5"></progress>
+              <span className="progress-value">{statistics.workload.toFixed(2)}</span>
             </div>
             <div className="stat-wrapper">
-              <label htmlFor="score">Score</label>
-              <progress id="score" value={course.score} max="4"></progress>
-              <span className="progress-value">{course.score}</span>
+              <label htmlFor="overallRating">Overall Rating</label>
+              <progress id="overallRating" value={statistics.overallRating} max="5"></progress>
+              <span className="progress-value">{statistics.overallRating.toFixed(2)}</span>
             </div>
-            <p className="average-score">Average score: {course.averageScore}</p>
+            <p className="average-score">Average Grade: {statistics.averageScore.toFixed(2)}</p>
           </div>
         </div>
       </div>
@@ -69,17 +96,24 @@ const CourseDetailMain = ({ evaluations, questions }) => {
       <div className="evaluation-container">
         <div className="evaluate-box">
           <h2>
-            <Link to="/evaluation" className="coursedetail-link">Evaluate ({evaluations.length})</Link>
+            <Link to={`/evaluation/${course.id}`} key={course.id} className="coursedetail-link">Evaluate ({evaluations.length})</Link>
           </h2>
-          <p>{evaluations.length > 0 ? evaluations[0].comment : 'No evaluations yet.'}</p>
-          <p className="user-info">Taught by <span className="username">{evaluations.length > 0 ? evaluations[0].instructor : 'Anonymous'}</span> on <span className="publish-date">{evaluations.length > 0 ? getYearFromQuarter(evaluations[0].quarterTaught) : 'Unknown'}</span></p>
+          {evaluations.length > 0 ? (
+            <p>{evaluations[0].comment}</p>
+          ) : (
+            <p>No evaluations yet.</p>
+          )}
+          <p className="user-info">Taught by <span className="username">{evaluations.length > 0 ? evaluations[0].instructor : 'Anonymous'}</span></p>
         </div>
         <div className="question-box">
           <h2>
-            <Link to='/qa'>Question ({questions.length})</Link>
+            <Link to={`/qa/${course.id}`} key={course.id}>Question ({questions.length})</Link>
           </h2>
-          <p>{questions.length > 0 ? questions[0].title : 'No questions yet.'}</p>
-          <p className="user-info">Posted by <span className="username">{questions.length > 0 ? 'Kim' : 'Anonymous'}</span></p>
+          {questions.length > 0 ? (
+            <p>{questions[0].title}</p>
+          ) : (
+            <p>No questions yet.</p>
+          )}
         </div>
       </div>
       <div className="background-only-box">

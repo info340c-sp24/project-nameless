@@ -1,19 +1,33 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import evaluationData from '../data/evaluations.json'; 
+import courseData from '../data/coursecards.json';
 import '../style/eval.css';
 
-function Evaluation({ evaluations }) {
+function Evaluation({ }) {
   const navigate = useNavigate();
+  const { courseId } = useParams();
   const [filterInstructor, setFilterInstructor] = useState('');
   const [filterQuarter, setFilterQuarter] = useState('');
   const [filterRating, setFilterRating] = useState('');
+  const [courseTitle, setCourseTitle] = useState('');
+  const [evaluations, setEvaluations] = useState([]);
+
+  useEffect(() => {
+    const course = courseData.find(c => c.id.toString() === courseId);
+    if (course) {
+      setCourseTitle(course.title);
+    }
+    setEvaluations(evaluationData);
+  }, [courseId]);
+
 
   const handleBackClick = () => {
-    navigate('/detail');
+    navigate(`/detail/${courseId}`);
   };
 
   const handleRateClick = () => {
-    navigate('/rate');
+    navigate(`/rate/${courseId}`);
   };
 
   const handleInstructorChange = (event) => {
@@ -32,7 +46,8 @@ function Evaluation({ evaluations }) {
     const instructorMatch = filterInstructor === '' || evaluation.instructor.toLowerCase().includes(filterInstructor.toLowerCase());
     const quarterMatch = filterQuarter === '' || evaluation.quarterTaught.toLowerCase().includes(filterQuarter.toLowerCase());
     const ratingMatch = filterRating === '' || evaluation.rating === filterRating;
-    return instructorMatch && quarterMatch && ratingMatch;
+    const courseMatch = evaluation.id === parseInt(courseId);
+    return instructorMatch && quarterMatch && ratingMatch && courseMatch;
   });
 
   return (
@@ -41,7 +56,7 @@ function Evaluation({ evaluations }) {
         <div className="rate">
           <div className="rate-wrap">
             <button onClick={handleBackClick} aria-label="go back to detail page" className="back">Back</button>
-            <h1>Class Rating for INFO340</h1>
+            <h1>Class Rating for {courseTitle}</h1>
             <button onClick={handleRateClick} aria-label="go to the rating page" className="back">Submit Rating</button>
           </div>
         </div>
