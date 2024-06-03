@@ -72,24 +72,22 @@ const App = ({ database }) => {
     <Router>
       <div className="App">
         <Header setSearchQuery={setSearchQuery} isLoggedIn={isLoggedIn} handleLogout={handleLogout} />
-        {!isLoggedIn && (
+        {/* {!isLoggedIn && (
           <div className="login-overlay">
             <p>Please login to access course evaluations</p>
             <Link to="/login" className='blur-login'>Login</Link>
           </div>
-        )}
-        <div className={`main-content ${isLoggedIn ? '' : 'blurred'}`}>
-          <Routes>
-            <Route path="/" element={<HomePage searchQuery={searchQuery} isLoggedIn={isLoggedIn} />} />
-            <Route path="/detail/:courseId" element={<CourseDetailMain />} isLoggedIn={isLoggedIn} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<SignUp />} />
-            <Route path="/qa/:courseId" element={<QAPage questions={questions} setQuestions={setQuestions} onAddQuestion={handleAddQuestion} />} isLoggedIn={isLoggedIn} />
-            <Route path="/rate" element={<Rate onAddEvaluation={handleAddEvaluation} isLoggedIn={isLoggedIn} />} />
-            <Route path="/evaluation/:courseId" element={<Evaluation evaluations={evaluations} isLoggedIn={isLoggedIn} />} />
-          </Routes>
-          <Footer />
-        </div>
+        )} */}
+        <Routes>
+          <Route path="/" element={<HomePage searchQuery={searchQuery} isLoggedIn={isLoggedIn} />} />
+          <Route path="/detail/:courseId" element={<CourseDetailMain />} isLoggedIn={isLoggedIn} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/qa/:courseId" element={<QAPage questions={questions} setQuestions={setQuestions} onAddQuestion={handleAddQuestion} />} isLoggedIn={isLoggedIn} />
+          <Route path="/rate" element={<Rate onAddEvaluation={handleAddEvaluation} isLoggedIn={isLoggedIn} />} />
+          <Route path="/evaluation/:courseId" element={<Evaluation evaluations={evaluations} isLoggedIn={isLoggedIn} />} />
+        </Routes>
+        <Footer />
       </div>
     </Router>
   );
