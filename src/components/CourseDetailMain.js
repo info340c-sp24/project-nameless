@@ -6,17 +6,20 @@ const CourseDetailMain = ( { courseData, evaluations, questions }) => {
   const { courseTitle } = useParams();
   const [course, setCourse] = useState(null);
   const [statistics, setStatistics] = useState({ difficulty: 0, workload: 0, overallRating: 0, averageScore: 0 });
-
-  let courseEvaluations = evaluations;
-  let courseQuestions = questions;
+  const [courseEvaluations, setCourseEvaluations] = useState(evaluations);
+  const [courseQuestions, setCourseQuestions] = useState(questions);
 
   useEffect(() => {
+
     const selectedCourse = courseData.find(course => course.title.toString() === courseTitle);
     setCourse(selectedCourse);
 
     if (selectedCourse) {
-      courseEvaluations = evaluations.filter(evaluation => evaluation.courseTitle === selectedCourse.title);
-      courseQuestions = questions.filter(question => question.courseTitle === selectedCourse.title);
+
+      const filteredCourseEvaluations = evaluations.filter(evaluation => evaluation.courseTitle === selectedCourse.title);
+      setCourseEvaluations(filteredCourseEvaluations);
+      const filteredCourseQuestions = questions.filter(question => question.courseTitle === selectedCourse.title);
+      setCourseQuestions(filteredCourseQuestions);
 
       if (courseEvaluations.length > 0) {
         const totalDifficulty = courseEvaluations.reduce((sum, evaluation) => sum + parseFloat(evaluation.drating), 0);
