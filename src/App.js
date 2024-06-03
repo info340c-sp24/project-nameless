@@ -44,8 +44,8 @@ const App = ({ database }) => {
   };
 
   const handleAddQuestion = (question) => {
-    const newQuestionRef = push(ref(database, 'questions'));
-    set(newQuestionRef, question).then(() => {
+    const QuestionRef = ref(database, `questions/${questions.length}`)
+    set(QuestionRef, question).then(() => {
       console.log('Successfully submitted question!');
     }).catch((error) => {
       console.error('Error writing question:', error);
