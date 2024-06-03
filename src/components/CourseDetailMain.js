@@ -10,32 +10,32 @@ const CourseDetailMain = ( { courseData, evaluations, questions }) => {
   const [courseQuestions, setCourseQuestions] = useState(questions);
 
   useEffect(() => {
+    if (courseData.length > 0) {
+      const selectedCourse = courseData.find(course => course.title.toString() === courseTitle);
+      setCourse(selectedCourse);
 
-    const selectedCourse = courseData.find(course => course.title.toString() === courseTitle);
-    setCourse(selectedCourse);
+      if (selectedCourse) {
+        const filteredCourseEvaluations = evaluations.filter(evaluation => evaluation.courseTitle === selectedCourse.title);
+        setCourseEvaluations(filteredCourseEvaluations);
+        const filteredCourseQuestions = questions.filter(question => question.courseTitle === selectedCourse.title);
+        setCourseQuestions(filteredCourseQuestions);
 
-    if (selectedCourse) {
+        if (filteredCourseEvaluations.length > 0) {
+          const totalDifficulty = filteredCourseEvaluations.reduce((sum, evaluation) => sum + parseFloat(evaluation.drating), 0);
+          const totalWorkload = filteredCourseEvaluations.reduce((sum, evaluation) => sum + parseFloat(evaluation.wlrating), 0);
+          const totalOverallRating = filteredCourseEvaluations.reduce((sum, evaluation) => sum + parseFloat(evaluation.rating), 0);
+          const totalGrades = filteredCourseEvaluations.reduce((sum, evaluation) => sum + parseFloat(evaluation.grade), 0);
 
-      const filteredCourseEvaluations = evaluations.filter(evaluation => evaluation.courseTitle === selectedCourse.title);
-      setCourseEvaluations(filteredCourseEvaluations);
-      const filteredCourseQuestions = questions.filter(question => question.courseTitle === selectedCourse.title);
-      setCourseQuestions(filteredCourseQuestions);
+          const difficulty = totalDifficulty / filteredCourseEvaluations.length;
+          const workload = totalWorkload / filteredCourseEvaluations.length;
+          const overallRating = totalOverallRating / filteredCourseEvaluations.length;
+          const averageScore = totalGrades / filteredCourseEvaluations.length;
 
-      if (courseEvaluations.length > 0) {
-        const totalDifficulty = courseEvaluations.reduce((sum, evaluation) => sum + parseFloat(evaluation.drating), 0);
-        const totalWorkload = courseEvaluations.reduce((sum, evaluation) => sum + parseFloat(evaluation.wlrating), 0);
-        const totalOverallRating = courseEvaluations.reduce((sum, evaluation) => sum + parseFloat(evaluation.rating), 0);
-        const totalGrades = courseEvaluations.reduce((sum, evaluation) => sum + parseFloat(evaluation.grade), 0);
-
-        const difficulty = totalDifficulty / courseEvaluations.length;
-        const workload = totalWorkload / courseEvaluations.length;
-        const overallRating = totalOverallRating / courseEvaluations.length;
-        const averageScore = totalGrades / courseEvaluations.length;
-
-        setStatistics({ difficulty, workload, overallRating, averageScore });
+          setStatistics({ difficulty, workload, overallRating, averageScore });
+        }
       }
     }
-  }, [courseTitle]);
+  }, [courseTitle, courseData, evaluations, questions]);
 
   if (!course) {
     return <div>Loading...</div>;
