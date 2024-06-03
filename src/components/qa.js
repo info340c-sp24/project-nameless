@@ -29,7 +29,7 @@ const QuestionCard = ({ question, onAnswerSubmit }) => {
         </div>
         <div className="answer">
           <ul className="card-text">
-            {question.answers.map((answer, index) => (
+            {question.answers && question.answers.map((answer, index) => (
               <li key={index}>{answer}</li>
             ))}
           </ul>
@@ -65,28 +65,55 @@ const QAPage = ({ database, questions, setQuestions, onAddQuestion, isLoggedIn }
   const [newQuestion, setNewQuestion] = useState('');
 
   useEffect(() => {
-    const filtered = questions.filter(q => q.courseTitle.toString() === courseTitle);
+    const filtered = questions.filter(q => q.courseTitle === courseTitle);
     setFilteredQuestions(filtered);
   }, [courseTitle, questions]);
 
-  const handleAnswerSubmit = (answer) => {
-    const questionIndex = questions.findIndex((q) => q.courseTitle === courseTitle);
-    console.log(questionIndex);
-    if (questionIndex !== -1) {
-    /*
-      const updatedQuestions = [...questions];
-      updatedQuestions[questionIndex] = {
-        ...questions[questionIndex],
-        answers: [...questions[questionIndex].answers, answer],
-      };
-      setQuestions(updatedQuestions);
-    */
-    const answerRef = ref(database, `questions/${questionIndex}/answers/${questions[questionIndex].answers.length}`);
-    set(answerRef, answer).then(() => {
-      console.log('Successfully submitted answer!');
-    }).catch((error) => {
-      console.error('Error writing answer:', error);
+  useEffect(() => {
+    const questionsRef = ref(database, 'questions');
+    onValue(questionsRef, (snapshot) => {
+      const fetchedQuestions = snapshot.val();
+      if (fetchedQuestions) {
+        const updatedQuestions = Object.values(fetchedQuestions);
+        setQuestions(updatedQuestions);
+      }
     });
+  }, [database]);
+
+  // const handleAnswerSubmit = (answer) => {
+  //   const questionIndex = questions.findIndex((q) => q.courseTitle === courseTitle);
+  //   console.log(questionIndex);
+  //   if (questionIndex !== -1) {
+  //   const answerRef = ref(database, `questions/${questionIndex}/answers/${questions[questionIndex].answers.length}`);
+  //   set(answerRef, answer).then(() => {
+  //     console.log('Successfully submitted answer!');
+  //   }).catch((error) => {
+  //     console.error('Error writing answer:', error);
+  //   });
+  //   }
+  // };
+
+  const handleAnswerSubmit = (questionId, answer) => {
+    const questionIndex = questions.findIndex((q) => q.id === questionId);
+    if (questionIndex !== -1) {
+      const questionRef = ref(database, `questions/${questionIndex}`);
+      const currentAnswers = questions[questionIndex].answers;
+
+      let updatedAnswers;
+      if (currentAnswers.length === 1 && currentAnswers[0] === "No answer yet...") {
+        updatedAnswers = [answer];
+      } else {
+        updatedAnswers = [...currentAnswers, answer];
+      }
+
+      const answerRef = ref(database, `questions/${questionIndex}/answers`);
+      set(answerRef, updatedAnswers)
+        .then(() => {
+          console.log('Successfully submitted answer!');
+        })
+        .catch((error) => {
+          console.error('Error writing answer:', error);
+        });
     }
   };
 
@@ -108,7 +135,7 @@ const QAPage = ({ database, questions, setQuestions, onAddQuestion, isLoggedIn }
       const newQuestionObj = {
         id: questions.length + 1,
         title: newQuestion,
-        answers: [],
+        answers: ["No answer yet..."],
         courseTitle: courseTitle
       };
       onAddQuestion(newQuestionObj);

@@ -72,12 +72,6 @@ const App = ({ database }) => {
     <Router>
       <div className="App">
         <Header setSearchQuery={setSearchQuery} isLoggedIn={isLoggedIn} handleLogout={handleLogout} />
-        {/* {!isLoggedIn && (
-          <div className="login-overlay">
-            <p>Please login to access course evaluations</p>
-            <Link to="/login" className='blur-login'>Login</Link>
-          </div>
-        )} */}
         <Routes>
         <Route path="/" element={<HomePage searchQuery={searchQuery} isLoggedIn={isLoggedIn} />} />
           <Route path="/detail/:courseTitle" element={<CourseDetailMain evaluations={evaluations} questions={questions} isLoggedIn={isLoggedIn} />} />
