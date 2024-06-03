@@ -16,6 +16,7 @@
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 5px;
+    font-size:10px;
 }
 
 .rate-wrap {
@@ -81,7 +82,7 @@
     flex-direction: row;
     height: 2vh;
     margin: auto;
-    font-size: 15px;
+    font-size: 12px;
 }
 
 .rating {
@@ -90,28 +91,61 @@
 
 .input-fields {
     display: flex;
-    align-items: center;
-    padding-left: 30%;
-    padding-right: 30%;
-    padding-bottom: 30px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 20px 30px;
 }
 
 .input-fields label {
-    flex: 1;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding-right: 10px;
+    margin-bottom: 5px;
 }
 
 .comments textarea {
-    width: 650px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.input-fields input, .input-fields select, .input-fields textarea {
-    width: 300px;
+.input-fields input,
+.input-fields select,
+.input-fields textarea {
+    width: 100%;
+    box-sizing: border-box;
 }
+
 
 .eval-back {
     margin-left: 300px;
+}
+
+@media (min-width: 500px) {
+    .ratingBox {
+        font-size: 15px;
+    }
+
+    .filter-input {
+        font-size:15px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .input-fields {
+        flex-direction: row;
+        align-items: center;
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+
+    .input-fields label {
+        flex: 1;
+        justify-content: flex-start;
+        align-items: center;
+        padding-right: 10px;
+        margin-bottom: 0;
+    }
+
+    .input-fields input,
+    .input-fields select,
+    .input-fields textarea {
+        width: 300px;
+    }
 }

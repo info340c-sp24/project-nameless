@@ -142,7 +142,7 @@ function Rate({ onAddEvaluation }) {
               />
             </div>
 
-            <div className="comments">
+            <div className="input-fields comments">
               <label htmlFor="comment">Your Comment:</label>
               <br />
               <textarea
