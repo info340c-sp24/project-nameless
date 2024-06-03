@@ -18,7 +18,6 @@ const App = ({ database }) => {
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
-    initializeDatabase();
     const evaluationRef = ref(database, 'evaluations');
     const questionsRef = ref(database, 'questions');
 
@@ -31,15 +30,24 @@ const App = ({ database }) => {
       const fetchedQuestions = snapshot.val() || [];
       setQuestions(fetchedQuestions);
     });
-    initializeDatabase();
   }, [database]);
 
   const handleAddEvaluation = (evaluation) => {
-    setEvaluations([...evaluations, evaluation]);
+    const newEvaluationRef = push(ref(database, 'evaluations'));
+    set(newEvaluationRef, evaluation).then(() => {
+      console.log('Successfully submitted evaluation!');
+    }).catch((error) => {
+      console.error('Error writing evaluation:', error);
+    });
   };
 
   const handleAddQuestion = (question) => {
-    setQuestions([...questions, question]);
+    const newQuestionRef = push(ref(database, 'questions'));
+    set(newQuestionRef, question).then(() => {
+      console.log('Successfully submitted question!');
+    }).catch((error) => {
+      console.error('Error writing question:', error);
+    });
   };
 
   return (
