@@ -32,6 +32,7 @@ function Rate({ onAddEvaluation }) {
   };
 
   const handleSubmit = (event) => {
+    event.preventDefault();
     const newEvaluation = {
       ...formData,
       id: courseId,
