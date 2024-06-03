@@ -7,8 +7,8 @@ const CourseDetailMain = ( { courseData, evaluations, questions }) => {
   const [course, setCourse] = useState(null);
   const [statistics, setStatistics] = useState({ difficulty: 0, workload: 0, overallRating: 0, averageScore: 0 });
 
-  const courseEvaluations = evaluations;
-  const courseQuestions = questions;
+  let courseEvaluations = evaluations;
+  let courseQuestions = questions;
 
   useEffect(() => {
     const selectedCourse = courseData.find(course => course.title.toString() === courseTitle);
