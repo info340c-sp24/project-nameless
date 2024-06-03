@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import '../style/coursedetail.css';
-import courseData from '../data/coursecards.json';
-import evaluationsData from '../data/evaluations.json';
-import questionsData from '../data/questions.json';
 
-const CourseDetailMain = ( { evaluations, questions }) => {
+const CourseDetailMain = ( { courseData, evaluations, questions }) => {
   const { courseTitle } = useParams();
   const [course, setCourse] = useState(null);
   const [statistics, setStatistics] = useState({ difficulty: 0, workload: 0, overallRating: 0, averageScore: 0 });

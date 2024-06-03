@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import '../style/eval.css';
-import courseData from '../data/coursecards.json';
 
 function Rate({ onAddEvaluation }) {
   const [formData, setFormData] = useState({
