@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../style/general.css';
+import logout from '../img/out.png';
 
 const Header = ({ setSearchQuery, isLoggedIn, handleLogout }) => {
   const [searchInput, setSearchInput] = useState('');
@@ -46,8 +47,7 @@ const Header = ({ setSearchQuery, isLoggedIn, handleLogout }) => {
       <div className="login">
       {isLoggedIn ? (
           <div onClick={handleLogoutClick}>
-            <img src="/img/out.png" alt="Logout Icon" />
-            <span>Logout</span>
+            <img src={logout} alt="Logout Icon" />
           </div>
         ) : (
           <Link to="/login">

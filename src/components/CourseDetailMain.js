@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import '../style/coursedetail.css';
-import courseData from '../data/coursecards.json'; 
-import evaluationsData from '../data/evaluations.json'; 
-import questionsData from '../data/questions.json'; 
+import courseData from '../data/coursecards.json';
+import evaluationsData from '../data/evaluations.json';
+import questionsData from '../data/questions.json';
 
 const CourseDetailMain = () => {
-  const { courseId } = useParams(); 
-  const [course, setCourse] = useState(null); 
+  const { courseId } = useParams();
+  const [course, setCourse] = useState(null);
   const [statistics, setStatistics] = useState({ difficulty: 0, workload: 0, overallRating: 0, averageScore: 0 });
   const [evaluations, setEvaluations] = useState([]);
   const [questions, setQuestions] = useState([]);
@@ -22,7 +22,7 @@ const CourseDetailMain = () => {
 
       setEvaluations(courseEvaluations);
       setQuestions(courseQuestions);
-      
+
       if (courseEvaluations.length > 0) {
         const totalDifficulty = courseEvaluations.reduce((sum, evaluation) => sum + parseFloat(evaluation.drating), 0);
         const totalWorkload = courseEvaluations.reduce((sum, evaluation) => sum + parseFloat(evaluation.wlrating), 0);
@@ -45,7 +45,7 @@ const CourseDetailMain = () => {
   };
 
   if (!course) {
-    return <div>Loading...</div>; 
+    return <div>Loading...</div>;
   }
 
   return (

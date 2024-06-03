@@ -67,3 +67,27 @@ textarea {
     margin-top: 15px;
     margin-left: 15px;
 }
+
+.blurred {
+    filter: blur(5px);
+    pointer-events: none;
+  }
+
+.login-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+}
+
+.login-overlay p {
+    color: white;
+    font-size: 24px;
+    text-align: center;
+}
