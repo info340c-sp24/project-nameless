@@ -44,7 +44,7 @@ const App = ({ database }) => {
   };
 
   const handleAddQuestion = (question) => {
-    const QuestionRef = ref(database, `questions/${questions.length}`)
+    const QuestionRef = ref(database, `questions/${questions.length}`);
     set(QuestionRef, question).then(() => {
       console.log('Successfully submitted question!');
     }).catch((error) => {
@@ -83,7 +83,7 @@ const App = ({ database }) => {
           <Route path="/detail/:courseTitle" element={<CourseDetailMain evaluations={evaluations} questions={questions} isLoggedIn={isLoggedIn} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/qa/:courseTitle" element={<QAPage questions={questions} setQuestions={setQuestions} onAddQuestion={handleAddQuestion} isLoggedIn={isLoggedIn} />} />
+          <Route path="/qa/:courseTitle" element={<QAPage database={database} questions={questions} setQuestions={setQuestions} onAddQuestion={handleAddQuestion} isLoggedIn={isLoggedIn} />} />
           <Route path="/rate/:courseTitle" element={<Rate onAddEvaluation={handleAddEvaluation} isLoggedIn={isLoggedIn} />} />
           <Route path="/evaluation/:courseTitle" element={<Evaluation evaluations={evaluations} isLoggedIn={isLoggedIn} />} />
         </Routes>

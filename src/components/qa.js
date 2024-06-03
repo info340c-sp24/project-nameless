@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import '../style/qa.css';
+import { ref, onValue, push, set, update } from 'firebase/database';
 
 const QuestionCard = ({ question, onAnswerSubmit }) => {
   const [isAnswering, setIsAnswering] = useState(false);
@@ -54,7 +55,7 @@ const QuestionCard = ({ question, onAnswerSubmit }) => {
   );
 };
 
-const QAPage = ({ questions, setQuestions, onAddQuestion, isLoggedIn }) => {
+const QAPage = ({ database, questions, setQuestions, onAddQuestion, isLoggedIn }) => {
   const { courseTitle } = useParams();
   const [filteredQuestions, setFilteredQuestions] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
@@ -68,15 +69,24 @@ const QAPage = ({ questions, setQuestions, onAddQuestion, isLoggedIn }) => {
     setFilteredQuestions(filtered);
   }, [courseTitle, questions]);
 
-  const handleAnswerSubmit = (questionCourseTitle, answer) => {
-    const questionIndex = questions.findIndex((q) => q.courseTitle === questionCourseTitle);
+  const handleAnswerSubmit = (answer) => {
+    const questionIndex = questions.findIndex((q) => q.courseTitle === courseTitle);
+    console.log(questionIndex);
     if (questionIndex !== -1) {
+    /*
       const updatedQuestions = [...questions];
       updatedQuestions[questionIndex] = {
         ...questions[questionIndex],
         answers: [...questions[questionIndex].answers, answer],
       };
       setQuestions(updatedQuestions);
+    */
+    const answerRef = ref(database, `questions/${questionIndex}/answers/${questions[questionIndex].answers.length}`);
+    set(answerRef, answer).then(() => {
+      console.log('Successfully submitted answer!');
+    }).catch((error) => {
+      console.error('Error writing answer:', error);
+    });
     }
   };
 
