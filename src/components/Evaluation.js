@@ -1,30 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import courseData from '../data/coursecards.json';
 import '../style/eval.css';
 
 function Evaluation({ evaluations }) {
   const navigate = useNavigate();
-  const { courseId } = useParams();
+  const { courseTitle } = useParams();
   const [filterInstructor, setFilterInstructor] = useState('');
   const [filterQuarter, setFilterQuarter] = useState('');
   const [filterRating, setFilterRating] = useState('');
-  const [courseTitle, setCourseTitle] = useState('');
-
-  useEffect(() => {
-    const course = courseData.find(c => c.id.toString() === courseId);
-    if (course) {
-      setCourseTitle(course.title);
-    }
-  }, [courseId]);
-
 
   const handleBackClick = () => {
-    navigate(`/detail/${courseId}`);
+    navigate(`/detail/${courseTitle}`);
   };
 
   const handleRateClick = () => {
-    navigate(`/rate/${courseId}`);
+    navigate(`/rate/${courseTitle}`);
   };
 
   const handleInstructorChange = (event) => {
@@ -43,7 +33,7 @@ function Evaluation({ evaluations }) {
     const instructorMatch = filterInstructor === '' || evaluation.instructor.toLowerCase().includes(filterInstructor.toLowerCase());
     const quarterMatch = filterQuarter === '' || evaluation.quarterTaught.toLowerCase().includes(filterQuarter.toLowerCase());
     const ratingMatch = filterRating === '' || evaluation.rating === filterRating;
-    const courseMatch = evaluation.id === parseInt(courseId);
+    const courseMatch = evaluation.courseTitle === courseTitle;
     return instructorMatch && quarterMatch && ratingMatch && courseMatch;
   });
 

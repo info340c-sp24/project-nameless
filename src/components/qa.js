@@ -55,7 +55,7 @@ const QuestionCard = ({ question, onAnswerSubmit }) => {
 };
 
 const QAPage = ({ questions, setQuestions, onAddQuestion, isLoggedIn }) => {
-  const { courseId } = useParams();
+  const { courseTitle } = useParams();
   const [filteredQuestions, setFilteredQuestions] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
@@ -64,12 +64,12 @@ const QAPage = ({ questions, setQuestions, onAddQuestion, isLoggedIn }) => {
   const [newQuestion, setNewQuestion] = useState('');
 
   useEffect(() => {
-    const filtered = questions.filter(q => q.id.toString() === courseId);
+    const filtered = questions.filter(q => q.courseTitle.toString() === courseTitle);
     setFilteredQuestions(filtered);
-  }, [courseId, questions]);
+  }, [courseTitle, questions]);
 
-  const handleAnswerSubmit = (questionId, answer) => {
-    const questionIndex = questions.findIndex((q) => q.id === questionId);
+  const handleAnswerSubmit = (questionCourseTitle, answer) => {
+    const questionIndex = questions.findIndex((q) => q.courseTitle === questionCourseTitle);
     if (questionIndex !== -1) {
       const updatedQuestions = [...questions];
       updatedQuestions[questionIndex] = {
@@ -99,6 +99,7 @@ const QAPage = ({ questions, setQuestions, onAddQuestion, isLoggedIn }) => {
         id: questions.length + 1,
         title: newQuestion,
         answers: [],
+        courseTitle: courseTitle
       };
       onAddQuestion(newQuestionObj);
       setNewQuestion('');
@@ -114,13 +115,13 @@ const QAPage = ({ questions, setQuestions, onAddQuestion, isLoggedIn }) => {
   return (
     <div>
       {!isLoggedIn && (
-          <div className="login-overlay">
-            <p>Please login to access</p>
-            <Link to="/login" className='blur-login'>Login</Link>
-          </div>
-        )}
+        <div className="login-overlay">
+          <p>Please login to access</p>
+          <Link to="/login" className='blur-login'>Login</Link>
+        </div>
+      )}
       <div className={`title_ask ${isLoggedIn ? '' : 'blurred'}`}>
-        <Link to={`/detail/${courseId}`}>
+        <Link to={`/detail/${courseTitle}`}>
           <button className="back-btn-qa">Back</button>
         </Link>
         <h1>Q &amp; A Board</h1>
@@ -139,7 +140,7 @@ const QAPage = ({ questions, setQuestions, onAddQuestion, isLoggedIn }) => {
             </div>
           )}
         </div>
-        <div className="ask">
+        <div className={`ask`}>
           {isAsking ? (
             <form onSubmit={handleAskQuestion}>
               <textarea

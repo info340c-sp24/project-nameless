@@ -10,8 +10,8 @@ const HomePage = ({ searchQuery }) => {
     useEffect(() => {
         const query = location.state?.searchQuery || searchQuery;
         if (query) {
-            setFilteredCourses(courses.filter(course => 
-                course.title.toLowerCase().includes(query) || 
+            setFilteredCourses(courses.filter(course =>
+                course.title.toLowerCase().includes(query) ||
                 course.description.toLowerCase().includes(query)
             ));
         } else {
@@ -23,7 +23,7 @@ const HomePage = ({ searchQuery }) => {
         <div className="main_page">
             <div className="courses">
                 {filteredCourses.map(course => (
-                    <Link to={`/detail/${course.id}`} key={course.id}>
+                    <Link to={`/detail/${course.title}`} key={course.title}>
                         <div className="course_card">
                             <div className="course_background">
                                 <img src={course.image} className="course_img" alt={course.description} />

@@ -6,14 +6,14 @@ import evaluationsData from '../data/evaluations.json';
 import questionsData from '../data/questions.json';
 
 const CourseDetailMain = () => {
-  const { courseId } = useParams();
+  const { courseTitle } = useParams();
   const [course, setCourse] = useState(null);
   const [statistics, setStatistics] = useState({ difficulty: 0, workload: 0, overallRating: 0, averageScore: 0 });
   const [evaluations, setEvaluations] = useState([]);
   const [questions, setQuestions] = useState([]);
 
   useEffect(() => {
-    const selectedCourse = courseData.find(course => course.id.toString() === courseId);
+    const selectedCourse = courseData.find(course => course.title.toString() === courseTitle);
     setCourse(selectedCourse);
 
     if (selectedCourse) {
@@ -37,7 +37,7 @@ const CourseDetailMain = () => {
         setStatistics({ difficulty, workload, overallRating, averageScore });
       }
     }
-  }, [courseId]);
+  }, [courseTitle]);
 
   if (!course) {
     return <div>Loading...</div>;
@@ -91,7 +91,7 @@ const CourseDetailMain = () => {
       <div className="evaluation-container">
         <div className="evaluate-box">
           <h2>
-            <Link to={`/evaluation/${course.id}`} key={course.id} className="coursedetail-link">Evaluate ({evaluations.length})</Link>
+            <Link to={`/evaluation/${course.title}`} key={course.title} className="coursedetail-link">Evaluate ({evaluations.length})</Link>
           </h2>
           {evaluations.length > 0 ? (
             <p>{evaluations[0].comment}</p>
@@ -102,7 +102,7 @@ const CourseDetailMain = () => {
         </div>
         <div className="question-box">
           <h2>
-            <Link to={`/qa/${course.id}`} key={course.id}>Question ({questions.length})</Link>
+            <Link to={`/qa/${course.title}`} key={course.title}>Question ({questions.length})</Link>
           </h2>
           {questions.length > 0 ? (
             <p>{questions[0].title}</p>
