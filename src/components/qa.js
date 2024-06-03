@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import '../style/qa.css';
 
 const QuestionCard = ({ question, onAnswerSubmit }) => {
@@ -55,11 +55,18 @@ const QuestionCard = ({ question, onAnswerSubmit }) => {
 };
 
 const QAPage = ({ questions, setQuestions, onAddQuestion }) => {
+  const { courseId } = useParams();
+  const [filteredQuestions, setFilteredQuestions] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [noMatchingResults, setNoMatchingResults] = useState(false);
   const [isAsking, setIsAsking] = useState(false);
   const [newQuestion, setNewQuestion] = useState('');
+
+  useEffect(() => {
+    const filtered = questions.filter(q => q.id.toString() === courseId);
+    setFilteredQuestions(filtered);
+  }, [courseId, questions]);
 
   const handleAnswerSubmit = (questionId, answer) => {
     const questionIndex = questions.findIndex((q) => q.id === questionId);
@@ -106,12 +113,10 @@ const QAPage = ({ questions, setQuestions, onAddQuestion }) => {
     setIsAsking(false);
   };
 
-  const filteredQuestions = searchResults.length > 0 ? searchResults : questions;
-
   return (
     <div>
       <div className="title_ask">
-        <Link to='/detail'>
+        <Link to={`/detail/${courseId}`}>
           <button className="back-btn-qa">Back</button>
         </Link>
         <h1>Q &amp; A Board</h1>

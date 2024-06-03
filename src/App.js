@@ -31,12 +31,12 @@ const App = () => {
         <Header setSearchQuery={setSearchQuery} />
         <Routes>
           <Route path="/" element={<HomePage searchQuery={searchQuery} />} />
-          <Route path="/detail/:courseId" element={<CourseDetailMain evaluations={evaluations} questions={questions} />} />
+          <Route path="/detail/:courseId" element={<CourseDetailMain />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/qa" element={<QAPage questions={questions} setQuestions={setQuestions} onAddQuestion={handleAddQuestion} />} />
+          <Route path="/qa/:courseId" element={<QAPage questions={questions} setQuestions={setQuestions} onAddQuestion={handleAddQuestion} />} />
           <Route path="/rate" element={<Rate onAddEvaluation={handleAddEvaluation} />} />
-          <Route path="/evaluation" element={<Evaluation evaluations={evaluations} />} />
+          <Route path="/evaluation/:courseId" element={<Evaluation evaluations={evaluations} />} />
         </Routes>
         <Footer />
       </div>
