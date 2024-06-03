@@ -5,6 +5,8 @@ import courseData from '../data/coursecards.json';
 
 function Rate({ onAddEvaluation }) {
   const [formData, setFormData] = useState({
+    id: '',
+    courseTitle: '',
     instructor: '',
     quarterTaught: '',
     drating: '',
@@ -16,9 +18,13 @@ function Rate({ onAddEvaluation }) {
 
   const { courseId } = useParams();
   const navigate = useNavigate();
+  const [courseTitle, setCourseTitle] = useState('');
 
   useEffect(() => {
     const course = courseData.find(c => c.id.toString() === courseId);
+    if (course) {
+      setCourseTitle(course.title);
+    }
   }, [courseId]);
 
   const handleChange = (event) => {
@@ -26,16 +32,22 @@ function Rate({ onAddEvaluation }) {
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-    onAddEvaluation(formData);
+    const newEvaluation = {
+      ...formData,
+      id: courseId,
+      courseTitle: courseTitle,
+    };
+    onAddEvaluation(newEvaluation);
     setFormData({
+      id: '',
+      courseTitle: '',
       instructor: '',
       quarterTaught: '',
       drating: '',
       wlrating: '',
       rating: '',
       grade: '',
-      comment: ''
+      comment: '',
     });
     navigate(`/evaluation/${courseId}`);
   };
