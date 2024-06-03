@@ -5,7 +5,6 @@ import courseData from '../data/coursecards.json';
 
 function Rate({ onAddEvaluation }) {
   const [formData, setFormData] = useState({
-    id: '',
     courseTitle: '',
     instructor: '',
     quarterTaught: '',
@@ -35,7 +34,6 @@ function Rate({ onAddEvaluation }) {
     event.preventDefault();
     const newEvaluation = {
       ...formData,
-      id: courseId,
       courseTitle: courseTitle,
     };
     onAddEvaluation(newEvaluation);
