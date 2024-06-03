@@ -10,7 +10,7 @@ import QAPage from './components/qa';
 import Rate from './components/Rate';
 import HomePage from './components/HomePage';
 import Evaluation from './components/Evaluation';
-import { ref, onValue, push } from 'firebase/database';
+import { ref, onValue, push, set } from 'firebase/database';
 import initializeDatabase from './components/initializeDatabase';
 
 const App = ({ database }) => {
@@ -78,7 +78,7 @@ const App = ({ database }) => {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/qa/:courseId" element={<QAPage questions={questions} setQuestions={setQuestions} onAddQuestion={handleAddQuestion} />} isLoggedIn={isLoggedIn} />
-          <Route path="/rate" element={<Rate onAddEvaluation={handleAddEvaluation} isLoggedIn={isLoggedIn} />} />
+          <Route path="/rate/:courseId" element={<Rate onAddEvaluation={handleAddEvaluation} isLoggedIn={isLoggedIn} />} />
           <Route path="/evaluation/:courseId" element={<Evaluation evaluations={evaluations} isLoggedIn={isLoggedIn} />} />
         </Routes>
         <Footer />

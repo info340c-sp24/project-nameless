@@ -31,11 +31,11 @@ function Rate({ onAddEvaluation }) {
       grade: '',
       comment: ''
     });
-    navigate('/evaluation');
+    navigate('/evaluation/:courseId');
   };
 
   const handleBackClick = () => {
-    navigate('/evaluation');
+    navigate('/evaluation/:courseId');
   };
 
   return (
