@@ -10,7 +10,7 @@ import QAPage from './components/qa';
 import Rate from './components/Rate';
 import HomePage from './components/HomePage';
 import Evaluation from './components/Evaluation';
-import { ref, onValue, push } from 'firebase/database';
+import { ref, onValue, push, set } from 'firebase/database';
 import initializeDatabase from './components/initializeDatabase';
 
 const App = ({ database }) => {
