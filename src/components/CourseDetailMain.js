@@ -5,23 +5,21 @@ import courseData from '../data/coursecards.json';
 import evaluationsData from '../data/evaluations.json';
 import questionsData from '../data/questions.json';
 
-const CourseDetailMain = () => {
+const CourseDetailMain = ( { evaluations, questions }) => {
   const { courseTitle } = useParams();
   const [course, setCourse] = useState(null);
   const [statistics, setStatistics] = useState({ difficulty: 0, workload: 0, overallRating: 0, averageScore: 0 });
-  const [evaluations, setEvaluations] = useState([]);
-  const [questions, setQuestions] = useState([]);
+
+  const courseEvaluations = evaluations;
+  const courseQuestions = questions;
 
   useEffect(() => {
     const selectedCourse = courseData.find(course => course.title.toString() === courseTitle);
     setCourse(selectedCourse);
 
     if (selectedCourse) {
-      const courseEvaluations = evaluationsData.filter(evaluation => evaluation.courseTitle === selectedCourse.title);
-      const courseQuestions = questionsData.filter(question => question.courseTitle === selectedCourse.title);
-
-      setEvaluations(courseEvaluations);
-      setQuestions(courseQuestions);
+      const courseEvaluations = evaluations.filter(evaluation => evaluation.courseTitle === selectedCourse.title);
+      const courseQuestions = questions.filter(question => question.courseTitle === selectedCourse.title);
 
       if (courseEvaluations.length > 0) {
         const totalDifficulty = courseEvaluations.reduce((sum, evaluation) => sum + parseFloat(evaluation.drating), 0);
@@ -91,21 +89,21 @@ const CourseDetailMain = () => {
       <div className="evaluation-container">
         <div className="evaluate-box">
           <h2>
-            <Link to={`/evaluation/${course.title}`} key={course.title} className="coursedetail-link">Evaluate ({evaluations.length})</Link>
+            <Link to={`/evaluation/${course.title}`} key={course.title} className="coursedetail-link">Evaluate ({courseEvaluations.length})</Link>
           </h2>
-          {evaluations.length > 0 ? (
-            <p>{evaluations[0].comment}</p>
+          {courseEvaluations.length > 0 ? (
+            <p>{courseEvaluations[0].comment}</p>
           ) : (
             <p>No evaluations yet.</p>
           )}
-          <p className="user-info">Taught by <span className="username">{evaluations.length > 0 ? evaluations[0].instructor : 'Anonymous'}</span></p>
+          <p className="user-info">Taught by <span className="username">{courseEvaluations.length > 0 ? courseEvaluations[0].instructor : 'Anonymous'}</span></p>
         </div>
         <div className="question-box">
           <h2>
-            <Link to={`/qa/${course.title}`} key={course.title}>Question ({questions.length})</Link>
+            <Link to={`/qa/${course.title}`} key={course.title}>Question ({courseQuestions.length})</Link>
           </h2>
-          {questions.length > 0 ? (
-            <p>{questions[0].title}</p>
+          {courseQuestions.length > 0 ? (
+            <p>{courseQuestions[0].title}</p>
           ) : (
             <p>No questions yet.</p>
           )}

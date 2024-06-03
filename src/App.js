@@ -80,7 +80,7 @@ const App = ({ database }) => {
         )} */}
         <Routes>
         <Route path="/" element={<HomePage searchQuery={searchQuery} isLoggedIn={isLoggedIn} />} />
-          <Route path="/detail/:courseTitle" element={<CourseDetailMain isLoggedIn={isLoggedIn} />} />
+          <Route path="/detail/:courseTitle" element={<CourseDetailMain evaluations={evaluations} questions={questions} isLoggedIn={isLoggedIn} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/qa/:courseTitle" element={<QAPage questions={questions} setQuestions={setQuestions} onAddQuestion={handleAddQuestion} isLoggedIn={isLoggedIn} />} />
