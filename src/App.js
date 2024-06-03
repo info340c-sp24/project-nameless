@@ -10,7 +10,7 @@ import QAPage from './components/qa';
 import Rate from './components/Rate';
 import HomePage from './components/HomePage';
 import Evaluation from './components/Evaluation';
-import { ref, onValue, push, set } from 'firebase/database';
+import { ref, onValue, push, set, update } from 'firebase/database';
 import initializeDatabase from './components/initializeDatabase';
 
 const App = ({ database }) => {
@@ -23,11 +23,10 @@ const App = ({ database }) => {
     const evaluationRef = ref(database, 'evaluations');
     const questionsRef = ref(database, 'questions');
 
-onValue(evaluationRef, (snapshot) => {
-  const fetchedEvaluations = snapshot.val() || {};
-  const evaluationsArray = Object.values(fetchedEvaluations);
-  setEvaluations(evaluationsArray);
-});
+    onValue(evaluationRef, (snapshot) => {
+      const fetchedEvaluations = snapshot.val() || [];
+      setEvaluations(fetchedEvaluations);
+    });
 
     onValue(questionsRef, (snapshot) => {
       const fetchedQuestions = snapshot.val() || [];
@@ -36,8 +35,8 @@ onValue(evaluationRef, (snapshot) => {
   }, [database]);
 
   const handleAddEvaluation = (evaluation) => {
-    const newEvaluationRef = push(ref(database, 'evaluations'));
-    set(newEvaluationRef, evaluation).then(() => {
+    const EvaluationRef = ref(database, `evaluations/${evaluations.length}`);
+    set(EvaluationRef, evaluation).then(() => {
       console.log('Successfully submitted evaluation!');
     }).catch((error) => {
       console.error('Error writing evaluation:', error);
@@ -73,6 +72,12 @@ onValue(evaluationRef, (snapshot) => {
     <Router>
       <div className="App">
         <Header setSearchQuery={setSearchQuery} isLoggedIn={isLoggedIn} handleLogout={handleLogout} />
+        {/* {!isLoggedIn && (
+          <div className="login-overlay">
+            <p>Please login to access course evaluations</p>
+            <Link to="/login" className='blur-login'>Login</Link>
+          </div>
+        )} */}
         <Routes>
           <Route path="/" element={<HomePage searchQuery={searchQuery} isLoggedIn={isLoggedIn} />} />
           <Route path="/detail/:courseId" element={<CourseDetailMain />} isLoggedIn={isLoggedIn} />
