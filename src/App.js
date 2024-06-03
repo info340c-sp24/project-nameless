@@ -79,13 +79,13 @@ const App = ({ database }) => {
           </div>
         )} */}
         <Routes>
-          <Route path="/" element={<HomePage searchQuery={searchQuery} isLoggedIn={isLoggedIn} />} />
-          <Route path="/detail/:courseId" element={<CourseDetailMain />} isLoggedIn={isLoggedIn} />
+        <Route path="/" element={<HomePage searchQuery={searchQuery} isLoggedIn={isLoggedIn} />} />
+          <Route path="/detail/:courseTitle" element={<CourseDetailMain isLoggedIn={isLoggedIn} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/qa/:courseId" element={<QAPage questions={questions} setQuestions={setQuestions} onAddQuestion={handleAddQuestion} />} isLoggedIn={isLoggedIn} />
-          <Route path="/rate/:courseId" element={<Rate onAddEvaluation={handleAddEvaluation} isLoggedIn={isLoggedIn} />} />
-          <Route path="/evaluation/:courseId" element={<Evaluation evaluations={evaluations} isLoggedIn={isLoggedIn} />} />
+          <Route path="/qa/:courseTitle" element={<QAPage questions={questions} setQuestions={setQuestions} onAddQuestion={handleAddQuestion} isLoggedIn={isLoggedIn} />} />
+          <Route path="/rate/:courseTitle" element={<Rate onAddEvaluation={handleAddEvaluation} isLoggedIn={isLoggedIn} />} />
+          <Route path="/evaluation/:courseTitle" element={<Evaluation evaluations={evaluations} isLoggedIn={isLoggedIn} />} />
         </Routes>
         <Footer />
       </div>
