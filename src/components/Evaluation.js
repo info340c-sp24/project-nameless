@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, Link } from 'react-router-dom';
 import '../style/eval.css';
 
-function Evaluation({ evaluations }) {
+function Evaluation({ evaluations, isLoggedIn }) {
   const navigate = useNavigate();
   const { courseTitle } = useParams();
   const [filterInstructor, setFilterInstructor] = useState('');
@@ -39,7 +39,13 @@ function Evaluation({ evaluations }) {
 
   return (
     <div>
-      <main>
+      {!isLoggedIn && (
+        <div className="login-overlay">
+          <p>Please login to access</p>
+          <Link to="/login" className='blur-login'>Login</Link>
+        </div>
+      )}
+      <main className={`${isLoggedIn ? '' : 'blurred'}`}>
         <div className="rate">
           <div className="rate-wrap">
             <button onClick={handleBackClick} aria-label="go back to detail page" className="back">Back</button>
