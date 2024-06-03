@@ -18,7 +18,7 @@ const CourseDetailMain = () => {
 
     if (selectedCourse) {
       const courseEvaluations = evaluationsData.filter(evaluation => evaluation.courseTitle === selectedCourse.title);
-      const courseQuestions = questionsData.filter(question => question.id.toString() === courseId);
+      const courseQuestions = questionsData.filter(question => question.courseTitle === selectedCourse.title);
 
       setEvaluations(courseEvaluations);
       setQuestions(courseQuestions);
