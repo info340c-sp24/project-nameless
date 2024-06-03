@@ -71,7 +71,7 @@ textarea {
 .blurred {
     filter: blur(5px);
     pointer-events: none;
-  }
+}
 
 .login-overlay {
     position: fixed;
@@ -90,4 +90,15 @@ textarea {
     color: white;
     font-size: 24px;
     text-align: center;
+}
+
+.login-overlay {
+    display: flex;
+    flex-direction: column;
+}
+
+.blur-login {
+    color: #ffffff;
+    font-size: 30px;
+    text-decoration: underline;
 }

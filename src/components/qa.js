@@ -113,7 +113,13 @@ const QAPage = ({ questions, setQuestions, onAddQuestion, isLoggedIn }) => {
 
   return (
     <div>
-      <div className="title_ask">
+      {!isLoggedIn && (
+          <div className="login-overlay">
+            <p>Please login to access</p>
+            <Link to="/login" className='blur-login'>Login</Link>
+          </div>
+        )}
+      <div className={`title_ask ${isLoggedIn ? '' : 'blurred'}`}>
         <Link to={`/detail/${courseId}`}>
           <button className="back-btn-qa">Back</button>
         </Link>
@@ -150,7 +156,7 @@ const QAPage = ({ questions, setQuestions, onAddQuestion, isLoggedIn }) => {
         </div>
       </div>
 
-      <div className="question-container">
+      <div className={`question-container title_ask ${isLoggedIn ? '' : 'blurred'}`}>
         <div className="container">
           <div className="row">
             {filteredQuestions.map((question) => (
