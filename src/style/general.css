@@ -55,14 +55,14 @@ a {
     display: flex;
     align-items: center;
 }
-  
+
 .search-button {
     background-color: transparent;
     border: none;
     cursor: pointer;
     margin-left: 5px;
-    margin-left: 1px; 
-    padding-left: 2px; 
+    margin-left: 1px;
+    padding-left: 2px;
 }
 
 .login {

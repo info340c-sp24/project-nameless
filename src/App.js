@@ -13,6 +13,7 @@ import Evaluation from './components/Evaluation';
 import { ref, onValue, push, set, update } from 'firebase/database';
 import initializeDatabase from './components/initializeDatabase';
 
+
 const App = ({ database }) => {
   const [evaluations, setEvaluations] = useState([]);
   const [questions, setQuestions] = useState([]);
@@ -34,7 +35,7 @@ const App = ({ database }) => {
       const fetchedQuestions = snapshot.val() || [];
       setQuestions(fetchedQuestions);
     });
-    
+
     onValue(coursecardsRef, (snapshot) => {
       const fetchedcoursecards = snapshot.val() || [];
       setCoursecards(fetchedcoursecards);
