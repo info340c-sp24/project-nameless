@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase';
+import { ref, set } from 'firebase/database';
 import '../style/login&signup.css';
 
 const SignUp = () => {

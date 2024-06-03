@@ -46,7 +46,7 @@ const Header = ({ setSearchQuery, isLoggedIn, handleLogout }) => {
       <div className="login">
       {isLoggedIn ? (
           <div onClick={handleLogoutClick}>
-            <img src="../img/logout.png" alt="Logout Icon" />
+            <img src="/img/out.png" alt="Logout Icon" />
             <span>Logout</span>
           </div>
         ) : (
