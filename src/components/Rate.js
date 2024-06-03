@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import '../style/eval.css';
+import courseData from '../data/coursecards.json';
 
 function Rate({ onAddEvaluation }) {
   const [formData, setFormData] = useState({
@@ -13,7 +14,12 @@ function Rate({ onAddEvaluation }) {
     comment: ''
   });
 
+  const { courseId } = useParams();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const course = courseData.find(c => c.id.toString() === courseId);
+  }, [courseId]);
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
@@ -31,11 +37,11 @@ function Rate({ onAddEvaluation }) {
       grade: '',
       comment: ''
     });
-    navigate('/evaluation/:courseId');
+    navigate(`/evaluation/${courseId}`);
   };
 
   const handleBackClick = () => {
-    navigate('/evaluation/:courseId');
+    navigate(`/evaluation/${courseId}`);
   };
 
   return (

@@ -1,24 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import evaluationData from '../data/evaluations.json'; 
 import courseData from '../data/coursecards.json';
 import '../style/eval.css';
 
-function Evaluation({ }) {
+function Evaluation({ evaluations }) {
   const navigate = useNavigate();
   const { courseId } = useParams();
   const [filterInstructor, setFilterInstructor] = useState('');
   const [filterQuarter, setFilterQuarter] = useState('');
   const [filterRating, setFilterRating] = useState('');
   const [courseTitle, setCourseTitle] = useState('');
-  const [evaluations, setEvaluations] = useState([]);
 
   useEffect(() => {
     const course = courseData.find(c => c.id.toString() === courseId);
     if (course) {
       setCourseTitle(course.title);
     }
-    setEvaluations(evaluationData);
   }, [courseId]);
 
 

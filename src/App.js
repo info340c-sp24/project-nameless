@@ -84,7 +84,7 @@ const App = ({ database }) => {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/qa/:courseId" element={<QAPage questions={questions} setQuestions={setQuestions} onAddQuestion={handleAddQuestion} />} isLoggedIn={isLoggedIn} />
-          <Route path="/rate" element={<Rate onAddEvaluation={handleAddEvaluation} isLoggedIn={isLoggedIn} />} />
+          <Route path="/rate/:courseId" element={<Rate onAddEvaluation={handleAddEvaluation} isLoggedIn={isLoggedIn} />} />
           <Route path="/evaluation/:courseId" element={<Evaluation evaluations={evaluations} isLoggedIn={isLoggedIn} />} />
         </Routes>
         <Footer />
