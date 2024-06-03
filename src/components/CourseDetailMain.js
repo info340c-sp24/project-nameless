@@ -15,8 +15,8 @@ const CourseDetailMain = ( { courseData, evaluations, questions }) => {
     setCourse(selectedCourse);
 
     if (selectedCourse) {
-      const courseEvaluations = evaluations.filter(evaluation => evaluation.courseTitle === selectedCourse.title);
-      const courseQuestions = questions.filter(question => question.courseTitle === selectedCourse.title);
+      courseEvaluations = evaluations.filter(evaluation => evaluation.courseTitle === selectedCourse.title);
+      courseQuestions = questions.filter(question => question.courseTitle === selectedCourse.title);
 
       if (courseEvaluations.length > 0) {
         const totalDifficulty = courseEvaluations.reduce((sum, evaluation) => sum + parseFloat(evaluation.drating), 0);
