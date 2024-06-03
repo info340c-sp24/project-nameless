@@ -122,11 +122,16 @@ const QAPage = ({ database, questions, setQuestions, onAddQuestion, isLoggedIn }
   };
 
   const handleSearch = () => {
-    const filteredResults = questions.filter((question) =>
-      question.title.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-    setSearchResults(filteredResults);
-    setNoMatchingResults(filteredResults.length === 0);
+    if (searchQuery.trim() === '') {
+      setSearchResults([]);
+      setNoMatchingResults(false);
+    } else {
+      const filteredResults = questions.filter((question) =>
+        question.title.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+      setSearchResults(filteredResults);
+      setNoMatchingResults(filteredResults.length === 0);
+    }
   };
 
   const handleAskQuestion = (event) => {
@@ -197,11 +202,19 @@ const QAPage = ({ database, questions, setQuestions, onAddQuestion, isLoggedIn }
       <div className={`question-container title_ask ${isLoggedIn ? '' : 'blurred'}`}>
         <div className="container">
           <div className="row">
-            {filteredQuestions.map((question) => (
-              <div key={question.id} className="col-md-4">
-                <QuestionCard question={question} onAnswerSubmit={handleAnswerSubmit} />
-              </div>
-            ))}
+            {searchResults.length > 0 ? (
+              searchResults.map((question) => (
+                <div key={question.id} className="col-md-4">
+                  <QuestionCard question={question} onAnswerSubmit={handleAnswerSubmit} />
+                </div>
+              ))
+            ) : (
+              filteredQuestions.map((question) => (
+                <div key={question.id} className="col-md-4">
+                  <QuestionCard question={question} onAnswerSubmit={handleAnswerSubmit} />
+                </div>
+              ))
+            )}
           </div>
         </div>
       </div>
