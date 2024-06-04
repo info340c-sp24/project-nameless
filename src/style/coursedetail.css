@@ -7,10 +7,6 @@ button, .back {
     border-style: outset;
 }
 
-button:hover, .back:hover {
-    background-color: rgba(72, 53, 182, 0.4);
-}
-
 .course-detail-main {
     padding: 20px;
 }
@@ -30,24 +26,25 @@ button:hover, .back:hover {
 }
 
 .statistics {
-    align-self: flex-end;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-end; 
+    height: auto; 
+    justify-content: center; 
 }
 
 .stat-wrapper {
     display: flex;
     align-items: center;
 }
-
-.stat-wrapper label {
-    flex: 1;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding-right: 15px;
+.responsive-container {
+    width: 100%;
+    height: 300px; 
 }
 
-.stat-wrapper span {
-    padding-left: 10px;
+.average-score {
+    padding-top: 10px; 
+    text-align: center; 
 }
 
 .info-box, .course-introduction-box, .evaluate-box, .question-box {
@@ -102,21 +99,6 @@ button:hover, .back:hover {
 .course-detail-page .background-only-box img {
     width: 100%;
     height: auto;
-}
-
-.course-detail-page footer {
-    width: 100%;
-    text-align: center;
-    padding: 10px 0;
-    background: #f0f0f0;
-    position: relative;
-    bottom: 0;
-    left: 0;
-    clear: both;
-}
-
-progress {
-    background-color: #e6e6e6;
 }
 
 progress::-webkit-progress-value {
