@@ -122,6 +122,7 @@
     margin-left: 300px;
 }
 
+/* Evaluation Page and Submit Evaluation Page Media Styles */
 @media (min-width: 500px) {
     .ratingBox {
         font-size: 15px;
