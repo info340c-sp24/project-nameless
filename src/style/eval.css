@@ -1,7 +1,27 @@
+/* Evaluations Page and Submit Evaluation Page General Styling */
 .rate {
     background-image: url('../img/pink-banner.jpg');
     background-size: cover;
 }
+
+.rate-wrap {
+    padding: 20px;
+    margin-bottom: 1.5rem;
+}
+
+.rate h1, .rateForm {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+
+.back {
+    margin-left: 12px;
+    margin-left: 0;
+}
+
+
+/* Filter Evaluation Styling */
 
 .filter-group {
     display: flex;
@@ -19,22 +39,7 @@
     font-size:10px;
 }
 
-.rate-wrap {
-    padding: 20px;
-    margin-bottom: 1.5rem;
-}
-
-.back {
-    margin-left: 12px;
-    margin-left: 0;
-}
-
-
-.rate h1, .rateee {
-    text-align: center;
-    margin-bottom: 1.5rem;
-}
-
+/* Evaluation Cards Styling  */
 .evaluationTable {
     margin-left: 10px;
     margin-right: 10px;
@@ -89,6 +94,7 @@
     margin-left: .5vw;
 }
 
+/* Submit Evaluation Form Styling */
 .input-fields {
     display: flex;
     flex-direction: column;
@@ -111,7 +117,6 @@
     width: 100%;
     box-sizing: border-box;
 }
-
 
 .eval-back {
     margin-left: 300px;

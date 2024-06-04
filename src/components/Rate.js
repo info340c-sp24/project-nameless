@@ -50,7 +50,7 @@ function Rate({ onAddEvaluation }) {
       <main>
         <button onClick={handleBackClick} aria-label="go back to evaluation page" className="back">Back</button>
         <h1>Submit your Rating</h1>
-        <div className="rateee">
+        <div className="rateForm">
           <form onSubmit={handleSubmit}>
             <div className="input-fields">
               <label htmlFor="instructor">Instructor:</label>
