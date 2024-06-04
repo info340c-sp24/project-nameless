@@ -108,7 +108,8 @@ const QAPage = ({ database, questions, setQuestions, onAddQuestion, isLoggedIn }
       setNoMatchingResults(false);
     } else {
       const filteredResults = questions.filter((question) =>
-        question.title.toLowerCase().includes(searchQuery.toLowerCase())
+        question.title.toLowerCase().includes(searchQuery.toLowerCase()) &&
+        question.courseTitle === courseTitle
       );
       setSearchResults(filteredResults);
       setNoMatchingResults(filteredResults.length === 0);
