@@ -78,7 +78,7 @@ const CourseDetailMain = ({ courseData, evaluations, questions }) => {
           <div className="statistics">
               <div className="stat-wrapper">
                   <ResponsiveContainer width="70%" height={140} className="responsive-container">
-                      <BarChart data={data} layout="vertical" margin={{ top: 5, right: 35, left: 15, bottom: 5 }}>
+                      <BarChart data={data} layout="vertical" margin={{ top: 5, right: 35, left: 22, bottom: 5 }}>
                           <CartesianGrid strokeDasharray="3 3" />
                           <XAxis type="number" domain={[0, 5]} />
                           <YAxis type="category" dataKey="name" />
