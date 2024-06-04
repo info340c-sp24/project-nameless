@@ -1,9 +1,11 @@
+/* Heading Styles */
 .signup-main, .login-main {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* Input Styles */
 .login_input {
     padding-top: 30px;
     width: 50%;
@@ -29,6 +31,7 @@ input.login {
     font-size: 16px;
 }
 
+/* Button Styles */
 button.login-btn {
     margin-top: 40px;
     width: 100%;
@@ -39,6 +42,11 @@ button.login-btn {
     border-radius: 5px;
 }
 
+button.login-btn:hover {
+    background-color: rgba(72, 53, 182, 0.4);
+}
+
+/* Link Styles */
 .login_input a {
     display: flex;
     justify-content: center;
@@ -47,6 +55,4 @@ button.login-btn {
     text-align: center;
 }
 
-button.login-btn:hover {
-    background-color: rgba(72, 53, 182, 0.4);
-}
+
