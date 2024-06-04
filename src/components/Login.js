@@ -8,6 +8,7 @@ const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -19,6 +20,16 @@ const Login = () => {
     return () => unsubscribe();
   }, [navigate]);
 
+  useEffect(() => {
+    let timer;
+    if (errorMessage) {
+      timer = setTimeout(() => {
+        setErrorMessage('');
+      }, 5000);
+    }
+    return () => clearTimeout(timer);
+  }, [errorMessage]);
+
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
 
@@ -26,6 +37,9 @@ const Login = () => {
       await signInWithEmailAndPassword(auth, email, password);
     } catch (error) {
       console.error('Error during login:', error);
+      setErrorMessage('Invalid email or password.');
+      setEmail('');
+      setPassword('');
     }
   };
 
@@ -33,6 +47,7 @@ const Login = () => {
     <main className="login-main">
       <h1>Login</h1>
       <div className="login_input">
+      {errorMessage && <p className="error-message">{errorMessage}</p>}
         <form onSubmit={handleLoginSubmit} className='login-form'>
           <label htmlFor="email">Email</label>
           <input
