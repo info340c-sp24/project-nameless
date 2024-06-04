@@ -16,3 +16,7 @@ Front-end design completed.
 Second Draft completed.
 All react components are complete. 
 Interactive features available at Evaluation page and Q&A page. The features include searching, filtering, and uploading content. 
+
+## Update
+Final Draft completed.
+Website available: https://project-nameless-8f4df.web.app/
