@@ -80,19 +80,6 @@ const QAPage = ({ database, questions, setQuestions, onAddQuestion, isLoggedIn }
     });
   }, [database]);
 
-  // const handleAnswerSubmit = (answer) => {
-  //   const questionIndex = questions.findIndex((q) => q.courseTitle === courseTitle);
-  //   console.log(questionIndex);
-  //   if (questionIndex !== -1) {
-  //   const answerRef = ref(database, `questions/${questionIndex}/answers/${questions[questionIndex].answers.length}`);
-  //   set(answerRef, answer).then(() => {
-  //     console.log('Successfully submitted answer!');
-  //   }).catch((error) => {
-  //     console.error('Error writing answer:', error);
-  //   });
-  //   }
-  // };
-
   const handleAnswerSubmit = (questionId, answer) => {
     const questionIndex = questions.findIndex((q) => q.id === questionId);
     if (questionIndex !== -1) {
@@ -108,12 +95,6 @@ const QAPage = ({ database, questions, setQuestions, onAddQuestion, isLoggedIn }
 
       const answerRef = ref(database, `questions/${questionIndex}/answers`);
       set(answerRef, updatedAnswers)
-        .then(() => {
-          console.log('Successfully submitted answer!');
-        })
-        .catch((error) => {
-          console.error('Error writing answer:', error);
-        });
     }
   };
 

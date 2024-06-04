@@ -26,7 +26,6 @@ const SignUp = () => {
     e.preventDefault();
 
     if (password !== confirmPassword) {
-      console.log('Passwords do not match');
       setErrorMessage('Passwords do not match');
       setEmail('');
       setPassword('');
@@ -35,7 +34,6 @@ const SignUp = () => {
     }
 
     if (password.length < 6 | confirmPassword.length < 6) {
-      console.log('Password too short');
       setErrorMessage('Password too short');
       setEmail('');
       setPassword('');
@@ -47,7 +45,6 @@ const SignUp = () => {
       await createUserWithEmailAndPassword(auth, email, password);
       navigate('/login');
     } catch (error) {
-      console.error('Error during sign up:', error);
       setErrorMessage('Signup failed: account existed');
       setEmail('');
       setPassword('');

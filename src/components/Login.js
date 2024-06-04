@@ -36,7 +36,6 @@ const Login = () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
     } catch (error) {
-      console.error('Error during login:', error);
       setErrorMessage('Invalid email or password.');
       setEmail('');
       setPassword('');
