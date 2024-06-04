@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 import '../style/coursedetail.css';
 
-const CourseDetailMain = ( { courseData, evaluations, questions }) => {
+const CustomLabel = (props) => {
+  const { x, y, width, value } = props;
+  return <text x={x + width + 5} y={y + 15} fill="#666" textAnchor="start">{value.toFixed(2)}</text>;
+};
+
+const CourseDetailMain = ({ courseData, evaluations, questions }) => {
   const { courseTitle } = useParams();
   const [course, setCourse] = useState(null);
   const [statistics, setStatistics] = useState({ difficulty: 0, workload: 0, overallRating: 0, averageScore: 0 });
@@ -41,6 +47,12 @@ const CourseDetailMain = ( { courseData, evaluations, questions }) => {
     return <div>Loading...</div>;
   }
 
+  const data = [
+    {name: 'Difficulty', value: statistics.difficulty, fill: '#8884d8'},
+    {name: 'Workload', value: statistics.workload, fill: '#83a6ed'},
+    {name: 'Overall', value: statistics.overallRating, fill: '#8dd1e1'}
+  ];
+
   return (
     <main className="course-detail-page course-detail-main">
       <div className="info-box">
@@ -63,22 +75,24 @@ const CourseDetailMain = ( { courseData, evaluations, questions }) => {
             </li>
           </ul>
           <div className="statistics">
-            <div className="stat-wrapper">
-              <label htmlFor="difficulty">Rating Difficulty</label>
-              <progress id="difficulty" value={statistics.difficulty} max="5"></progress>
-              <span className="progress-value">{statistics.difficulty.toFixed(2)}</span>
-            </div>
-            <div className="stat-wrapper">
-              <label htmlFor="workload">Workload</label>
-              <progress id="workload" value={statistics.workload} max="5"></progress>
-              <span className="progress-value">{statistics.workload.toFixed(2)}</span>
-            </div>
-            <div className="stat-wrapper">
-              <label htmlFor="overallRating">Overall Rating</label>
-              <progress id="overallRating" value={statistics.overallRating} max="5"></progress>
-              <span className="progress-value">{statistics.overallRating.toFixed(2)}</span>
-            </div>
-            <p className="average-score">Average Grade: {statistics.averageScore.toFixed(2)}</p>
+          <div className="statistics">
+              <div className="stat-wrapper">
+                  <ResponsiveContainer width="70%" height={140} className="responsive-container">
+                      <BarChart data={data} layout="vertical" margin={{ top: 5, right: 35, left: 15, bottom: 5 }}>
+                          <CartesianGrid strokeDasharray="3 3" />
+                          <XAxis type="number" domain={[0, 5]} />
+                          <YAxis type="category" dataKey="name" />
+                          <Tooltip />
+                          <Bar dataKey="value" barSize={20} label={<CustomLabel />}>
+                              {data.map((entry, index) => (
+                                  <Cell key={`cell-${index}`} fill={entry.fill} />
+                              ))}
+                          </Bar>
+                      </BarChart>
+                  </ResponsiveContainer>
+                  <p className="average-score">Average Grade: {statistics.averageScore.toFixed(2)}</p>
+              </div>
+           </div>
           </div>
         </div>
       </div>
