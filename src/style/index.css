@@ -1,82 +1,92 @@
+/* Container styling for courses section, enabling responsive flexbox layout */
 .courses {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px 20px;
+    display: flex; /* Use flexbox to layout children */
+    flex-wrap: wrap; /* Allow items to wrap onto the next line */
+    justify-content: center; /* Center align the flex items */
+    padding: 20px; /* Space inside the container */
 }
 
+/* Styling for individual course cards */
 .courses .course_card {
-    width: 340px;
-    background-color: #ffffff;
-    margin-bottom: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    margin: 20px 40px;
+    width: 340px; /* Fixed width for each card */
+    background-color: #ffffff; /* White background color */
+    margin-bottom: 10px; /* Space below each card */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Shadow effect for depth */
+    display: flex; /* Use flexbox for layout inside each card */
+    flex-direction: column; /* Stack children vertically */
+    margin: 20px 40px; /* Uniform margin around each card */
 }
 
+/* Styling for the course image container */
 .courses .course_background {
-    position: relative;
-    width: 100%;
-    height: 170px;
-    overflow: hidden;
-    border-radius: 4px;
+    position: relative; /* Position relative to its normal position */
+    width: 100%; /* Full width of the parent container */
+    height: 170px; /* Fixed height */
+    overflow: hidden; /* Hide any overflow */
+    border-radius: 4px; /* Rounded corners */
 }
 
+/* Styling for course image */
 .course_background .course_img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 100%; /* Full width to cover container */
+    height: 100%; /* Full height to cover container */
+    object-fit: cover; /* Scale the image to maintain aspect ratio while filling the element */
 }
 
+/* Styling for the course title overlay */
 .course_background .course_title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #ffffff;
-    z-index: 1;
-    font-weight: bold;
-    text-shadow: 0px 8px 10px rgba(0, 0, 0, 0.6);
-    font-size: 32px;
+    position: absolute; /* Position relative to the nearest positioned ancestor */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust the position to truly center the element */
+    color: #ffffff; /* White text color */
+    z-index: 1; /* Ensure it's above the image */
+    font-weight: bold; /* Bold font for visibility */
+    text-shadow: 0px 8px 10px rgba(0, 0, 0, 0.6); /* Text shadow for better readability */
+    font-size: 32px; /* Large font size for visibility */
 }
 
+/* Styling for the course name in the description */
 .simple_description .course-name {
-    margin: 25px 20px;
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 5px
+    margin: 25px 20px; /* Space around the text */
+    font-size: 18px; /* Font size */
+    font-weight: bold; /* Bold text */
+    margin-bottom: 5px /* Space below the text */
 }
 
+/* Hover effect for course name */
 .course-name:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Underline on hover for emphasis */
 }
 
+/* Container for tags below the course name */
 .simple_description .description-tags {
-    display: flex;
-    justify-content: flex-start;
-    padding: 10px 20px;
+    display: flex; /* Use flexbox for layout */
+    justify-content: flex-start; /* Align items to the start */
+    padding: 10px 20px; /* Padding inside the container */
 }
 
+/* Common styling for tags */
 .description-tags .tag_RSN, .tag_credit {
-    font-size: 13px;
-    margin: 5px;
-    flex-basis: 14%;
-    text-align: center;
-    border-radius: 15px;
+    font-size: 13px; /* Smaller font size for tags */
+    margin: 5px; /* Margin around each tag */
+    flex-basis: 14%; /* Basis before remaining space is distributed */
+    text-align: center; /* Center text within tags */
+    border-radius: 15px; /* Rounded corners for tags */
 }
 
+/* Styling for specific tags */
 .description-tags .tag_RSN {
-    background-color: #ad7589;
-    color: #ffffff;
+    background-color: #ad7589; /* Muted pink background */
+    color: #ffffff; /* White text for contrast */
 }
 
 .description-tags .tag_credit {
-    background-color: #e08ec9;
-    color: #ffffff;
+    background-color: #e08ec9; /* Bright pink background */
+    color: #ffffff; /* White text for contrast */
 }
 
 .credit {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin-top: 0.5rem; /* Top margin */
+    margin-bottom: 0.5rem; /* Bottom margin */
 }
