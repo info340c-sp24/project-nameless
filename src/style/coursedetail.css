@@ -1,3 +1,4 @@
+/* Button and back link styles */
 button, .back {
     background-color: rgba(173, 136, 198, 0.4);
     color: #080710;
@@ -7,16 +8,19 @@ button, .back {
     border-style: outset;
 }
 
+/* Course detail main container */
 .course-detail-main {
     padding: 20px;
 }
 
+/* Course info section */
 .course-info {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
+/* Info list item styles */
 .info-list li:first-child {
     margin-bottom: 30px;
 }
@@ -25,6 +29,7 @@ button, .back {
     margin-top: 10px;
 }
 
+/* Statistics section styles */
 .statistics {
     display: flex;
     flex-direction: column; 
@@ -33,63 +38,76 @@ button, .back {
     justify-content: center; 
 }
 
+/* Wrapper for individual statistics */
 .stat-wrapper {
     display: flex;
     align-items: center;
 }
+
+/* Responsive container for bar chart */
 .responsive-container {
     width: 100%;
     height: 300px; 
 }
 
+/* Average score text styling */
 .average-score {
     padding-top: 10px; 
     text-align: center; 
 }
 
+/* General box styles for different sections */
 .info-box, .course-introduction-box, .evaluate-box, .question-box {
     background-color: #FBF0FF;
     margin-bottom: 20px;
     padding: 20px;
 }
 
+/* Styles for the info list */
 .info-list {
     list-style-type: none;
     padding: 0;
     margin-top: 0;
 }
 
+/* Evaluation container styles */
 .evaluation-container {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
 }
 
+/* Styles for evaluation and question boxes */
 .evaluate-box, .question-box {
     width: 100%;
 }
 
+/* Image styles within the course detail */
 .coursedetail-image {
     vertical-align: middle;
     margin-right: 5px;
 }
 
+/* Hover effects for evaluation and question headings */
 .evaluate-box h2:hover, .question-box h2:hover {
     text-decoration: underline;
     text-decoration-color: #4835B6;
 }
 
+/* Link icon styles */
 .link-icon {
     width: 16px;
     height: auto;
     vertical-align: middle;
 }
 
+/* Link text styles */
 .link-text {
     vertical-align: middle;
     padding-bottom: 2px;
 }
 
+/* Styles for background-only box */
 .course-detail-page .background-only-box {
     width: 100%;
     display: flex;
@@ -101,14 +119,17 @@ button, .back {
     height: auto;
 }
 
+/* Progress bar value color */
 progress::-webkit-progress-value {
     background-color: rgb(115, 0, 255);
 }
 
+/* Hover effect for link text */
 .link-text:hover {
     text-decoration: underline;
 }
 
+/* Media queries for different screen sizes */
 @media (min-width: 960px) {
     .background-only-box {
         height: calc(100vh - 100px);
