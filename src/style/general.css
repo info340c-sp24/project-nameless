@@ -1,3 +1,4 @@
+/* General Styles */
 * {
     font-family: "Titillium Web", sans-serif;
     font-weight: 600;
@@ -14,6 +15,7 @@ body {
     width: 100%;
 }
 
+/* Header Styles */
 header {
     width: 100%;
     display: flex;
@@ -22,11 +24,13 @@ header {
     align-items: center;
 }
 
+/* Link Styles */
 a {
     text-decoration: none;
     color: #4835B6;
 }
 
+/* Header Component Styles */
 .logo {
     flex: 1;
     display: flex;
@@ -45,7 +49,6 @@ a {
 .logo img, .login img {
     margin: 10px;
 }
-
 
 .search-container img {
     display: none;
@@ -96,6 +99,7 @@ header a {
     outline: none;
 }
 
+/* Main Styles */
 main {
     align-items: center;
     margin-top: 20px;
@@ -109,6 +113,7 @@ h1 {
     text-align: center;
 }
 
+/* Footer Styles */
 footer {
     padding-top: 12px;
     color: #4835B6;
@@ -126,6 +131,7 @@ footer p {
     line-height: 1.25;
 }
 
+/* Button Styles */
 button{
     background-color: rgba(173, 136, 198, 0.4);
     color: #080710;
@@ -138,6 +144,7 @@ button:hover, .back:hover {
     background-color: rgba(72, 53, 182, 0.4);
 }
 
+/* Input Styles */
 .text_input {
     padding: 12px;
 }
@@ -157,6 +164,7 @@ textarea {
     margin-bottom: 10px;
 }
 
+/* General Media Styles */
 @media (min-width: 1330px) {
     .logo span {
         display: flex;
